@@ -1,0 +1,196 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Student API",
+    "description" : "No description",
+    "contact" : { },
+    "version" : "1.0.0"
+  },
+  "servers" : [ {
+    "url" : "https://q7ulgua.us.api-mocks.com"
+  } ],
+  "paths" : {
+    "/student/{id}/" : {
+      "get" : {
+        "summary" : "Get by Student ID",
+        "description" : "Get Students using the Student ID",
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Student%20JSON"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "Delete Student",
+        "description" : "Delete the student by ID",
+        "responses" : {
+          "202" : {
+            "description" : "Status 202"
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      } ],
+      "x-talend" : {
+        "section" : "Operations"
+      }
+    },
+    "/student/" : {
+      "get" : {
+        "summary" : "Get Students",
+        "parameters" : [ {
+          "name" : "lastName",
+          "in" : "query",
+          "description" : "Student Last Name",
+          "schema" : {
+            "type" : "string",
+            "description" : "Student Last Name"
+          },
+          "example" : "Jones"
+        }, {
+          "name" : "entryTerm",
+          "in" : "query",
+          "description" : "Student Entry Term",
+          "schema" : {
+            "type" : "string",
+            "description" : "Student Entry Term"
+          },
+          "example" : "201801"
+        }, {
+          "name" : "firstName",
+          "in" : "query",
+          "description" : "Student First Name",
+          "schema" : {
+            "type" : "string",
+            "description" : "Student First Name"
+          }
+        }, {
+          "name" : "applicantStatus",
+          "in" : "query",
+          "description" : "Student Applicant Status",
+          "schema" : {
+            "type" : "string",
+            "description" : "Student Applicant Status",
+            "enum" : [ "accepted", "denied", "withdraw", "enrolled" ]
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Student%20JSON"
+                  }
+                },
+                "example" : "{  \n   \"student\":[  \n      {  \n         \"studentId\":145003,\n         \"firstName\":\"Benjamin\",\n         \"middleName\":\"Woodrow\",\n         \"lastName\":\"Fillmore\",\n         \"applicantStatus\":\"withdraw\",\n         \"entryTerm\":201702,\n         \"address\":\"539 Cleveland Ave.\",\n         \"city\":\"Helena\",\n         \"state\":\"Mississippi\",\n         \"zip\":3657\n      },\n      {  \n         \"studentId\":145013,\n         \"firstName\":\"Andrew\",\n         \"middleName\":\"Warren\",\n         \"lastName\":\"Fillmore\",\n         \"applicantStatus\":\"accepted\",\n         \"entryTerm\":201701,\n         \"address\":\"1229 Bailard Avenue\",\n         \"city\":\"Trenton\",\n         \"state\":\"South Carolina\",\n         \"zip\":63959\n      },\n      {  \n         \"studentId\":145091,\n         \"firstName\":\"Millard\",\n         \"middleName\":\"Richard\",\n         \"lastName\":\"Fillmore\",\n         \"applicantStatus\":\"enrolled\",\n         \"entryTerm\":201701,\n         \"address\":\"1090 Carpinteria North\",\n         \"city\":\"Providence\",\n         \"state\":\"Maine\",\n         \"zip\":57472\n      }\n   ]\n}"
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "Add a new Student",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Student%20JSON"
+              },
+              "example" : "{\n  \"student\": {\n    \"studentId\": 55555,\n    \"firstName\": \"Andrew\",\n    \"middleName\": \"Franklin\",\n    \"lastName\": \"Quincy\",\n    \"applicantStatus\": \"accepted\",\n    \"entryTerm\": 201702,\n    \"address\": \"1793 East Main Street\",\n    \"city\": \"Columbia\",\n    \"state\": \"Hawaii\",\n    \"zip\": 62433\n  }\n}"
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      },
+      "x-talend" : {
+        "section" : "Operations"
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "applicantStatus" : {
+        "type" : "string",
+        "description" : "The Student Applicant Status",
+        "enum" : [ "accepted", "denied", "withdraw", "enrolled" ],
+        "x-talend" : {
+          "section" : "Structures"
+        }
+      },
+      "Student JSON" : {
+        "type" : "object",
+        "description" : "Student JSON Structure",
+        "properties" : {
+          "Student" : {
+            "type" : "object",
+            "properties" : {
+              "zip" : {
+                "type" : "number",
+                "description" : "US Postal Code"
+              },
+              "city" : {
+                "type" : "string"
+              },
+              "state" : {
+                "type" : "string"
+              },
+              "address" : {
+                "type" : "string"
+              },
+              "lastName" : {
+                "type" : "string"
+              },
+              "entryTerm" : {
+                "type" : "number",
+                "example" : 201701
+              },
+              "firstName" : {
+                "type" : "string"
+              },
+              "studentId" : {
+                "type" : "number",
+                "example" : 145001
+              },
+              "middleName" : {
+                "type" : "string"
+              },
+              "applicantStatus" : {
+                "$ref" : "#/components/schemas/applicantStatus"
+              }
+            }
+          }
+        },
+        "example" : "{\n  \"student\": {\n    \"studentId\": 145025,\n    \"firstName\": \"Andrew\",\n    \"middleName\": \"Franklin\",\n    \"lastName\": \"Quincy\",\n    \"applicantStatus\": \"accepted\",\n    \"entryTerm\": 201702,\n    \"address\": \"1793 East Main Street\",\n    \"city\": \"Columbia\",\n    \"state\": \"Hawaii\",\n    \"zip\": 62433\n  }\n}",
+        "x-talend" : {
+          "section" : "Structures"
+        }
+      }
+    }
+  },
+  "x-talend" : {
+    "sections" : {
+      "Operations" : { },
+      "Structures" : { }
+    }
+  }
+}

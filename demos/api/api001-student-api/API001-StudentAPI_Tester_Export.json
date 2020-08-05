@@ -1,0 +1,397 @@
+{
+    "version": 4,
+    "entities": [
+        {
+            "entity": {
+                "type": "Project",
+                "description": "No description",
+                "fullProjectTag": "3d8e2ddc-7bbe-489c-b8f4-f6049e195b67",
+                "id": "8ef054ac-365f-43b4-ac55-ed6dadb8cac5",
+                "importedFrom": "0e41fbd1-1f74-4ec2-a779-62360407d8a8",
+                "lastModified": "2019-04-10T15:00:15.519-04:00",
+                "lastUpdaterId": "bbc55193-cc86-4467-8551-93cc8624677b",
+                "lastUpdaterName": "Ben Hough",
+                "name": "Student API",
+                "tag": "085a8624-3a5f-45b4-9172-1abb5f095493",
+                "updatedAt": "2018-11-20T14:41:36.880Z"
+            },
+            "children": [
+                {
+                    "entity": {
+                        "type": "Service",
+                        "id": "cc33ccfd-0eff-4b5d-b8a7-39ef7634500d",
+                        "lastUpdaterId": "bbc55193-cc86-4467-8551-93cc8624677b",
+                        "lastUpdaterName": "Ben Hough",
+                        "name": "Operations",
+                        "tag": "4742f11a-6c5d-4567-aa86-178a60297216",
+                        "updatedAt": "2018-11-20T14:41:36.880Z",
+                        "parentId": "8ef054ac-365f-43b4-ac55-ed6dadb8cac5"
+                    },
+                    "children": [
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "requestBody": true,
+                                    "link": "",
+                                    "name": "POST"
+                                },
+                                "body": {
+                                    "bodyType": "Text",
+                                    "textBody": "{\n  \"student\": {\n    \"studentId\": 44444,\n    \"firstName\": \"Andrew\",\n    \"middleName\": \"Franklin\",\n    \"lastName\": \"Quincy\",\n    \"applicantStatus\": \"accepted\",\n    \"entryTerm\": 201702,\n    \"address\": \"1793 East Main Street\",\n    \"city\": \"Columbia\",\n    \"state\": \"Hawaii\",\n    \"zip\": 62433\n  }\n}"
+                                },
+                                "headersType": "Form",
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "name": "${scheme}"
+                                    },
+                                    "host": "${host}:${port}",
+                                    "path": "/services/student-api/student/"
+                                },
+                                "id": "c4f5d374-bb73-4693-986d-b9c805ef62d6",
+                                "lastUpdaterId": "bbc55193-cc86-4467-8551-93cc8624677b",
+                                "lastUpdaterName": "Ben Hough",
+                                "name": "Add a new Student",
+                                "tag": "a03036ec-2e5f-432d-b001-8475c1265304",
+                                "updatedAt": "2018-11-30T19:10:22.163Z",
+                                "headers": [
+                                    {
+                                        "enabled": true,
+                                        "name": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "parentId": "cc33ccfd-0eff-4b5d-b8a7-39ef7634500d"
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "",
+                                    "name": "DELETE"
+                                },
+                                "headersType": "Form",
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "name": "${scheme}"
+                                    },
+                                    "host": "${host}:${port}",
+                                    "path": "/services/student-api/student/44444/"
+                                },
+                                "description": "Delete the student by ID",
+                                "id": "c45cfd77-2d65-4950-a1d4-6961017703ea",
+                                "lastUpdaterId": "bbc55193-cc86-4467-8551-93cc8624677b",
+                                "lastUpdaterName": "Ben Hough",
+                                "name": "Delete Student",
+                                "tag": "06ac5907-93b7-4924-9a5e-2e990b671e5d",
+                                "updatedAt": "2018-11-30T19:10:17.477Z",
+                                "headers": [],
+                                "parentId": "cc33ccfd-0eff-4b5d-b8a7-39ef7634500d"
+                            }
+                        },
+                        {
+                            "entity": {
+                                "uriEditor": true,
+                                "type": "Request",
+                                "method": {
+                                    "link": "",
+                                    "name": "GET"
+                                },
+                                "headersType": "Form",
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": [
+                                            {
+                                                "enabled": true,
+                                                "name": "lastName",
+                                                "value": "Fillmo"
+                                            },
+                                            {
+                                                "name": "entryTerm",
+                                                "value": "201801"
+                                            },
+                                            {
+                                                "name": "applicantStatus",
+                                                "value": "accepted"
+                                            },
+                                            {
+                                                "name": "firstName",
+                                                "value": "Andr"
+                                            }
+                                        ]
+                                    },
+                                    "scheme": {
+                                        "name": "${scheme}"
+                                    },
+                                    "host": "${host}:${port}",
+                                    "path": "/services/student-api/student/"
+                                },
+                                "id": "ff06eeed-45de-4957-b47e-fd3b88c12c6d",
+                                "lastUpdaterId": "bbc55193-cc86-4467-8551-93cc8624677b",
+                                "lastUpdaterName": "Ben Hough",
+                                "name": "Get Students",
+                                "tag": "dd2739f4-4946-4d41-ab53-9e30ca97f428",
+                                "updatedAt": "2019-03-12T13:47:48.551Z",
+                                "headers": [
+                                    {
+                                        "enabled": true,
+                                        "name": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "parentId": "cc33ccfd-0eff-4b5d-b8a7-39ef7634500d"
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "",
+                                    "name": "GET"
+                                },
+                                "headersType": "Form",
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "name": "${scheme}"
+                                    },
+                                    "host": "${host}:${port}",
+                                    "path": "/services/student-api/student/145170/"
+                                },
+                                "description": "Get Students using the Student ID",
+                                "id": "7e46c80a-3997-495d-a676-b834e1d0a90e",
+                                "lastUpdaterId": "bbc55193-cc86-4467-8551-93cc8624677b",
+                                "lastUpdaterName": "Ben Hough",
+                                "name": "Get by Student ID",
+                                "tag": "32744e05-b2ec-409f-a742-a451456d69f3",
+                                "updatedAt": "2019-01-09T21:35:48.887Z",
+                                "headers": [
+                                    {
+                                        "enabled": true,
+                                        "name": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "parentId": "cc33ccfd-0eff-4b5d-b8a7-39ef7634500d"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "entity": {
+                        "type": "Scenario",
+                        "description": "",
+                        "id": "9a090327-0831-4c24-831f-690abc7ac19f",
+                        "lastUpdaterId": "bbc55193-cc86-4467-8551-93cc8624677b",
+                        "lastUpdaterName": "Ben Hough",
+                        "name": "Add and Remove Student Scenario",
+                        "tag": "9f618774-44e3-4b40-9b39-be4c6b6c2b5f",
+                        "updatedAt": "2019-02-22T13:54:04.179Z",
+                        "parentId": "8ef054ac-365f-43b4-ac55-ed6dadb8cac5"
+                    },
+                    "children": [
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "requestBody": true,
+                                    "link": "",
+                                    "name": "POST"
+                                },
+                                "body": {
+                                    "bodyType": "Text",
+                                    "textBody": "{\n  \"student\": {\n    \"studentId\": 55555,\n    \"firstName\": \"Andrew\",\n    \"middleName\": \"Franklin\",\n    \"lastName\": \"Quincy\",\n    \"applicantStatus\": \"accepted\",\n    \"entryTerm\": 201702,\n    \"address\": \"1793 East Main Street\",\n    \"city\": \"Columbia\",\n    \"state\": \"Hawaii\",\n    \"zip\": 62433\n  }\n}"
+                                },
+                                "headersType": "Form",
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "name": "${scheme}"
+                                    },
+                                    "host": "${host}:${port}",
+                                    "path": "/services/student-api/student/"
+                                },
+                                "id": "e170d7c4-ee00-437d-81c6-8b12d896a414",
+                                "lastUpdaterId": "bbc55193-cc86-4467-8551-93cc8624677b",
+                                "lastUpdaterName": "Ben Hough",
+                                "name": "Add a new Student",
+                                "tag": "44f28645-6870-40a3-89d9-ff0c6f2bca76",
+                                "updatedAt": "2019-04-09T19:15:48.817Z",
+                                "weight": "W",
+                                "headers": [
+                                    {
+                                        "enabled": true,
+                                        "name": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "assertions": [
+                                    {
+                                        "comparison": "Equals",
+                                        "subject": "ResponseStatus",
+                                        "path": "code",
+                                        "value": "202"
+                                    }
+                                ],
+                                "parentId": "9a090327-0831-4c24-831f-690abc7ac19f"
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "",
+                                    "name": "GET"
+                                },
+                                "headersType": "Form",
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "name": "${scheme}"
+                                    },
+                                    "host": "${host}:${port}",
+                                    "path": "/services/student-api/student/${getEntityById(\"e170d7c4-ee00-437d-81c6-8b12d896a414\").\"request\".\"body\".\"student\".\"studentId\"}/"
+                                },
+                                "description": "Get Students using the Student ID",
+                                "id": "433aa861-6b89-467e-a6c0-dbbb27e06f5f",
+                                "lastUpdaterId": "bbc55193-cc86-4467-8551-93cc8624677b",
+                                "lastUpdaterName": "Ben Hough",
+                                "name": "Get by Student ID",
+                                "tag": "3d8e2ddc-7bbe-489c-b8f4-f6049e195b67",
+                                "updatedAt": "2019-04-10T19:00:15.519Z",
+                                "weight": "p",
+                                "headers": [
+                                    {
+                                        "enabled": true,
+                                        "name": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "assertions": [
+                                    {
+                                        "comparison": "Equals",
+                                        "subject": "ResponseStatus",
+                                        "path": "code",
+                                        "value": "200"
+                                    },
+                                    {
+                                        "comparison": "Equals",
+                                        "subject": "ResponseJsonBody",
+                                        "enabled": true,
+                                        "path": "$.student",
+                                        "value": "${getEntityById(\"e170d7c4-ee00-437d-81c6-8b12d896a414\").\"request\".\"body\".\"student\"}"
+                                    }
+                                ],
+                                "parentId": "9a090327-0831-4c24-831f-690abc7ac19f"
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "",
+                                    "name": "DELETE"
+                                },
+                                "headersType": "Form",
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "name": "${scheme}"
+                                    },
+                                    "host": "${host}:${port}",
+                                    "path": "/services/student-api/student/55555/"
+                                },
+                                "description": "Delete the student by ID",
+                                "id": "3e470124-a818-471f-820e-a606ee810c66",
+                                "lastUpdaterId": "bbc55193-cc86-4467-8551-93cc8624677b",
+                                "lastUpdaterName": "Ben Hough",
+                                "name": "Delete Student",
+                                "tag": "19029cac-9b1e-434d-a184-03b6244ccc84",
+                                "updatedAt": "2018-12-05T19:38:05.054Z",
+                                "weight": "q",
+                                "headers": [],
+                                "assertions": [
+                                    {
+                                        "comparison": "Equals",
+                                        "subject": "ResponseStatus",
+                                        "path": "code",
+                                        "value": "202"
+                                    }
+                                ],
+                                "parentId": "9a090327-0831-4c24-831f-690abc7ac19f"
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "",
+                                    "name": "GET"
+                                },
+                                "headersType": "Form",
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "name": "${scheme}"
+                                    },
+                                    "host": "${host}:${port}",
+                                    "path": "/services/student-api/student/55555/"
+                                },
+                                "description": "Get Students using the Student ID",
+                                "id": "e9c6da8c-5fa6-4e3a-bdbe-a910def6e9f4",
+                                "lastUpdaterId": "bbc55193-cc86-4467-8551-93cc8624677b",
+                                "lastUpdaterName": "Ben Hough",
+                                "name": "Verify Student is Deleted",
+                                "tag": "89d47377-a0a6-428c-83d1-c1872f309491",
+                                "updatedAt": "2019-02-27T16:01:45.353Z",
+                                "weight": "u",
+                                "headers": [
+                                    {
+                                        "enabled": true,
+                                        "name": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "assertions": [
+                                    {
+                                        "comparison": "Equals",
+                                        "subject": "ResponseStatus",
+                                        "path": "code",
+                                        "value": "404"
+                                    }
+                                ],
+                                "parentId": "9a090327-0831-4c24-831f-690abc7ac19f"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "front-version": "2.104.5"
+}

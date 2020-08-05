@@ -28,7 +28,7 @@ These instructions have been tested with Talend 7.3.1.
 - Talend Studio 7.3+
 - A [MySQL 8](https://dev.mysql.com/downloads/) Instance
 
-:question: Don't have a MySQL Instance? Consider running one in Docker.
+:question: Don't have a MySQL Instance? Consider running one in [Docker](../../../misc/docker.md)
 
 ## Required Artifacts <a name="requiredartifacts"></a>
 
@@ -125,7 +125,7 @@ Download [`API001-StudentAPI_Designer_Export.json`](API001-StudentAPI_Designer_E
 Select __From URL__ and use the URL from this repository for `API001-StudentAPI_Designer_Export.json`: 
 
 ```
-https://raw.githubusercontent.com/Talend/.../demos/api/api001-student-api/API001-StudentAPI_Designer_Export.json
+https://raw.githubusercontent.com/Talend/partnerresources/master/demos/api/api001-student-api/API001-StudentAPI_Designer_Export.json
 ```
 
 ![Talend API Designer Import From URL](screenshots/api001-014b.png)

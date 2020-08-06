@@ -37,8 +37,10 @@ These files will be imported during the set up below:
 1. [API Tester Export](API001-StudentAPI_Tester_Export.json)
 2. [API Designer Export](API001-StudentAPI_Designer_Export.json)
 3. API001.zip (provided by the Channel team)
-4. Demo Video (provided by the Channel team)
-5. Demo Slides (provided by the Channel team)
+
+Additional materials for demo:
+1. Demo Video (provided by the Channel team)
+2. Demo Slides (provided by the Channel team)
 
 ## Setup <a name="setup"></a>
 

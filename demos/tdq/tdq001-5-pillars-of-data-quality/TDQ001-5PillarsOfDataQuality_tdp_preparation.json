@@ -7,8 +7,8 @@
 	"preparations": [{
 			"id": "d528e72b-0401-4e66-98bf-28175a5b44b0",
 			"baseDataSetId": "74478dc5-248b-4a98-864a-2544c2c61f03",
-			"baseDataSetName": "TDQ001_5PillarsOfDataQuality_tdp_dataset",
-			"name": "TDQ001_5PillarsOfDataQuality_preparation",
+			"baseDataSetName": "TDQ001-5PillarsOfDataQuality_tdp_dataset",
+			"name": "TDQ001-5PillarsOfDataQuality_preparation",
 			"creationDate": "2020-05-18T18:24:40.552+0000",
 			"lastModificationDate": "2020-05-18T18:25:02.858+0000",
 			"author": {

@@ -29,10 +29,10 @@ These instructions have been tested with Talend 7.3.1.
 
 These files will be imported during the set up below:
 
-1. [Data Preparation Dataset](TDQ001_5PillarsOfDataQuality_tdp_dataset.csv)
-2. [Data Preparation Export](TDQ001_5PillarsOfDataQuality_preparation.json)
-3. [Data Stewardship Campaign](TDQ001_5PillarsOfDataQuality_campaign.json)
-4. [Data Stewardship Model](TDQ001_5PillarsOfDataQuality_tds_model.json)
+1. [Data Preparation - Dataset](TDQ001-5PillarsOfDataQuality_tdp_dataset.csv)
+2. [Data Preparation - Preparation](TDQ001-5PillarsOfDataQuality_tdp_preparation.json)
+3. [Data Stewardship - Campaign](TDQ001-5PillarsOfDataQuality_tds_campaign.json)
+4. [Data Stewardship - Model](TDQ001-5PillarsOfDataQuality_tds_model.json)
 5. TDQ001.zip (provided by the Channel team)
 
 Additional materials for demo:

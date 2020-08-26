@@ -1,0 +1,153 @@
+{
+  "metadata" : {
+    "backendVersion" : "11.7.1",
+    "backendCommitId" : "3e062d69a53c28de2065bf9c1a095143fedc0697"
+  },
+  "campaigns" : [ {
+    "campaign" : {
+      "id" : "5b6b14d04cedfd000bfa2c82",
+      "createdBy" : "9f6c4ec5-0b6e-48a2-ac4e-c50b6ef8a2e0",
+      "lastUpdatedBy" : "Talend",
+      "creationDate" : 1533744336567,
+      "lastUpdateDate" : 1585458361153,
+      "name" : "c41b898d5c2bf294721d46357869e668a",
+      "label" : "TDQ001 - Company Merge",
+      "description" : null,
+      "owners" : [ "user@company.com" ],
+      "ownersDetail" : null,
+      "status" : "STARTED",
+      "startDate" : 1533744336526,
+      "endDate" : null,
+      "taskType" : "MERGING",
+      "schemaRef" : {
+        "namespace" : "org.talend.schema",
+        "name" : "s1c76cbfe21c6f44c1d1e59d54f3e4420",
+        "version" : 3,
+        "displayName" : "Company"
+      },
+      "impactAnalysisStatus" : "UPDATED",
+      "fieldsAccess" : {
+        "GUID" : {
+          "Stewards" : "READ_ONLY"
+        },
+        "NAME" : { },
+        "PHONE" : { },
+        "STREET" : { },
+        "CITY" : { },
+        "REGION" : { },
+        "COUNTRY" : { },
+        "EMAIL" : { }
+      },
+      "taskResolutionDelay" : null,
+      "workflow" : {
+        "id" : null,
+        "lastUpdatedBy" : "Talend",
+        "creationDate" : 0,
+        "lastUpdateDate" : 1585458361153,
+        "tenantId" : null,
+        "name" : "default workflow",
+        "states" : [ {
+          "name" : "New",
+          "label" : "New",
+          "transitionQuestion" : null,
+          "transitions" : [ {
+            "name" : "To validate",
+            "label" : "To validate",
+            "targetStateName" : "To validate",
+            "allowedRoles" : [ "Other", "Stewards" ]
+          } ],
+          "allowedRoles" : [ ],
+          "translations" : { }
+        }, {
+          "name" : "To validate",
+          "label" : "To validate",
+          "transitionQuestion" : null,
+          "transitions" : [ {
+            "name" : "Accept",
+            "label" : "Accept",
+            "targetStateName" : "Resolved",
+            "allowedRoles" : [ "Other", "Stewards" ]
+          }, {
+            "name" : "Reject",
+            "label" : "Reject",
+            "targetStateName" : "New",
+            "allowedRoles" : [ "Other", "Stewards" ]
+          } ],
+          "allowedRoles" : [ ],
+          "translations" : { }
+        }, {
+          "name" : "Resolved",
+          "label" : "Resolved",
+          "transitionQuestion" : null,
+          "transitions" : [ ],
+          "allowedRoles" : [ "Stewards" ],
+          "translations" : { }
+        } ]
+      },
+      "survivorshipConfiguration" : {
+        "fieldSurvivorshipConfiguration" : {
+          "GUID" : {
+            "algorithm" : "FIRST_VALID",
+            "algorithmConfiguration" : { },
+            "source" : null
+          },
+          "NAME" : {
+            "algorithm" : "MOST_COMMON",
+            "algorithmConfiguration" : { },
+            "source" : null
+          },
+          "PHONE" : {
+            "algorithm" : "MOST_TRUSTED",
+            "algorithmConfiguration" : { },
+            "source" : null
+          },
+          "STREET" : {
+            "algorithm" : "MOST_TRUSTED",
+            "algorithmConfiguration" : { },
+            "source" : null
+          },
+          "CITY" : {
+            "algorithm" : "MOST_TRUSTED",
+            "algorithmConfiguration" : { },
+            "source" : null
+          },
+          "REGION" : {
+            "algorithm" : "MOST_TRUSTED",
+            "algorithmConfiguration" : { },
+            "source" : null
+          },
+          "COUNTRY" : {
+            "algorithm" : "MOST_TRUSTED",
+            "algorithmConfiguration" : { },
+            "source" : null
+          },
+          "EMAIL" : {
+            "algorithm" : "MOST_RECENT",
+            "algorithmConfiguration" : { },
+            "source" : null
+          }
+        }
+      },
+      "sourcesConfiguration" : {
+        "sources" : {
+          "Source 1" : {
+            "label" : "Source 1",
+            "generalRating" : 60,
+            "fieldRatings" : { }
+          },
+          "Source 2" : {
+            "label" : "Source 2",
+            "generalRating" : 40,
+            "fieldRatings" : { }
+          }
+        },
+        "rejectUnknownSources" : false
+      }
+    },
+    "participants" : {
+      "Stewards" : [ "user1@company.com" ],
+      "Other" : [ "user2@company.com", "user3@company.com" ]
+    },
+    "participantsDetail" : null
+  } ]
+}

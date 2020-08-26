@@ -1,0 +1,105 @@
+{
+  "metadata" : {
+    "schemaServiceVersion" : "2.5.0-20191212151741-g79eb313",
+    "schemaServiceCommitId" : "79eb313a6eece9f0cb925193d64312777d7cd707"
+  },
+  "schemas" : [ {
+    "namespace" : "org.talend.schema",
+    "displayName" : "TDQ001 - Company Model",
+    "name" : "s1c76cbfe21c6f44c1d1e59d54f3e4420",
+    "description" : "",
+    "version" : 3,
+    "creationDate" : 1533744184568,
+    "lastUpdateDate" : 1533756721683,
+    "createdBy" : {
+      "id" : "9f6c4ec5-0b6e-48a2-ac4e-c50b6ef8a2e0",
+      "username" : "user@company.com",
+      "firstName" : "Company",
+      "lastName" : "User",
+      "enabled" : true
+    },
+    "lastUpdatedBy" : {
+      "id" : "9f6c4ec5-0b6e-48a2-ac4e-c50b6ef8a2e0",
+      "username" : "user@company.com",
+      "firstName" : "Company",
+      "lastName" : "User",
+      "enabled" : true
+    },
+    "fields" : [ {
+      "name" : "GUID",
+      "displayName" : "",
+      "path" : null,
+      "type" : "text",
+      "description" : "",
+      "required" : false,
+      "constraints" : [ ],
+      "allowedValues" : null
+    }, {
+      "name" : "NAME",
+      "displayName" : "",
+      "path" : null,
+      "type" : "text",
+      "description" : "",
+      "required" : false,
+      "constraints" : [ ],
+      "allowedValues" : null
+    }, {
+      "name" : "PHONE",
+      "displayName" : "",
+      "path" : null,
+      "type" : "US_PHONE",
+      "description" : "",
+      "required" : false,
+      "constraints" : [ ],
+      "allowedValues" : null
+    }, {
+      "name" : "STREET",
+      "displayName" : "",
+      "path" : null,
+      "type" : "text",
+      "description" : "",
+      "required" : false,
+      "constraints" : [ ],
+      "allowedValues" : null
+    }, {
+      "name" : "CITY",
+      "displayName" : "",
+      "path" : null,
+      "type" : "text",
+      "description" : "",
+      "required" : false,
+      "constraints" : [ ],
+      "allowedValues" : null
+    }, {
+      "name" : "REGION",
+      "displayName" : "",
+      "path" : null,
+      "type" : "text",
+      "description" : "",
+      "required" : false,
+      "constraints" : [ ],
+      "allowedValues" : null
+    }, {
+      "name" : "COUNTRY",
+      "displayName" : "",
+      "path" : null,
+      "type" : "COUNTRY",
+      "description" : "",
+      "required" : false,
+      "constraints" : [ ],
+      "allowedValues" : null
+    }, {
+      "name" : "EMAIL",
+      "displayName" : "",
+      "path" : null,
+      "type" : "text",
+      "description" : "",
+      "required" : false,
+      "constraints" : [ {
+        "name" : "patternText",
+        "value" : "^.*(\\.org|\\.net|\\.com)$"
+      } ],
+      "allowedValues" : null
+    } ]
+  } ]
+}

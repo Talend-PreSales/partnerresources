@@ -137,7 +137,7 @@ Click __Import__ on the definition and verify that import was successful:
 ![Talend API Designer Import Success](screenshots/api001-015.png)
 </details>
 
-### Studio <a name="studio"></a>
+### Talend Studio <a name="studio"></a>
 
 <details>
   <summary>Click to expand the instructions for this section</summary>

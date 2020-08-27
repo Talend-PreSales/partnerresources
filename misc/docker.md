@@ -45,3 +45,23 @@ You can stop the container by running
 ```
 docker container kill mysql8
 ```
+## Restart Existing Container
+
+To list containers, open a terminal and run:
+
+```
+docker ps -a
+```
+
+Find the container you wish to restart:
+
+```
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                     PORTS               NAMES
+30193ed97eec        mysql:8             "docker-entrypoint.s…"   3 weeks ago         Exited (137) 3 weeks ago                       mysql8
+```
+
+Use the name to restart the container:
+
+```
+docker start mysql8
+```

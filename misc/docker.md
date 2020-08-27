@@ -65,3 +65,17 @@ Use the name to restart the container:
 ```
 docker start mysql8
 ```
+
+## Run Commands Inside Container
+
+To run commands inside the container, open a terminal and run:
+
+```
+docker exec -it mysql8 bash
+```
+
+Once inside the container, start a MySQL shell with:
+
+```
+mysql -h localhost -P 3306 -uroot -pmy-secret-pw
+```

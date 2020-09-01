@@ -32,10 +32,10 @@ These instructions have been tested with Talend 7.3.1.
 
 These files will be imported during the set up below:
 
-1. [Data Preparation - Dataset](TDQ001-5PillarsOfDataQuality_tdp_dataset.csv)
-2. [Data Preparation - Preparation](TDQ001-5PillarsOfDataQuality_tdp_preparation.json)
-3. [Data Stewardship - Model](TDQ001-5PillarsOfDataQuality_tds_model.json)
-4. [Data Stewardship - Campaign](TDQ001-5PillarsOfDataQuality_tds_campaign.json)
+1. [Data Preparation - Dataset](TDQ001-5PillarsOfDataQuality_tdp_dataset.csv) [(raw file)](https://raw.githubusercontent.com/Talend/partnerresources/master/demos/tdq/tdq001-5-pillars-of-data-quality/TDQ001-5PillarsOfDataQuality_tdp_dataset.csv)
+2. [Data Preparation - Preparation](TDQ001-5PillarsOfDataQuality_tdp_preparation.json) [(raw file)](https://raw.githubusercontent.com/Talend/partnerresources/master/demos/tdq/tdq001-5-pillars-of-data-quality/TDQ001-5PillarsOfDataQuality_tdp_preparation.json)
+3. [Data Stewardship - Model](TDQ001-5PillarsOfDataQuality_tds_model.json) [(raw file)](https://raw.githubusercontent.com/Talend/partnerresources/master/demos/tdq/tdq001-5-pillars-of-data-quality/TDQ001-5PillarsOfDataQuality_tds_model.json)
+4. [Data Stewardship - Campaign](TDQ001-5PillarsOfDataQuality_tds_campaign.json) [(raw file)](https://raw.githubusercontent.com/Talend/partnerresources/master/demos/tdq/tdq001-5-pillars-of-data-quality/TDQ001-5PillarsOfDataQuality_tds_campaign.json)
 5. TDQ001.zip (provided by the Channel team)
 
 Additional materials for demo:
@@ -62,7 +62,7 @@ In Talend Data Preparation, choose __Datasets__ on the left menu:
 
 ![Talend Data Preparation Add Dataset](screenshots/tdq001-011.png)
 
-Download [`TDQ001-5PillarsOfDataQuality_tdp_dataset.csv`](TDQ001-5PillarsOfDataQuality_tdp_dataset.csv) from this repository and click __Add Dataset__. After adding the dataset, verify it has been successfully added:
+Download [`TDQ001-5PillarsOfDataQuality_tdp_dataset.csv`](https://raw.githubusercontent.com/Talend/partnerresources/master/demos/tdq/tdq001-5-pillars-of-data-quality/TDQ001-5PillarsOfDataQuality_tdp_dataset.csv) from this repository and click __Add Dataset__. After adding the dataset, verify it has been successfully added:
 
 ![Talend Data Preparation](screenshots/tdq001-012.png)
 
@@ -70,7 +70,7 @@ Choose __Preparations__ on the left menu:
 
 ![Talend Data Preparation](screenshots/tdq001-013.png)
 
-Download [`TDQ001-5PillarsOfDataQuality_tdp_preparation.json`](TDQ001-5PillarsOfDataQuality_tdp_preparation.json) from this repository and click __Import Preparation__. After importing the preparation, verify it has been successfully imported:
+Download [`TDQ001-5PillarsOfDataQuality_tdp_preparation.json`](https://raw.githubusercontent.com/Talend/partnerresources/master/demos/tdq/tdq001-5-pillars-of-data-quality/TDQ001-5PillarsOfDataQuality_tdp_preparation.json) from this repository and click __Import Preparation__. After importing the preparation, verify it has been successfully imported:
 
 ![Talend Data Preparation](screenshots/tdq001-014.png)
 
@@ -90,7 +90,7 @@ In Talend Data Stewardship, choose __Data models__ on the left menu:
 
 ![Talend Data Stewardship Data Models](screenshots/tdq001-020.png)
 
-Download [`TDQ001-5PillarsOfDataQuality_tds_model.json`](TDQ001-5PillarsOfDataQuality_tds_model.json) from this repository and click __Import Data Model__. After importing the data model, verify it has been successfully imported:
+Download [`TDQ001-5PillarsOfDataQuality_tds_model.json`](https://raw.githubusercontent.com/Talend/partnerresources/master/demos/tdq/tdq001-5-pillars-of-data-quality/TDQ001-5PillarsOfDataQuality_tds_model.json) from this repository and click __Import Data Model__. After importing the data model, verify it has been successfully imported:
 
 ![Talend Data Stewardship Data Models](screenshots/tdq001-021.png)
 
@@ -98,7 +98,7 @@ Choose __Campaigns__ on the left menu:
 
 ![Talend Data Stewardship Campaigns](screenshots/tdq001-022.png)
 
-Download [`TDQ001-5PillarsOfDataQuality_tds_campaign.json`](TDQ001-5PillarsOfDataQuality_tds_campaign.json) from this repository and click __Import Campaign__. After importing the campaign, verify it has been successfully imported:
+Download [`TDQ001-5PillarsOfDataQuality_tds_campaign.json`](https://raw.githubusercontent.com/Talend/partnerresources/master/demos/tdq/tdq001-5-pillars-of-data-quality/TDQ001-5PillarsOfDataQuality_tds_campaign.jsonn) from this repository and click __Import Campaign__. After importing the campaign, verify it has been successfully imported:
 
 ![Talend Data Stewardship Campaigns](screenshots/tdq001-023.png)
 
@@ -181,17 +181,43 @@ Select the __Run job__ tab and click __Run__ to run the job. The job should load
 
 In the repository, navigate to __Job Designs__ > __Standard__ > __DATA_QUALITY__ > __TDQ001_5PillarsOfDataQuality__ and open the __TDQ001_CreateSynonymDictionary 0.1__ job:
 
-![Talend Studio Generate Data Job Open](screenshots/tdq001-044.png)
+![Talend Studio Synonym Dictionary Job Open](screenshots/tdq001-044.png)
 
 Select the __Run job__ tab and click __Run__ to run the job. The job will create an index located in `/tmp/bus_entity_type_02`.
+
+#### Update Preparation
+
+To propagate the Data Preparation to the job, the preparation must be updated in the Studio job.
+
+In the repository, navigate to __Job Designs__ > __Standard__ > __DATA_QUALITY__ > __TDQ001_5PillarsOfDataQuality__ and open the __TDQ001_5PillarsOfDataQuality 0.1__ job:
+
+![Talend Studio Main Job Open](screenshots/tdq001-050.png)
+
+Locate the __DATA PREP FORMAT__ component and in the __Component__ tab click __Choose an existing preparation__. Select the imported preparation and click __OK__:
+
+![Talend Preparations](screenshots/tdq001-051.png)
+
+#### Update Campaign
+
+To propagate the Data Stewardship campaign to the job, the campaign must be updated in the Studio job.
+
+In the repository, navigate to __Job Designs__ > __Standard__ > __DATA_QUALITY__ > __TDQ001_5PillarsOfDataQuality__ and open the __TDQ001_5PillarsOfDataQuality 0.1__ job:
+
+![Talend Studio Main Job Open](screenshots/tdq001-052.png)
+
+Locate the __Assign Stewardship Task__ component and in the __Component__ tab click __Find a campaign__. Select the imported preparation and click __OK__:
+
+![Talend Preparations](screenshots/tdq001-053.png)
 
 #### Test 5 Pillars of Data Quality
 
 In the repository, navigate to __Job Designs__ > __Standard__ > __DATA_QUALITY__ > __TDQ001_5PillarsOfDataQuality__ and open the __TDQ001_5PillarsOfDataQuality 0.1__ job:
 
-![Talend Studio Generate Data Job Open](screenshots/tdq001-045.png)
+![Talend Studio Main Job Open](screenshots/tdq001-045.png)
 
 Select the __Run job__ tab and click __Run__ to run the job. Verify that everything has run successfully.
+
+![Talend Studio Main Job Run](screenshots/tdq001-054.png)
 
 </details>
 

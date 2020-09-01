@@ -189,11 +189,11 @@ Select the __Run job__ tab and click __Run__ to run the job. The job will create
 
 To propagate the Data Preparation to the job, the preparation must be updated in the Studio job.
 
-In the repository, navigate to __Job Designs__ > __Standard__ > __DATA_QUALITY__ > __TDQ001_5PillarsOfDataQuality__ and open the __TDQ001_5PillarsOfDataQuality 0.1__ job:
+In the repository, navigate to __Job Designs__ > __Standard__ > __DATA_QUALITY__ > __TDQ001_5PillarsOfDataQuality__ and open the __TDQ001_5PillarsOfDataQuality 0.1__ job. Locate the __DATA PREP FORMAT__ component and in the __Component__ tab click __Choose an existing preparation__.
 
 ![Talend Studio Main Job Open](screenshots/tdq001-050.png)
 
-Locate the __DATA PREP FORMAT__ component and in the __Component__ tab click __Choose an existing preparation__. Select the imported preparation and click __OK__:
+Select the imported preparation and click __OK__:
 
 ![Talend Preparations](screenshots/tdq001-051.png)
 
@@ -201,11 +201,11 @@ Locate the __DATA PREP FORMAT__ component and in the __Component__ tab click __C
 
 To propagate the Data Stewardship campaign to the job, the campaign must be updated in the Studio job.
 
-In the repository, navigate to __Job Designs__ > __Standard__ > __DATA_QUALITY__ > __TDQ001_5PillarsOfDataQuality__ and open the __TDQ001_5PillarsOfDataQuality 0.1__ job:
+In the repository, navigate to __Job Designs__ > __Standard__ > __DATA_QUALITY__ > __TDQ001_5PillarsOfDataQuality__ and open the __TDQ001_5PillarsOfDataQuality 0.1__ job. Locate the __Assign Stewardship Task__ component and in the __Component__ tab click __Find a campaign__.
 
 ![Talend Studio Main Job Open](screenshots/tdq001-052.png)
 
-Locate the __Assign Stewardship Task__ component and in the __Component__ tab click __Find a campaign__. Select the imported preparation and click __OK__:
+Select the imported preparation and click __OK__:
 
 ![Talend Preparations](screenshots/tdq001-053.png)
 

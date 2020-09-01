@@ -98,7 +98,7 @@ Choose __Campaigns__ on the left menu:
 
 ![Talend Data Stewardship Campaigns](screenshots/tdq001-022.png)
 
-Download [`TDQ001-5PillarsOfDataQuality_tds_campaign.json`](https://raw.githubusercontent.com/Talend/partnerresources/master/demos/tdq/tdq001-5-pillars-of-data-quality/TDQ001-5PillarsOfDataQuality_tds_campaign.jsonn) from this repository and click __Import Campaign__. After importing the campaign, verify it has been successfully imported:
+Download [`TDQ001-5PillarsOfDataQuality_tds_campaign.json`](https://raw.githubusercontent.com/Talend/partnerresources/master/demos/tdq/tdq001-5-pillars-of-data-quality/TDQ001-5PillarsOfDataQuality_tds_campaign.json) from this repository and click __Import Campaign__. After importing the campaign, verify it has been successfully imported:
 
 ![Talend Data Stewardship Campaigns](screenshots/tdq001-023.png)
 

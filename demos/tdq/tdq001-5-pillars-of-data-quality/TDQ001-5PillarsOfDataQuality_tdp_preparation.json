@@ -1,223 +1,247 @@
 {
-	"version": {
-		"versionId": "3.12.1-2.24.0",
-		"buildId": "4bc3876-f50d49a",
-		"serviceName": ""
-	},
-	"preparations": [{
-			"id": "d528e72b-0401-4e66-98bf-28175a5b44b0",
-			"baseDataSetId": "74478dc5-248b-4a98-864a-2544c2c61f03",
-			"baseDataSetName": "TDQ001-5PillarsOfDataQuality_tdp_dataset",
-			"name": "TDQ001-5PillarsOfDataQuality_preparation",
-			"creationDate": "2020-05-18T18:24:40.552+0000",
-			"lastModificationDate": "2020-05-18T18:25:02.858+0000",
-			"author": {
-				"id": "9f6c4ec5-0b6e-48a2-ac4e-c50b6ef8a2e0"
-			},
-			"baseMetadata": {
-				"columnMetadata": [{
-						"name": "guid",
-						"typeName": "string"
-					}, {
-						"name": "company_name",
-						"typeName": "string"
-					}, {
-						"name": "entity_type",
-						"typeName": "string"
-					}, {
-						"name": "std",
-						"typeName": "string"
-					}, {
-						"name": "phone",
-						"typeName": "string"
-					}, {
-						"name": "street",
-						"typeName": "string"
-					}, {
-						"name": "city",
-						"typeName": "string"
-					}, {
-						"name": "region",
-						"typeName": "string"
-					}, {
-						"name": "country",
-						"typeName": "string"
-					}, {
-						"name": "email",
-						"typeName": "string"
-					}
-				]
-			},
-			"steps": [{
-					"actions": []
-				}, {
-					"actions": [{
-							"name": "uppercase",
-							"parameters": {
-								"column_id": "0001",
-								"column_name": "company_name",
-								"create_new_column": "false",
-								"row_id": null,
-								"scope": "column"
-							}
-						}
-					]
-				}, {
-					"actions": [{
-							"name": "uppercase",
-							"parameters": {
-								"column_id": "0001",
-								"column_name": "company_name",
-								"create_new_column": "false",
-								"row_id": null,
-								"scope": "column"
-							}
-						}, {
-							"name": "remove_non_alpha_num_chars",
-							"parameters": {
-								"column_id": "0001",
-								"column_name": "company_name",
-								"create_new_column": "false",
-								"row_id": null,
-								"scope": "column"
-							}
-						}
-					]
-				}, {
-					"actions": [{
-							"name": "uppercase",
-							"parameters": {
-								"column_id": "0001",
-								"column_name": "company_name",
-								"create_new_column": "false",
-								"row_id": null,
-								"scope": "column"
-							}
-						}, {
-							"name": "remove_non_alpha_num_chars",
-							"parameters": {
-								"column_id": "0001",
-								"column_name": "company_name",
-								"create_new_column": "false",
-								"row_id": null,
-								"scope": "column"
-							}
-						}, {
-							"name": "uppercase",
-							"parameters": {
-								"column_id": "0002",
-								"column_name": "entity_type",
-								"create_new_column": "false",
-								"row_id": null,
-								"scope": "column"
-							}
-						}
-					]
-				}, {
-					"actions": [{
-							"name": "uppercase",
-							"parameters": {
-								"column_id": "0001",
-								"column_name": "company_name",
-								"create_new_column": "false",
-								"row_id": null,
-								"scope": "column"
-							}
-						}, {
-							"name": "remove_non_alpha_num_chars",
-							"parameters": {
-								"column_id": "0001",
-								"column_name": "company_name",
-								"create_new_column": "false",
-								"row_id": null,
-								"scope": "column"
-							}
-						}, {
-							"name": "uppercase",
-							"parameters": {
-								"column_id": "0002",
-								"column_name": "entity_type",
-								"create_new_column": "false",
-								"row_id": null,
-								"scope": "column"
-							}
-						}, {
-							"name": "format_phone_number",
-							"parameters": {
-								"mode": "constant_mode",
-								"column_id": "0004",
-								"filter": "(0004 is invalid)",
-								"format_type": "international",
-								"create_new_column": "false",
-								"scope": "column",
-								"column_name": "phone",
-								"row_id": null,
-								"version": "1",
-								"region_code": "region.code.US"
-							}
-						}
-					]
-				}, {
-					"actions": [{
-							"name": "uppercase",
-							"parameters": {
-								"column_id": "0001",
-								"column_name": "company_name",
-								"create_new_column": "false",
-								"row_id": null,
-								"scope": "column"
-							}
-						}, {
-							"name": "remove_non_alpha_num_chars",
-							"parameters": {
-								"column_id": "0001",
-								"column_name": "company_name",
-								"create_new_column": "false",
-								"row_id": null,
-								"scope": "column"
-							}
-						}, {
-							"name": "uppercase",
-							"parameters": {
-								"column_id": "0002",
-								"column_name": "entity_type",
-								"create_new_column": "false",
-								"row_id": null,
-								"scope": "column"
-							}
-						}, {
-							"name": "format_phone_number",
-							"parameters": {
-								"mode": "constant_mode",
-								"column_id": "0004",
-								"filter": "(0004 is invalid)",
-								"format_type": "international",
-								"create_new_column": "false",
-								"scope": "column",
-								"column_name": "phone",
-								"row_id": null,
-								"version": "1",
-								"region_code": "region.code.US"
-							}
-						}, {
-							"name": "format_phone_number",
-							"parameters": {
-								"mode": "constant_mode",
-								"column_id": "0004",
-								"filter": "(0004 is invalid)",
-								"format_type": "national",
-								"create_new_column": "false",
-								"scope": "column",
-								"column_name": "phone",
-								"row_id": null,
-								"version": "1",
-								"region_code": "region.code.US"
-							}
-						}
-					]
-				}
-			],
-			"preparationVersions": []
-		}
-	]
+   "version":{
+      "versionId":"3.15.1-2.38.0",
+      "buildId":"9f1dfb6-d22e572",
+      "serviceName":""
+   },
+   "preparations":[
+      {
+         "id":"9c4cba4a-f734-48ba-b9a2-32bbf526518d",
+         "baseDataSetId":"2833a477-e8bc-4aed-8a1c-1374b15affd8",
+         "baseDataSetName":"TDQ001-5PillarsOfDataQuality_tdp_dataset",
+         "name":"TDQ001-5PillarsOfDataQuality_tdp_dataset Preparation",
+         "creationDate":"2020-09-01T21:38:18.613+0000",
+         "lastModificationDate":"2020-09-01T21:44:27.739+0000",
+         "author":{
+            "id":"5d016689-6668-4bd6-8046-1ebcc2629725"
+         },
+         "baseMetadata":{
+            "columnMetadata":[
+               {
+                  "name":"guid",
+                  "typeName":"string"
+               },
+               {
+                  "name":"company_name",
+                  "typeName":"string"
+               },
+               {
+                  "name":"entity_type",
+                  "typeName":"string"
+               },
+               {
+                  "name":"std",
+                  "typeName":"string"
+               },
+               {
+                  "name":"phone",
+                  "typeName":"string"
+               },
+               {
+                  "name":"street",
+                  "typeName":"string"
+               },
+               {
+                  "name":"city",
+                  "typeName":"string"
+               },
+               {
+                  "name":"region",
+                  "typeName":"string"
+               },
+               {
+                  "name":"country",
+                  "typeName":"string"
+               },
+               {
+                  "name":"email",
+                  "typeName":"string"
+               }
+            ]
+         },
+         "steps":[
+            {
+               "actions":[
+                  
+               ]
+            },
+            {
+               "actions":[
+                  {
+                     "name":"uppercase",
+                     "parameters":{
+                        "column_id":"0001",
+                        "column_name":"company_name",
+                        "create_new_column":"false",
+                        "scope":"column"
+                     }
+                  }
+               ]
+            },
+            {
+               "actions":[
+                  {
+                     "name":"uppercase",
+                     "parameters":{
+                        "column_id":"0001",
+                        "column_name":"company_name",
+                        "create_new_column":"false",
+                        "scope":"column"
+                     }
+                  },
+                  {
+                     "name":"remove_non_alpha_num_chars",
+                     "parameters":{
+                        "column_id":"0001",
+                        "column_name":"company_name",
+                        "create_new_column":"false",
+                        "scope":"column"
+                     }
+                  }
+               ]
+            },
+            {
+               "actions":[
+                  {
+                     "name":"uppercase",
+                     "parameters":{
+                        "column_id":"0001",
+                        "column_name":"company_name",
+                        "create_new_column":"false",
+                        "scope":"column"
+                     }
+                  },
+                  {
+                     "name":"remove_non_alpha_num_chars",
+                     "parameters":{
+                        "column_id":"0001",
+                        "column_name":"company_name",
+                        "create_new_column":"false",
+                        "scope":"column"
+                     }
+                  },
+                  {
+                     "name":"uppercase",
+                     "parameters":{
+                        "column_id":"0002",
+                        "column_name":"entity_type",
+                        "create_new_column":"false",
+                        "scope":"column"
+                     }
+                  }
+               ]
+            },
+            {
+               "actions":[
+                  {
+                     "name":"uppercase",
+                     "parameters":{
+                        "column_id":"0001",
+                        "column_name":"company_name",
+                        "create_new_column":"false",
+                        "scope":"column"
+                     }
+                  },
+                  {
+                     "name":"remove_non_alpha_num_chars",
+                     "parameters":{
+                        "column_id":"0001",
+                        "column_name":"company_name",
+                        "create_new_column":"false",
+                        "scope":"column"
+                     }
+                  },
+                  {
+                     "name":"uppercase",
+                     "parameters":{
+                        "column_id":"0002",
+                        "column_name":"entity_type",
+                        "create_new_column":"false",
+                        "scope":"column"
+                     }
+                  },
+                  {
+                     "name":"format_phone_number",
+                     "parameters":{
+                        "mode":"constant_mode",
+                        "column_id":"0004",
+                        "format_type":"international",
+                        "create_new_column":"false",
+                        "object_type":"preparation",
+                        "scope":"column",
+                        "column_name":"phone",
+                        "object_id":"9c4cba4a-f734-48ba-b9a2-32bbf526518d",
+                        "version":"1",
+                        "region_code":"region.code.US"
+                     }
+                  }
+               ]
+            },
+            {
+               "actions":[
+                  {
+                     "name":"uppercase",
+                     "parameters":{
+                        "column_id":"0001",
+                        "column_name":"company_name",
+                        "create_new_column":"false",
+                        "scope":"column"
+                     }
+                  },
+                  {
+                     "name":"remove_non_alpha_num_chars",
+                     "parameters":{
+                        "column_id":"0001",
+                        "column_name":"company_name",
+                        "create_new_column":"false",
+                        "scope":"column"
+                     }
+                  },
+                  {
+                     "name":"uppercase",
+                     "parameters":{
+                        "column_id":"0002",
+                        "column_name":"entity_type",
+                        "create_new_column":"false",
+                        "scope":"column"
+                     }
+                  },
+                  {
+                     "name":"format_phone_number",
+                     "parameters":{
+                        "mode":"constant_mode",
+                        "column_id":"0004",
+                        "format_type":"international",
+                        "create_new_column":"false",
+                        "object_type":"preparation",
+                        "scope":"column",
+                        "column_name":"phone",
+                        "object_id":"9c4cba4a-f734-48ba-b9a2-32bbf526518d",
+                        "version":"1",
+                        "region_code":"region.code.US"
+                     }
+                  },
+                  {
+                     "name":"format_phone_number",
+                     "parameters":{
+                        "mode":"constant_mode",
+                        "column_id":"0004",
+                        "format_type":"national",
+                        "create_new_column":"false",
+                        "object_type":"preparation",
+                        "scope":"column",
+                        "column_name":"phone",
+                        "object_id":"9c4cba4a-f734-48ba-b9a2-32bbf526518d",
+                        "version":"1",
+                        "region_code":"region.code.US"
+                     }
+                  }
+               ]
+            }
+         ],
+         "preparationVersions":[
+            
+         ]
+      }
+   ]
 }

@@ -104,8 +104,96 @@ Download [`TDQ001-5PillarsOfDataQuality_tds_campaign.json`](TDQ001-5PillarsOfDat
 
 </details>
 
+
 ### Talend Studio <a name="studio"></a>
 
+<details>
+  <summary>Click to expand the instructions for this section</summary>
+<br/>
+
+For help downloading and installing Talend Studio, see the [documentation](https://help.talend.com/reader/vRlROgSYpuvOAlfTFHVLBg/O3u91jkHBRioKLLRO0QMrQ). After [launching](https://help.talend.com/reader/vRlROgSYpuvOAlfTFHVLBg/1dVpykJi_RA0jA66OIaQtw) Talend Studio, [connect to Talend Cloud](https://help.talend.com/reader/vRlROgSYpuvOAlfTFHVLBg/rBl3OC0I3ZqTg5M4sWMnUw).
+
+#### Import Artifacts
+
+Import `TDQ001.zip` (obtained from the Channel team) into the Talend Studio repository by right clicking on __Job Designs__ and clicking __Import items__:
+
+![Talend Studio Repository Import Menu](screenshots/tdq001-031.png)
+
+Choose __Select archive file:__ and browse to the `TDQ001.zip` archive:
+
+![Talend Studio Repository Import Browse](screenshots/tdq001-032.png)
+
+Import all items by clicking __Select All__ on the right and click __Finish__.
+
+#### Update Database Contexts
+
+Navigate to __Contexts__, right click on __TDQ001_5PillarsOfDataQuality_Db 0.1__, and click __Edit context group__:
+
+![Talend Studio Repository Context Edit Group](screenshots/tdq001-033.png)
+
+Click __Next__:
+
+![Talend Studio Repository Context Edit Group](screenshots/tdq001-034.png)
+
+Update the values to connect to your MySQL instance and click __Finish__:
+
+![Talend Studio Repository Context Edit Group](screenshots/tdq001-035.png)
+
+If prompted to propagate to all jobs, click __Yes__:
+
+![Talend Studio Repository Context Update Propagate](screenshots/tdq001-036.png)
+
+Confirm all items are checked and click __OK__:
+
+![Talend Studio Repository Context Update Propagate](screenshots/tdq001-037.png)
+
+#### Update Talend Cloud Contexts
+
+Navigate to __Contexts__, right click on __TDQ001_5PillarsOfDataQuality_TC 0.1__, and click __Edit context group__:
+
+![Talend Studio Repository Context Edit Group](screenshots/tdq001-038.png)
+
+Click __Next__:
+
+![Talend Studio Repository Context Edit Group](screenshots/tdq001-039.png)
+
+Update the values to connect to your MySQL instance and click __Finish__:
+
+![Talend Studio Repository Context Edit Group](screenshots/tdq001-040.png)
+
+If prompted to propagate to all jobs, click __Yes__:
+
+![Talend Studio Repository Context Update Propagate](screenshots/tdq001-041.png)
+
+Confirm all items are checked and click __OK__:
+
+![Talend Studio Repository Context Update Propagate](screenshots/tdq001-042.png)
+
+#### Load Data
+
+In the repository, navigate to __Job Designs__ > __Standard__ > __DATA_QUALITY__ > __TDQ001_5PillarsOfDataQuality__ and open the __TDQ001_CreateTable 0.1__ job:
+
+![Talend Studio Load Data Job Open](screenshots/tdq001-043.png)
+
+Select the __Run job__ tab and click __Run__ to run the job. The job should load 1,000 rows into a `tdq001_company` table in the MySQL instance.
+
+#### Create Synonym Library
+
+In the repository, navigate to __Job Designs__ > __Standard__ > __DATA_QUALITY__ > __TDQ001_5PillarsOfDataQuality__ and open the __TDQ001_CreateSynonymDictionary 0.1__ job:
+
+![Talend Studio Generate Data Job Open](screenshots/tdq001-044.png)
+
+Select the __Run job__ tab and click __Run__ to run the job. The job will create an index located in `/tmp/bus_entity_type_02`.
+
+#### Test 5 Pillars of Data Quality
+
+In the repository, navigate to __Job Designs__ > __Standard__ > __DATA_QUALITY__ > __TDQ001_5PillarsOfDataQuality__ and open the __TDQ001_5PillarsOfDataQuality 0.1__ job:
+
+![Talend Studio Generate Data Job Open](screenshots/tdq001-045.png)
+
+Select the __Run job__ tab and click __Run__ to run the job. Verify that everything has run successfully.
+
+</details>
 
 ## Demo <a name="demo"></a>
 
@@ -116,3 +204,28 @@ Please refer to the video provided by the Channel team to review the demo flow a
 Please contact your Talend Channel team for support with this demo.
 
 ### Other Resources
+
+- General
+  - [Video: Introduction to Talend Data Preparation \[5:23\]](https://www.youtube.com/watch?v=1r0hL8B_A00)
+  - [Video: Introduction to Talend Data Stewardship \[2:41\]](https://www.youtube.com/watch?v=Wi2PRKpBZoQ)
+
+- Data Quality
+  - [Documentation: Data Profiling](https://help.talend.com/reader/p~XkHQRil1oYMoldgyweMg/JDVtHRIIkl9~J1Y8fSQEJQ)
+  - [Product Page: Data Quality](https://www.talend.com/products/data-quality/?type=productspage)
+
+- Data Stewardship
+  - [Documentation: Talend Data Stewardship Getting Started Guide](https://help.talend.com/reader/As1YAngaY~A81EV80epRXA/root)
+  - [Documentation: Talend Data Stewardship User Guide](https://help.talend.com/reader/2df~i24l5pOmgdb5RUvN3g/root)
+  - [Documentation: Talend Data Stewardship Examples](https://help.talend.com/reader/gt7IlxTsImMWssqXJOMR9A/root)
+  - [Product Page: Data Stewardship](https://www.talend.com/products/data-stewardship/)
+  - [Video: Managing Campaigns in Talend Data Stewardship \[4:58\]](https://www.youtube.com/watch?v=a5cG8tnWbZc)
+  - [Video: Creating Stewardship Campaigns and Data Models \[4:57\]](https://www.youtube.com/watch?v=aMFrLowRFnU)
+
+- Data Preparation
+  - [Documentation: Talend Data Preparation Getting Started Guide](https://help.talend.com/reader/T2p9ExPCQtmUGQ4iWnQc~g/root)
+  - [Documentation: Talend Data Preparation User Guide](https://help.talend.com/reader/MW4BgyaByO2NavajqTLiPA/root)
+  - [Documentation: Talend Data Preparation Quick Examples](https://help.talend.com/reader/pI86xGAKArFTA390rVb5sA/root)
+  - [Product Page: Data Preparation](https://www.talend.com/products/data-preparation/)
+  - [Video: How to Prepare Data & Work with Recipes \[4:59\]](https://www.youtube.com/watch?v=ub_5LTIn61c)
+  - [Video: Self-Service Data Profiling with Talend Data Preparation \[2:33\]](https://www.youtube.com/watch?v=hHgSseczqIQ)
+  - [Video: Operationalize Data Preparations in the Cloud \[3:49\]](https://www.youtube.com/watch?v=LIPxswJKjAk)

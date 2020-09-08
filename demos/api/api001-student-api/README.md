@@ -36,11 +36,11 @@ These files will be imported during the set up below:
 
 1. [API Tester Export](API001-StudentAPI_Tester_Export.json)
 2. [API Designer Export](API001-StudentAPI_Designer_Export.json)
-3. API001.zip (provided by the Channel team)
+3. API001.zip (download from Channeltivity)
 
 Additional materials for demo:
-1. Demo Video (provided by the Channel team)
-2. Demo Slides (provided by the Channel team)
+1. Demo Video (download from Channeltivity)
+2. Demo Slides (download from Channeltivity)
 
 ## Setup <a name="setup"></a>
 
@@ -147,7 +147,7 @@ For help downloading and installing Talend Studio, see the [documentation](https
 
 #### Import Artifacts
 
-Import `API001.zip` (obtained from the Channel team) into the Talend Studio repository by right clicking on __Job Designs__ and clicking __Import items__:
+Import `API001.zip` (download from Channeltivity) into the Talend Studio repository by right clicking on __Job Designs__ and clicking __Import items__:
 
 ![Talend Studio Repository Import Menu](screenshots/api001-016.png)
 
@@ -257,7 +257,7 @@ After validating no errors, __Kill__ the job:
 
 ## Demo <a name="demo"></a>
 
-Please refer to the video provided by the Channel team to review the demo flow and receive demo slides.
+Please refer to the video and slides on Channeltivity to review the demo flow.
 
 ## Resources <a name="resources"></a>
 

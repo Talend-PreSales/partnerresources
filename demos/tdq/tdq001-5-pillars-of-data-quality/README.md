@@ -13,7 +13,8 @@ These instructions have been tested with Talend 7.3.1.
 3. [Setup](#setup)
    1. [Talend Data Preparation](#dataprep)
    2. [Talend Data Stewardship](#datastewardship)
-   3. [Talend Studio](#studio)
+   3. [Talend Studio (Data Quality)](#studiodq)
+   4. [Talend Studio (Data Integration)](#studiodi)
 4. [Demo](#demo)
 5. [Resources](#resources)
 
@@ -36,11 +37,12 @@ These files will be imported during the set up below:
 2. [Data Preparation - Preparation](TDQ001-5PillarsOfDataQuality_tdp_preparation.json) [(raw file)](https://raw.githubusercontent.com/Talend/partnerresources/master/demos/tdq/tdq001-5-pillars-of-data-quality/TDQ001-5PillarsOfDataQuality_tdp_preparation.json)
 3. [Data Stewardship - Model](TDQ001-5PillarsOfDataQuality_tds_model.json) [(raw file)](https://raw.githubusercontent.com/Talend/partnerresources/master/demos/tdq/tdq001-5-pillars-of-data-quality/TDQ001-5PillarsOfDataQuality_tds_model.json)
 4. [Data Stewardship - Campaign](TDQ001-5PillarsOfDataQuality_tds_campaign.json) [(raw file)](https://raw.githubusercontent.com/Talend/partnerresources/master/demos/tdq/tdq001-5-pillars-of-data-quality/TDQ001-5PillarsOfDataQuality_tds_campaign.json)
-5. TDQ001.zip (provided by the Channel team)
+5. TDQ001_DI.zip (download from Channeltivity)
+6. TDQ001_DQ.zip (download from Channeltivity)
 
 Additional materials for demo:
-1. Demo Video (provided by the Channel team)
-2. Demo Slides (provided by the Channel team)
+1. Demo Video (download from Channeltivity)
+2. Demo Slides (download from Channeltivity)
 
 ## Setup <a name="setup"></a>
 
@@ -104,8 +106,7 @@ Download [`TDQ001-5PillarsOfDataQuality_tds_campaign.json`](https://raw.githubus
 
 </details>
 
-
-### Talend Studio <a name="studio"></a>
+### Talend Studio (Data Quality) <a name="studiodq"></a>
 
 <details>
   <summary>Click to expand the instructions for this section</summary>
@@ -113,13 +114,50 @@ Download [`TDQ001-5PillarsOfDataQuality_tds_campaign.json`](https://raw.githubus
 
 For help downloading and installing Talend Studio, see the [documentation](https://help.talend.com/reader/vRlROgSYpuvOAlfTFHVLBg/O3u91jkHBRioKLLRO0QMrQ). After [launching](https://help.talend.com/reader/vRlROgSYpuvOAlfTFHVLBg/1dVpykJi_RA0jA66OIaQtw) Talend Studio, [connect to Talend Cloud](https://help.talend.com/reader/vRlROgSYpuvOAlfTFHVLBg/rBl3OC0I3ZqTg5M4sWMnUw).
 
+#### Perspective
+
+After launching the Talend Studio, switch to the __Profiling__ perspective by clicking on the icon on the top right or choose it from the drop down menu:
+
+##### Icon
+
+![Talend Studio Profiling Perspective](screenshots/tdq001-060.png)
+
+##### Menu
+
+![Talend Studio Profiling Perspective](screenshots/tdq001-061.png)
+
 #### Import Artifacts
 
-Import `TDQ001.zip` (obtained from the Channel team) into the Talend Studio repository by right clicking on __Job Designs__ and clicking __Import items__:
+Import `TDQ001_DQ.zip` (download from Channeltivity) into the Talend Studio repository by right clicking on __Data Profiling__ and clicking __Import items__:
+
+
+</details>
+
+### Talend Studio (Data Integration) <a name="studiodi"></a>
+
+<details>
+  <summary>Click to expand the instructions for this section</summary>
+<br/>
+
+#### Perspective
+
+Switch to the __Integration__ perspective by clicking on the icon on the top right or choose it from the drop down menu:
+
+##### Icon
+
+![Talend Studio Integration Perspective](screenshots/tdq001-028.png)
+
+##### Menu
+
+![Talend Studio Integration Perspective](screenshots/tdq001-029.png)
+
+#### Import Artifacts
+
+Import `TDQ001_DI.zip` (download from Channeltivity) into the Talend Studio repository by right clicking on __Job Designs__ and clicking __Import items__:
 
 ![Talend Studio Repository Import Menu](screenshots/tdq001-031.png)
 
-Choose __Select archive file:__ and browse to the `TDQ001.zip` archive:
+Choose __Select archive file:__ and browse to the `TDQ001_DI.zip` archive:
 
 ![Talend Studio Repository Import Browse](screenshots/tdq001-032.png)
 
@@ -228,6 +266,13 @@ Please refer to the video provided by the Channel team to review the demo flow a
 ## Resources <a name="resources"></a>
 
 Please contact your Talend Channel team for support with this demo.
+
+### Troubleshooting
+
+* There are no rows being sent to the `DATA PREP FORMAT` component in the `TDQ001_5PillarsOfDataQuality` job
+  * Verify that Data Preparation has been propagated to the job ([see instructions](#update-preparation))
+* There are no rows being sent to the `Assign Stewardship Task` component in the `TDQ001_5PillarsOfDataQuality` job
+  * Decrease the `qualityThreshold` context value in the job to below `0.90`
 
 ### Other Resources
 

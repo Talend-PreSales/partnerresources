@@ -269,10 +269,14 @@ Please contact your Talend Channel team for support with this demo.
 
 ### Troubleshooting
 
-* There are no rows being sent to the `DATA PREP FORMAT` component in the `TDQ001_5PillarsOfDataQuality` job
+* There are no rows being output from the **STANDARDIZE** component in the `TDQ001_5PillarsOfDataQuality` job ![No rows](screenshots/tdq001-error-001.png)
+  * Verify that the synonym library has been generated ([see instructions](#create-synonym-library))
+* There are no rows being output from the **DATA PREP FORMAT** component in the `TDQ001_5PillarsOfDataQuality` job ![No rows](screenshots/tdq001-error-002.png)
   * Verify that Data Preparation has been propagated to the job ([see instructions](#update-preparation))
-* There are no rows being sent to the `Assign Stewardship Task` component in the `TDQ001_5PillarsOfDataQuality` job
+* There are no rows being sent to the **Assign Stewardship Task** component in the `TDQ001_5PillarsOfDataQuality` job ![No rows](screenshots/tdq001-error-003.png)
   * Decrease the `qualityThreshold` context value in the job to below `0.90`
+* The `TDQ001_5PillarsOfDataQuality` job fails on the `tRuleSurvivorship_1` component due to a `java.io.FileNotFoundException` error ![Component error](screenshots/tdq001-error-004.png)
+  * Open the **CONSOLIDATE** (`tRuleSurvivorship_1`) component and click *Generate rules and survivorship flow* ![Generate rules](screenshots/tdq001-error-005.png)
 
 ### Other Resources
 

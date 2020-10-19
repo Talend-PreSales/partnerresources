@@ -10,5 +10,6 @@ into a governed data lake in Databricks Delta Lake.
 
 The sample jobs used in this demo workshop are available in the ZIP file located in this dirctory.
 The sample data is available via download at this link. 
+
 https://drive.google.com/file/d/1INzZdOAQVUrFKoQwez73rO_7f0NgxjD1/view?usp=sharing
 

@@ -8,7 +8,7 @@ This demo showcases Talend's capabilities on Snowflake to bulk load data from an
 
 The sample jobs and sample data used in this demo workshop are available in the two corresponding ZIP files located in this directory.
 
-### Requirements
+##### Requirements
 
 - Login information for your Snowflake instance
    - This includes details on your preferred data warehouse, database, schema

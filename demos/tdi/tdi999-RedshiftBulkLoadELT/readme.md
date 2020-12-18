@@ -8,7 +8,7 @@ This demo showcases Talend's capabilities on Amazon Redshift to bulk load data f
 
 The sample jobs and sample data used in this demo workshop are available in the two corresponding ZIP files located in this directory.
 
-### Requirements
+##### Requirements
 
 - Login information for your Amazon Redshift instance
    - This includes details on your preferred data warehouse, cluster details, etc.

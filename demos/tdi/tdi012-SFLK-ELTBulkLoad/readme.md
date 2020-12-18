@@ -1,6 +1,6 @@
 ### Talend Data Integration
 
-#### Snowflake 
+#### Snowflake Bulk Loading and ELT
 
 This demo showcases Talend's capabilities on Snowflake to bulk load data from an Amazon S3 bucket, then use ELT (Extract, Load, Transform) to transform the newly-loaded data to create a new aggregate table in your Snowflake data warehouse.
 

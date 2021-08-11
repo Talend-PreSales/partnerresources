@@ -9,7 +9,6 @@ This guide will help you set up the "Data Health Demo" in your Talend cloud envi
 1. [Software Requirements](#softwarerequirements)
 2. [Required Artifacts](#requiredartifacts)
 3. [Setup](#setup)
-   1. [Talend](#)
 4. [Demo](#demo)
 5. [Resources](#resources)
 
@@ -69,15 +68,28 @@ The preparation refers to a dataset name “CRM Customers”, so ensure that the
 ### Talend Pipeline Designer
 Go to Talend Pipeline designer.
 Import the pipeline (6_Pipeline.json)
+
 ![image](https://user-images.githubusercontent.com/34091317/128997872-2c6f0669-286f-43f1-b48d-d99ff199ddb6.png)
+
+Once imported, you should see the following warning:
 
 ![image](https://user-images.githubusercontent.com/34091317/128997902-dbf7a639-77d3-4a3e-88f5-921a2a25314d.png)
 
+This warning is expected as the pipeline is missing the source and the destination and the campaign used is also not found by the pipeline.
+Open the pipeline and make the required changes:
+
 ![image](https://user-images.githubusercontent.com/34091317/128997917-f8c578a0-4b7e-4157-983e-cd17c4a1a5dd.png)
+
+- The source will be the dataset cleansed using Talend Data Preparation. Either you export thepreparation and import it as a file in Data Inventory or you load it in a database if you want.
+- The destination is an empty table in a database/warehouse of your choice. It will receive the unique customers.
+- Remove the campaign and replace it with your own (the one you imported earlier). When doing so, don’t forget to fill in the settings of the campaign:
 
 ![image](https://user-images.githubusercontent.com/34091317/128997953-ee3792c9-1489-4210-88d5-7f091bd7eabc.png)
 
 ### Talend API Designer
+Go to Talend API Designer.
+In API Designer, start by creating a new API Contract with the name "Customer 360 API Contract". 
+Then import the API Contract file (7_APIContract.json)
 
 ![image](https://user-images.githubusercontent.com/34091317/128998013-4f52cb08-56a4-4684-a5e8-f6cb426b609d.png)
 

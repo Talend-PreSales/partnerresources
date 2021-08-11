@@ -1,0 +1,434 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Customers 360 API",
+    "description" : "An API for keeping track of your customers and their transactions. For customer-facing employees such as Support.",
+    "contact" : { },
+    "version" : "4.1.0"
+  },
+  "paths" : {
+    "/customers/" : {
+      "get" : {
+        "tags" : [ "Contacts" ],
+        "summary" : "Get the list of Contacts",
+        "description" : "Loads a list of Contact.",
+        "parameters" : [ {
+          "$ref" : "#/components/parameters/%24size"
+        }, {
+          "$ref" : "#/components/parameters/%24page"
+        }, {
+          "$ref" : "#/components/parameters/%24sort"
+        }, {
+          "name" : "firstName",
+          "in" : "query",
+          "description" : "Allows to filter the collection of results by the value of field `firstName`",
+          "schema" : {
+            "type" : "string",
+            "description" : "Allows to filter the collection of results by the value of field `firstName`"
+          },
+          "example" : "John"
+        }, {
+          "name" : "lastName",
+          "in" : "query",
+          "description" : "Allows to filter the collection of results by the value of field `lastName`",
+          "schema" : {
+            "type" : "string",
+            "description" : "Allows to filter the collection of results by the value of field `lastName`"
+          },
+          "example" : "Doe"
+        }, {
+          "name" : "active",
+          "in" : "query",
+          "description" : "Allows to filter the collection of results by the value of field `active`",
+          "schema" : {
+            "type" : "boolean",
+            "description" : "Allows to filter the collection of results by the value of field `active`"
+          },
+          "example" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "headers" : {
+              "X-Page-Count" : {
+                "$ref" : "#/components/headers/X-Page-Count"
+              },
+              "X-Page-Number" : {
+                "$ref" : "#/components/headers/X-Page-Number"
+              },
+              "X-Page-Size" : {
+                "$ref" : "#/components/headers/X-Page-Size"
+              },
+              "X-Total-Count" : {
+                "$ref" : "#/components/headers/X-Total-Count"
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Contact"
+                  }
+                },
+                "example" : "[{\n  \"id\": \"0e8dd830-ad98-11e6-bf2e-47644ada7c0f\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Smith\",\n  \"birthday\": 152755200000,\n  \"active\": true,\n  \"rank\": 1,\n  \"company\": \"0e8cedd0-ad98-11e6-bf2e-47644ada7c0f\"\n}]"
+              }
+            }
+          },
+          "400" : {
+            "$ref" : "#/components/responses/Status%20400"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Contacts" ],
+        "summary" : "Create Customer",
+        "description" : "Adds a Contact.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Contact"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Contact"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "HTTP_BASIC" : [ ]
+        } ]
+      }
+    },
+    "/customers/{customerphone}" : {
+      "get" : {
+        "tags" : [ "Contacts" ],
+        "summary" : "Load a Contact",
+        "description" : "Loads a Contact.",
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Contact"
+                },
+                "example" : "{\n  \"id\": \"0e8dd830-ad98-11e6-bf2e-47644ada7c0f\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Smith\",\n  \"birthday\": 152755200000,\n  \"active\": true,\n  \"rank\": 1,\n  \"company\": \"0e8cedd0-ad98-11e6-bf2e-47644ada7c0f\"\n}"
+              }
+            }
+          },
+          "400" : {
+            "$ref" : "#/components/responses/Status%20400"
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Contacts" ],
+        "summary" : "Update a Contact",
+        "description" : "Updates a Contact.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Contact"
+              },
+              "example" : "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Smith\",\n  \"birthday\": 152755200000,\n  \"active\": true,\n  \"rank\": 1,\n  \"company\": \"0e8cedd0-ad98-11e6-bf2e-47644ada7c0f\"\n}"
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Contact"
+                },
+                "example" : "{\n  \"id\": \"0e8dd830-ad98-11e6-bf2e-47644ada7c0f\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Smith\",\n  \"birthday\": 152755200000,\n  \"active\": true,\n  \"rank\": 1,\n  \"company\": \"0e8cedd0-ad98-11e6-bf2e-47644ada7c0f\"\n}"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "HTTP_BASIC" : [ ]
+        } ]
+      },
+      "parameters" : [ {
+        "name" : "customerphone",
+        "in" : "path",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    },
+    "/campaigns/{id}" : {
+      "get" : {
+        "summary" : "Get a particular campaign using its ID",
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          },
+          "404" : {
+            "description" : "Status 404"
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Company" : {
+        "type" : "object",
+        "required" : [ "address", "id", "name" ],
+        "description" : "The dataType of a Company",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "description" : "Auto-generated primary key field"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "tags" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "pattern" : "[a-zA-Z]+"
+            },
+            "example" : "[\"brewery\", \"beer\", \"ale\"]"
+          },
+          "address" : {
+            "type" : "object",
+            "required" : [ "city", "street", "zipcode" ],
+            "properties" : {
+              "street" : {
+                "type" : "string"
+              },
+              "city" : {
+                "type" : "string"
+              },
+              "zipcode" : {
+                "type" : "string",
+                "pattern" : "[0-9]*"
+              }
+            }
+          }
+        },
+        "example" : "{\n  \"id\": \"0e8cedd0-ad98-11e6-bf2e-47644ada7c0f\",\n  \"name\": \"George Street Brewery\",\n  \"address\":{\n    \"street\": \"2 place de la Defense\",\n    \"zipcode\": \"92053\",\n    \"city\": \"Paris\"\n  },\n  \"tags\":[\n    \"brewery\",\n    \"beer\",\n    \"ale\"\n  ]\n}"
+      },
+      "Error" : {
+        "type" : "object",
+        "required" : [ "code" ],
+        "description" : "This general error structure is used throughout this API.",
+        "properties" : {
+          "code" : {
+            "type" : "integer",
+            "minimum" : 400,
+            "maximum" : 599
+          },
+          "description" : {
+            "type" : "string",
+            "example" : "Bad query parameter [$size]: Invalid integer value [abc]"
+          },
+          "reasonPhrase" : {
+            "type" : "string",
+            "example" : "Bad Request"
+          }
+        },
+        "example" : "{\n  \"code\": 400,\n  \"description\": \"Bad query parameter [$size]: Invalid integer value [abc]\",\n  \"reasonPhrase\": \"Bad Request\"\n}"
+      },
+      "Contact" : {
+        "type" : "object",
+        "required" : [ "firstName", "id", "lastName" ],
+        "description" : "The dataType of a Contact",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "description" : "Auto-generated primary key field",
+            "example" : "0e8ffb10-ad98-11e6-bf2e-47644ada7c0f"
+          },
+          "firstName" : {
+            "type" : "string",
+            "example" : "Kurt"
+          },
+          "lastName" : {
+            "type" : "string",
+            "example" : "Williams"
+          },
+          "birthday" : {
+            "type" : "integer",
+            "format" : "int64",
+            "description" : "Birthday as unix timestamp (in ms)",
+            "example" : 173664000000
+          },
+          "active" : {
+            "type" : "boolean",
+            "default" : true
+          },
+          "rank" : {
+            "type" : "integer",
+            "format" : "int32",
+            "minimum" : 1,
+            "example" : 1
+          },
+          "company" : {
+            "type" : "string",
+            "description" : "This property is a reference to a Company.",
+            "example" : "0e8c9fb0-ad98-11e6-bf2e-47644ada7c0f"
+          }
+        },
+        "example" : "{\n  \"id\": \"0e8dd830-ad98-11e6-bf2e-47644ada7c0f\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Smith\",\n  \"birthday\": 152755200000,\n  \"active\": true,\n  \"rank\": 1,\n  \"company\": \"0e8cedd0-ad98-11e6-bf2e-47644ada7c0f\"\n}"
+      }
+    },
+    "responses" : {
+      "Status 400" : {
+        "description" : "Status 400",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error"
+            }
+          }
+        }
+      }
+    },
+    "parameters" : {
+      "$size" : {
+        "name" : "$size",
+        "in" : "query",
+        "description" : "Size of the page to retrieve.",
+        "schema" : {
+          "type" : "integer",
+          "description" : "Size of the page to retrieve."
+        },
+        "example" : 10
+      },
+      "$page" : {
+        "name" : "$page",
+        "in" : "query",
+        "description" : "Number of the page to retrieve.",
+        "schema" : {
+          "type" : "integer",
+          "description" : "Number of the page to retrieve."
+        },
+        "example" : 1
+      },
+      "$sort" : {
+        "name" : "$sort",
+        "in" : "query",
+        "description" : "Order in which to retrieve the results. Multiple sort criteria can be passed.",
+        "schema" : {
+          "type" : "string",
+          "description" : "Order in which to retrieve the results. Multiple sort criteria can be passed."
+        },
+        "example" : "birthday DESC"
+      },
+      "X-Page-Count" : {
+        "name" : "X-Page-Count",
+        "in" : "header",
+        "schema" : {
+          "type" : "integer"
+        },
+        "example" : 1
+      },
+      "X-Page-Number" : {
+        "name" : "X-Page-Number",
+        "in" : "header",
+        "schema" : {
+          "type" : "integer"
+        },
+        "example" : 1
+      },
+      "X-Page-Size" : {
+        "name" : "X-Page-Size",
+        "in" : "header",
+        "schema" : {
+          "type" : "integer"
+        },
+        "example" : 25
+      },
+      "X-Total-Count" : {
+        "name" : "X-Total-Count",
+        "in" : "header",
+        "schema" : {
+          "type" : "integer"
+        },
+        "example" : 2
+      },
+      "contactid" : {
+        "name" : "contactid",
+        "in" : "path",
+        "required" : true,
+        "description" : "Identifier of the Contact",
+        "schema" : {
+          "type" : "string",
+          "description" : "Identifier of the Contact"
+        },
+        "example" : "0e8dd830-ad98-11e6-bf2e-47644ada7c0f"
+      },
+      "companyid" : {
+        "name" : "companyid",
+        "in" : "path",
+        "required" : true,
+        "description" : "Identifier of the Company",
+        "schema" : {
+          "type" : "string",
+          "description" : "Identifier of the Company"
+        },
+        "example" : "0e8c9fb0-ad98-11e6-bf2e-47644ada7c0f"
+      }
+    },
+    "headers" : {
+      "X-Page-Count" : {
+        "schema" : {
+          "type" : "integer"
+        },
+        "example" : 1
+      },
+      "X-Page-Number" : {
+        "schema" : {
+          "type" : "integer"
+        },
+        "example" : 1
+      },
+      "X-Page-Size" : {
+        "schema" : {
+          "type" : "integer"
+        },
+        "example" : 25
+      },
+      "X-Total-Count" : {
+        "schema" : {
+          "type" : "integer"
+        },
+        "example" : 2
+      }
+    },
+    "securitySchemes" : {
+      "HTTP_BASIC" : {
+        "type" : "http",
+        "scheme" : "basic",
+        "description" : "All GET methods are public, meaning that *you can read all the data*. Write operations require authentication and therefore are forbidden to the general public."
+      }
+    }
+  }
+}

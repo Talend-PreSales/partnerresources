@@ -1,0 +1,104 @@
+{
+  "metadata" : {
+    "schemaServiceVersion" : "7.0.0",
+    "schemaServiceCommitId" : "7fbcf5c74609aa96cc2cc2c469cd106bdeb84413"
+  },
+  "schemas" : [ {
+    "namespace" : "org.talend.schema",
+    "displayName" : "Customers DH",
+    "name" : "s6174070c65c1b0e0ec6375c7de861f4e",
+    "description" : "",
+    "version" : 2,
+    "creationDate" : 1626673004764,
+    "lastUpdateDate" : 1626703739630,
+    "createdBy" : {
+      "id" : "7f452429-30b8-4645-961f-e615de4e7022",
+      "username" : "tgourdel@pm.talend.com",
+      "firstName" : "Thibaut",
+      "lastName" : "Gourdel",
+      "enabled" : true
+    },
+    "lastUpdatedBy" : {
+      "id" : "7f452429-30b8-4645-961f-e615de4e7022",
+      "username" : "tgourdel@pm.talend.com",
+      "firstName" : "Thibaut",
+      "lastName" : "Gourdel",
+      "enabled" : true
+    },
+    "fields" : [ {
+      "name" : "Firstname",
+      "displayName" : "",
+      "path" : null,
+      "type" : "text",
+      "description" : "",
+      "required" : true,
+      "constraints" : [ ],
+      "allowedValues" : null
+    }, {
+      "name" : "Lastname",
+      "displayName" : "",
+      "path" : null,
+      "type" : "text",
+      "description" : "",
+      "required" : true,
+      "constraints" : [ ],
+      "allowedValues" : null
+    }, {
+      "name" : "Phone",
+      "displayName" : "",
+      "path" : null,
+      "type" : "PHONE",
+      "description" : "International Phone NUmbers",
+      "required" : false,
+      "constraints" : [ ],
+      "allowedValues" : null
+    }, {
+      "name" : "Country",
+      "displayName" : "",
+      "path" : null,
+      "type" : "COUNTRY_CODE_ISO2",
+      "description" : "",
+      "required" : true,
+      "constraints" : [ ],
+      "allowedValues" : null
+    }, {
+      "name" : "ZipCode",
+      "displayName" : "",
+      "path" : null,
+      "type" : "text",
+      "description" : "",
+      "required" : false,
+      "constraints" : [ ],
+      "allowedValues" : null
+    }, {
+      "name" : "Loyalty",
+      "displayName" : "",
+      "path" : null,
+      "type" : "text",
+      "description" : "Gold, Silver, Bronze",
+      "required" : false,
+      "constraints" : [ ],
+      "allowedValues" : null
+    }, {
+      "name" : "HouseholdDescription",
+      "displayName" : "",
+      "path" : null,
+      "type" : "Household composition",
+      "description" : "",
+      "required" : true,
+      "constraints" : [ ],
+      "allowedValues" : null
+    }, {
+      "name" : "Date",
+      "displayName" : "",
+      "path" : null,
+      "type" : "date",
+      "description" : "",
+      "required" : true,
+      "constraints" : [ ],
+      "allowedValues" : null
+    } ],
+    "rulesInstances" : [ ],
+    "allRulesCompliant" : true
+  } ]
+}

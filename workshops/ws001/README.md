@@ -37,7 +37,9 @@ These files will be used to set up the environment and used throughout the works
 
 Please download these files to your local machine.
 
-:information_source: &nbsp; For each file above, right click on the link and __Save Link As__
+:information_source:&nbsp; For each file above, right click on the link and __Save Link As__
+
+:warning:&nbsp; Verify the file extensions after downloading the files and rename as needed
 
 ## Setup <a name="setup"></a>
 
@@ -51,6 +53,6 @@ Complete your profile by setting a password and clicking __Save__:
 
 ![Talend Cloud Complete Your Profile](screenshots/ws001-002.png)
 
-:warning: &nbsp; Stop here | Do not proceed until instructed :warning:
+:warning:&nbsp; Stop here | Do not proceed until instructed :warning:
 
 ## Resources <a name="resources"></a>

@@ -1,0 +1,123 @@
+{
+  "metadata" : {
+    "backendVersion" : "17.0.0",
+    "backendCommitId" : "961e8fab45a4dd226a5d9f1a51a66f854e776c36"
+  },
+  "campaigns" : [ {
+    "campaign" : {
+      "id" : "60f5047181338b4ff4cdd884",
+      "createdBy" : "79f7cab4-d29d-4f20-a19f-030dea53934a",
+      "lastUpdatedBy" : "Talend",
+      "creationDate" : 1626670193682,
+      "lastUpdateDate" : 1626670354933,
+      "name" : "c63f4f576013dcdcc4b243641b1eb3b59",
+      "label" : "Customers Deduplication",
+      "description" : null,
+      "owners" : [ "tgourdel@talendmarketing.eap.talend.com" ],
+      "ownersDetail" : null,
+      "status" : "STARTED",
+      "startDate" : 1626670193682,
+      "endDate" : null,
+      "taskType" : "MERGING",
+      "schemaRef" : {
+        "namespace" : "org.talend.schema",
+        "name" : "sfb6486cb95a4e321e38aab7bc4a9ca81",
+        "version" : 11,
+        "displayName" : "Customers DH"
+      },
+      "impactAnalysisStatus" : "UPDATED",
+      "fieldsAccess" : {
+        "Firstname" : { },
+        "Lastname" : { },
+        "Phone" : { },
+        "Country" : { },
+        "ZipCode" : { },
+        "Loyalty" : { },
+        "HouseholdDescription" : { },
+        "Date" : { }
+      },
+      "taskResolutionDelay" : null,
+      "workflow" : {
+        "id" : null,
+        "createdBy" : "79f7cab4-d29d-4f20-a19f-030dea53934a",
+        "lastUpdatedBy" : "Talend",
+        "creationDate" : 1626670193682,
+        "lastUpdateDate" : 1626670354933,
+        "tenantId" : null,
+        "name" : "default workflow",
+        "states" : [ {
+          "name" : "New",
+          "label" : "New",
+          "transitionQuestion" : null,
+          "transitions" : [ {
+            "name" : "Resolved",
+            "label" : "Resolved",
+            "targetStateName" : "Resolved",
+            "allowedRoles" : [ "Stewards" ]
+          } ],
+          "allowedRoles" : [ ],
+          "translations" : { }
+        }, {
+          "name" : "Resolved",
+          "label" : "Resolved",
+          "transitionQuestion" : null,
+          "transitions" : [ ],
+          "allowedRoles" : [ "Stewards" ],
+          "translations" : { }
+        } ]
+      },
+      "survivorshipConfiguration" : {
+        "fieldSurvivorshipConfiguration" : {
+          "Firstname" : {
+            "algorithm" : "FIRST_VALID",
+            "algorithmConfiguration" : { },
+            "source" : null
+          },
+          "Lastname" : {
+            "algorithm" : "MOST_RECENT",
+            "algorithmConfiguration" : { },
+            "source" : null
+          },
+          "Phone" : {
+            "algorithm" : "MOST_COMMON",
+            "algorithmConfiguration" : { },
+            "source" : null
+          },
+          "Country" : {
+            "algorithm" : "MOST_COMMON",
+            "algorithmConfiguration" : { },
+            "source" : null
+          },
+          "ZipCode" : {
+            "algorithm" : "MOST_COMMON",
+            "algorithmConfiguration" : { },
+            "source" : null
+          },
+          "Loyalty" : {
+            "algorithm" : "MOST_RECENT",
+            "algorithmConfiguration" : { },
+            "source" : null
+          },
+          "HouseholdDescription" : {
+            "algorithm" : "MOST_RECENT",
+            "algorithmConfiguration" : { },
+            "source" : null
+          },
+          "Date" : {
+            "algorithm" : "MOST_RECENT",
+            "algorithmConfiguration" : { },
+            "source" : null
+          }
+        }
+      },
+      "sourcesConfiguration" : {
+        "sources" : { },
+        "rejectUnknownSources" : false
+      }
+    },
+    "participants" : {
+      "Stewards" : [ "dwilmer@talendmarketing.eap.talend.com", "tgourdel@talendmarketing.eap.talend.com" ]
+    },
+    "participantsDetail" : null
+  } ]
+}

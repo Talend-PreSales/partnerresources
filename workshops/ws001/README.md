@@ -29,15 +29,15 @@ This guide will help you to set up your environment and walk through aspects of 
 
 These files will be used to set up the environment and used throughout the workshop:
 
-1. WS001_API_Contract.json
-2. WS001_CRM_Customers.csv
-3. WS001_Data_Model.json
-4. WS001_HouseholdComposition_SemanticType.json
-5. WS001_Stewardship_Campaign.json
+1. [WS001_API_Contract.json](WS001_API_Contract.json)
+2. [WS001_CRM_Customers.csv](WS001_CRM_Customers.csv)
+3. [WS001_Data_Model.json](WS001_Data_Model.json)
+4. [WS001_HouseholdComposition_SemanticType.json](WS001_HouseholdComposition_SemanticType.json)
+5. [WS001_Stewardship_Campaign.json](WS001_Stewardship_Campaign.json)
 
 Please download these files to your local machine.
 
-:information_source: Right click on the link and save link as
+:information_source: &nbsp; Right click on the link and save link as
 
 ## Setup <a name="setup"></a>
 
@@ -51,5 +51,6 @@ Complete your profile by setting a password and clicking __Save__:
 
 ![Talend Cloud Complete Your Profile](screenshots/ws001-002.png)
 
-:warning:  Stop here | Do not proceed until instructed :warning:
+:warning: &nbsp; Stop here | Do not proceed until instructed :warning:
 
+## Resources <a name="resources"></a>

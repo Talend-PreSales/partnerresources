@@ -29,15 +29,15 @@ This guide will help you to set up your environment and walk through aspects of 
 
 These files will be used to set up the environment and used throughout the workshop:
 
-1. [WS001_API_Contract.json](WS001_API_Contract.json)
-2. [WS001_CRM_Customers.csv](WS001_CRM_Customers.csv)
-3. [WS001_Data_Model.json](WS001_Data_Model.json)
-4. [WS001_HouseholdComposition_SemanticType.json](WS001_HouseholdComposition_SemanticType.json)
-5. [WS001_Stewardship_Campaign.json](WS001_Stewardship_Campaign.json)
+1. [WS001_API_Contract.json](https://raw.githubusercontent.com/Talend-PreSales/partnerresources/master/workshops/ws001/WS001_API_Contract.json)
+2. [WS001_CRM_Customers.csv](https://raw.githubusercontent.com/Talend-PreSales/partnerresources/master/workshops/ws001/WS001_CRM_Customers.csv)
+3. [WS001_Data_Model.json](https://raw.githubusercontent.com/Talend-PreSales/partnerresources/master/workshops/ws001/WS001_Data_Model.json)
+4. [WS001_HouseholdComposition_SemanticType.json](https://raw.githubusercontent.com/Talend-PreSales/partnerresources/master/workshops/ws001/WS001_HouseholdComposition_SemanticType.json)
+5. [WS001_Stewardship_Campaign.json](https://raw.githubusercontent.com/Talend-PreSales/partnerresources/master/workshops/ws001/WS001_Stewardship_Campaign.json)
 
 Please download these files to your local machine.
 
-:information_source: &nbsp; Right click on the link and save link as
+:information_source: &nbsp; For each file above, right click on the link and __Save Link As__
 
 ## Setup <a name="setup"></a>
 

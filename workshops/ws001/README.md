@@ -9,10 +9,7 @@ This guide will help you to set up your environment and walk through aspects of 
 3. [Setup](#setup)
    1. [Talend Cloud](#tc)
    2. [Talend Data Inventory](#tdi)
-   3. [Talend Data Preparation](#tdp)
-   4. [Talend Data Stewardship](#tds)
-   5. [Talend Pipeline Designer](#tpd)
-   6. [Talend API Designer](#tad)
+   3. [Talend Pipeline Designer](#tpd)
 4. [Resources](#resources)
 
 ## Software Requirements <a name="softwarerequirements"></a>
@@ -27,7 +24,7 @@ This guide will help you to set up your environment and walk through aspects of 
 
 ## Required Artifacts <a name="requiredartifacts"></a>
 
-These files will be used to set up the environment and used throughout the workshop:
+The files below are used to set up the environment. For purposes of the workshop, you will only need `WS001_CRM_Customers.csv`:
 
 1. [WS001_API_Contract.json](https://raw.githubusercontent.com/Talend-PreSales/partnerresources/master/workshops/ws001/WS001_API_Contract.json)
 2. [WS001_CRM_Customers.csv](https://raw.githubusercontent.com/Talend-PreSales/partnerresources/master/workshops/ws001/WS001_CRM_Customers.csv)
@@ -35,11 +32,9 @@ These files will be used to set up the environment and used throughout the works
 4. [WS001_HouseholdComposition_SemanticType.json](https://raw.githubusercontent.com/Talend-PreSales/partnerresources/master/workshops/ws001/WS001_HouseholdComposition_SemanticType.json)
 5. [WS001_Stewardship_Campaign.json](https://raw.githubusercontent.com/Talend-PreSales/partnerresources/master/workshops/ws001/WS001_Stewardship_Campaign.json)
 
-Please download these files to your local machine.
+:information_source:&nbsp; To save a file, right click on the link and __Save Link As__
 
-:information_source:&nbsp; For each file above, right click on the link and __Save Link As__
-
-:warning:&nbsp; Verify the file extensions after downloading the files and rename as needed
+:warning:&nbsp; Verify the file extension after downloading and rename as needed
 
 ## Setup <a name="setup"></a>
 
@@ -54,5 +49,9 @@ Complete your profile by setting a password and clicking __Save__:
 ![Talend Cloud Complete Your Profile](screenshots/ws001-002.png)
 
 :warning:&nbsp; Stop here | Do not proceed until instructed :warning:
+
+### Talend Data Inventory <a name="tdi"></a>
+
+Locate the file `WS001_CRM_Customers.csv` on your machine and rename it with your name appended. For example, if your first name is _Valued_, and your last name is _Partner_, rename the file to `WS001_CRM_Customers_VPartner.csv`.
 
 ## Resources <a name="resources"></a>

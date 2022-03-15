@@ -78,6 +78,8 @@ Import the datapreparation (5_Preparation.json)
 
 Important:
 The preparation refers to a dataset name “CRM Customers”, so ensure that the previous imported dataset has that exact name.
+Export the prepared data to local file "CRM Customers - prepped"
+
 
 ### Talend Pipeline Designer
 Go to Talend Pipeline designer.

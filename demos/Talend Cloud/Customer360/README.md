@@ -8,9 +8,10 @@ This guide will help you set up the "Data Health Demo" in your Talend cloud envi
 
 1. [Software Requirements](#softwarerequirements)
 2. [Required Artifacts](#requiredartifacts)
-3. [Setup](#setup)
-4. [Demo](#demo)
-5. [Resources](#resources)
+3. [Login](#login)
+4. [Setup](#setup)
+5. [Demo](#demo)
+6. [Resources](#resources)
 
 ## Software Requirements <a name="softwarerequirements"></a>
 
@@ -26,9 +27,7 @@ This guide will help you set up the "Data Health Demo" in your Talend cloud envi
 ## Required Artifacts <a name="requiredartifacts"></a>
 
 The required artifacts/files are included here and must be imported in sequence. See step by step details in the setup section below.
-
-
-## Setup <a name="setup"></a>
+## Login <a name="login"></a>
 
 To begin the setup, navigate to [Talend Cloud](https://auth.us.cloud.talend.com/).
 Choose your region and log in with your credentials sent to your email:
@@ -40,6 +39,7 @@ If you haven't logged in before - the email recieved will ask you to update your
 Choose "Discover" and you're good to go.
 ![image](https://user-images.githubusercontent.com/34091317/158357951-3e5ff83a-a143-4441-b602-c9b2b6e40976.png)
 
+## Setup <a name="setup"></a>
 
 ### Talend Data Inventory
 Open the Data Inventory application
@@ -61,6 +61,7 @@ Import the Data model (3_DataModel.json)
 ![image](https://user-images.githubusercontent.com/34091317/128996344-5119cc6d-0e5a-4d09-aac7-e0c76a40aff5.png)
 
 Import the Campaign (4_StewardshipCampaign.json)
+
 ![image](https://user-images.githubusercontent.com/34091317/128996432-ce28c632-19d1-4d9f-ac17-c9bbc50fcf72.png)
 
 Important:

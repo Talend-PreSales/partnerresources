@@ -78,7 +78,7 @@ Import the datapreparation (5_Preparation.json)
 
 Important:
 The preparation refers to a dataset name “CRM Customers”, so ensure that the previous imported dataset has that exact name.
-Export the prepared data to local file "CRM Customers - prepped"
+Export the prepared data to local file and then import the dataset "CRM Customers Preparation"
 
 
 ### Talend Pipeline Designer
@@ -97,7 +97,10 @@ Open the pipeline and make the required changes:
 ![image](https://user-images.githubusercontent.com/34091317/128997917-f8c578a0-4b7e-4157-983e-cd17c4a1a5dd.png)
 
 - The source will be the dataset cleansed using Talend Data Preparation. Either you export thepreparation and import it as a file in Data Inventory or you load it in a database if you want.
-- The destination is an empty table in a database/warehouse of your choice. It will receive the unique customers.
+- The destination is an empty table in a database/warehouse of your choice. It will receive the unique customers. 
+In this example you should choose to add a new dataset on the local connection.
+![image](https://user-images.githubusercontent.com/34091317/158380477-16b97c90-5d9f-4bdc-ab0b-556db205dd43.png)
+
 - Remove the campaign and replace it with your own (the one you imported earlier). When doing so, don’t forget to fill in the settings of the campaign:
 
 ![image](https://user-images.githubusercontent.com/34091317/128997953-ee3792c9-1489-4210-88d5-7f091bd7eabc.png)

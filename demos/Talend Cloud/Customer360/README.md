@@ -30,9 +30,22 @@ The required artifacts/files are included here and must be imported in sequence.
 
 ## Setup <a name="setup"></a>
 
-To begin the setup, navigate to [Talend Cloud](https://auth.us.cloud.talend.com/) and log in:
+To begin the setup, navigate to [Talend Cloud](https://auth.us.cloud.talend.com/).
+Choose your region and log in with your credentials sent to your email:
+![image](https://user-images.githubusercontent.com/34091317/158356367-236c3fd3-ebf9-40d4-8600-7e8d50a23c14.png)
+
+If you haven't logged in before - the email recieved will ask you to update your information and set the password.
+![image](https://user-images.githubusercontent.com/34091317/158356816-afeb9cbc-55ec-4ea1-8b2e-ce0e0b89ecae.png)
+
+Choose "Discover" and you're good to go.
+![image](https://user-images.githubusercontent.com/34091317/158357951-3e5ff83a-a143-4441-b602-c9b2b6e40976.png)
+
 
 ### Talend Data Inventory
+Open the Data Inventory application
+
+![image](https://user-images.githubusercontent.com/34091317/158357227-105ccb6f-4180-446b-9550-75241a9acbd5.png)
+
 Go to Talend Data inventory and import the included semantic type file. (1_HouseholdComposition_SemanticType.json)
 ![image](https://user-images.githubusercontent.com/34091317/128995255-2cbc36cc-c55e-4cfa-874e-3831f3d62762.png)
 

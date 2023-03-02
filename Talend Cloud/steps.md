@@ -1,5 +1,23 @@
 # Environment Setup APIs
 
+Login to Talend Cloud and choose the API Designer application
+
+![image](https://user-images.githubusercontent.com/34091317/222459135-e53aed6d-51bd-433b-bca7-e23e801a693e.png)
+
+
+Create an API called TMC version x.y.z
+
+![image](https://user-images.githubusercontent.com/34091317/222458942-6a42adc8-ffb5-405e-a079-0bea3d5f8016.png)
+
+Import the TMC API Definition from location https://api.us.cloud.talend.com/tmc/ (you might need to download the api as a file)
+
+![image](https://user-images.githubusercontent.com/34091317/222459436-41760887-2551-4872-845f-a6c51be88805.png)
+
+Open the API Tester Application
+
+![image](https://user-images.githubusercontent.com/34091317/222460215-9725d8f0-7b31-4973-bf4f-94f29caf4eed.png)
+
+
 To proceed with the following environment setup, a service account must be first created. See the [documentation](README.md).
 
 ## Create a New Group

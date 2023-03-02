@@ -18,6 +18,12 @@ Open the API Tester Application
 ![image](https://user-images.githubusercontent.com/34091317/222460215-9725d8f0-7b31-4973-bf4f-94f29caf4eed.png)
 
 
+Configure environment
+
+![image](https://user-images.githubusercontent.com/34091317/222466938-7382eb1d-84da-4f7f-8e18-58c619788419.png)
+
+
+
 To proceed with the following environment setup, a service account must be first created. See the [documentation](README.md).
 
 ## Create a New Group

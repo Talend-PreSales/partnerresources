@@ -4,6 +4,9 @@ The purpose of this repository is to provide Talend Partners with demos and othe
 
 ## Available Demos
 
+### Manel ECommerce
+
+#### [Student API (API001)](demos/manel)
 ### API
 
 #### [Student API (API001)](demos/api/api001-student-api)

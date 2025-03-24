@@ -1,0 +1,411 @@
+{
+  "version": 6,
+  "entities": [
+    {
+      "entity": {
+        "type": "Project",
+        "description": "E-commerce API",
+        "id": "e5671729-5358-498d-8082-86665d3a6c20",
+        "name": "E-commerce 1.0.0"
+      },
+      "children": [
+        {
+          "entity": {
+            "type": "Service",
+            "id": "4cfe173f-88d9-48bb-a02c-c9f5ec30020f",
+            "name": "Model"
+          }
+        },
+        {
+          "entity": {
+            "type": "Service",
+            "id": "25591603-8bcd-458f-b517-0fa8b25a5b47",
+            "name": "Operations"
+          },
+          "children": [
+            {
+              "entity": {
+                "type": "Scenario",
+                "id": "34ccb9a1-d579-4c72-9f3d-dbcce2a29abe",
+                "name": "Test"
+              },
+              "children": [
+                {
+                  "entity": {
+                    "type": "Request",
+                    "method": {
+                      "link": "",
+                      "name": "GET"
+                    },
+                    "uri": {
+                      "query": {
+                        "delimiter": "&",
+                        "items": [
+                          {
+                            "enabled": true,
+                            "name": "name",
+                            "value": "Customer NRZ"
+                          },
+                          {
+                            "name": "tests",
+                            "value": "ab"
+                          }
+                        ]
+                      },
+                      "host": "${\"BaseUrl\"}",
+                      "path": "/customer"
+                    },
+                    "description": "Get customer list by query",
+                    "id": "7ee58159-d129-4a44-a2ca-7ad892ae9f48",
+                    "name": "Search for customers",
+                    "headers": [
+                      {
+                        "enabled": true,
+                        "name": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "assertions": []
+                  }
+                },
+                {
+                  "entity": {
+                    "type": "Request",
+                    "method": {
+                      "requestBody": true,
+                      "link": "",
+                      "name": "POST"
+                    },
+                    "body": {
+                      "bodyType": "Text",
+                      "textBody": "{\n    \"customer\": {\n        \"CustomerID\": \"92\",\n        \"CompanyName\": \"Acme\",\n        \"Contact\": { \n            \"ContactName\": \"Roadrunner\",\n            \"ContactTitle\": \"Fast & Furious\"\n        },\n        \"HQLocation\": {\n            \"Address\": \"Sandroad 11\",\n            \"City\": \"Carson city\",\n            \"Region\": \"TX\",\n            \"PostCode\": \"100\",\n            \"Country\": \"US\"\n        },\n        \"ElectronicCommuncation\": {\n            \"Phone\": \"+1 646585\",\n            \"Fax\": \"+1 864664\"\n        }\n    }\n}"
+                    },
+                    "uri": {
+                      "host": "${\"BaseUrl\"}",
+                      "path": "/customer"
+                    },
+                    "id": "de2073d4-cce8-46fe-ac55-02e0ae3e09cb",
+                    "name": "Create Customer",
+                    "headers": [
+                      {
+                        "enabled": true,
+                        "name": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "enabled": true,
+                        "name": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "assertions": [
+                      {
+                        "comparison": "Equals",
+                        "subject": "ResponseStatus",
+                        "path": "code",
+                        "value": "200"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "entity": {
+                    "type": "Request",
+                    "method": {
+                      "link": "",
+                      "name": "GET"
+                    },
+                    "uri": {
+                      "host": "${\"BaseUrl\"}",
+                      "path": "/customer/92"
+                    },
+                    "id": "398e7fcf-58b8-43e3-8bc6-3170607c5d53",
+                    "name": "Read customer by ID",
+                    "headers": [
+                      {
+                        "enabled": true,
+                        "name": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "assertions": []
+                  }
+                },
+                {
+                  "entity": {
+                    "type": "Request",
+                    "method": {
+                      "link": "",
+                      "name": "DELETE"
+                    },
+                    "uri": {
+                      "host": "${\"BaseUrl\"}",
+                      "path": "/customer/92"
+                    },
+                    "id": "9c9ca01a-66d4-47e2-8698-78cfbc8e1724",
+                    "name": "Delete customer by ID",
+                    "headers": [],
+                    "assertions": []
+                  }
+                },
+                {
+                  "entity": {
+                    "type": "Request",
+                    "method": {
+                      "requestBody": true,
+                      "link": "",
+                      "name": "PUT"
+                    },
+                    "body": {
+                      "bodyType": "Text",
+                      "textBody": "{\n    \"customer\": {\n        \"CustomerID\": \"92\",\n        \"CompanyName\": \"Acme\",\n        \"Contact\": { \n            \"ContactName\": \"Roadrunner\",\n            \"ContactTitle\": \"Fast & Furious\"\n        },\n        \"HQLocation\": {\n            \"Address\": \"Sandroad 11\",\n            \"City\": \"Carson city\",\n            \"Region\": \"TX\",\n            \"PostCode\": \"100\",\n            \"Country\": \"US\"\n        },\n        \"ElectronicCommuncation\": {\n            \"Phone\": \"+1 646585\",\n            \"Fax\": \"+1 864664\"\n        }\n    }\n}"
+                    },
+                    "uri": {
+                      "host": "${\"BaseUrl\"}",
+                      "path": "/customer"
+                    },
+                    "id": "c8c71a6a-437f-4199-9684-29f00bd8f2eb",
+                    "name": "Update Customer",
+                    "headers": [
+                      {
+                        "enabled": true,
+                        "name": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "enabled": true,
+                        "name": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "assertions": []
+                  }
+                },
+                {
+                  "entity": {
+                    "type": "Request",
+                    "method": {
+                      "link": "",
+                      "name": "GET"
+                    },
+                    "uri": {
+                      "host": "${\"BaseUrl\"}",
+                      "path": "/customer/92"
+                    },
+                    "id": "ffe79d1e-bac5-4c31-a623-f74d1096bbdf",
+                    "name": "Copy of Read customer by ID",
+                    "headers": [
+                      {
+                        "enabled": true,
+                        "name": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "assertions": [
+                      {
+                        "comparison": "Equals",
+                        "subject": "ResponseStatus",
+                        "path": "code",
+                        "value": "200"
+                      },
+                      {
+                        "comparison": "Equals",
+                        "subject": "ResponseBody",
+                        "path": "content",
+                        "value": "[]"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "",
+                  "name": "POST"
+                },
+                "body": {
+                  "bodyType": "Text",
+                  "textBody": "{\n    \"customer\": {\n        \"CustomerID\": \"cID\",\n        \"CompanyName\": \"Acme\",\n        \"Contact\": { \n            \"ContactName\": \"Roadrunner\",\n            \"ContactTitle\": \"Fast & Furious\"\n        },\n        \"HQLocation\": {\n            \"Address\": \"Sandroad 11\",\n            \"City\": \"Carson city\",\n            \"Region\": \"TX\",\n            \"PostCode\": \"100\",\n            \"Country\": \"US\"\n        },\n        \"ElectronicCommuncation\": {\n            \"Phone\": \"+1 646585\",\n            \"Fax\": \"+1 864664\"\n        }\n    }\n}"
+                },
+                "uri": {
+                  "host": "${\"BaseUrl\"}",
+                  "path": "/customer"
+                },
+                "id": "3826caa0-86ac-4ed7-9e1e-a14b09bb6887",
+                "name": "Create Customer",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "assertions": [
+                  {
+                    "comparison": "Equals",
+                    "subject": "ResponseStatus",
+                    "path": "code",
+                    "value": "200"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "",
+                  "name": "DELETE"
+                },
+                "uri": {
+                  "host": "${\"BaseUrl\"}",
+                  "path": "/customer/{id}"
+                },
+                "id": "8b7e804a-147b-49b6-b587-d7708542b39d",
+                "name": "Delete customer by ID",
+                "headers": [],
+                "assertions": []
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "",
+                  "name": "GET"
+                },
+                "uri": {
+                  "host": "${\"BaseUrl\"}",
+                  "path": "/customer/{id}"
+                },
+                "id": "56364cf0-88f3-4401-b447-d4132ea71371",
+                "name": "Read customer by ID",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "assertions": []
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "",
+                  "name": "GET"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": [
+                      {
+                        "name": "name",
+                        "value": ""
+                      }
+                    ]
+                  },
+                  "host": "${\"BaseUrl\"}",
+                  "path": "/customer"
+                },
+                "description": "Get customer list by query",
+                "id": "ce0f4afa-bea5-4df1-a4e6-f25ca1641ebb",
+                "name": "Search for customers",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "assertions": []
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "",
+                  "name": "GET"
+                },
+                "uri": {
+                  "host": "${\"BaseUrl\"}",
+                  "path": "/Advanced"
+                },
+                "id": "5002ee8b-fbd6-471a-9793-b58af078655d",
+                "name": "Search for matching customers",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "assertions": []
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "",
+                  "name": "PUT"
+                },
+                "body": {
+                  "bodyType": "Text",
+                  "textBody": "{\n    \"customer\": {\n        \"CustomerID\": \"cID\",\n        \"CompanyName\": \"Acme\",\n        \"Contact\": { \n            \"ContactName\": \"Roadrunner\",\n            \"ContactTitle\": \"Fast & Furious\"\n        },\n        \"HQLocation\": {\n            \"Address\": \"Sandroad 11\",\n            \"City\": \"Carson city\",\n            \"Region\": \"TX\",\n            \"PostCode\": \"100\",\n            \"Country\": \"US\"\n        },\n        \"ElectronicCommuncation\": {\n            \"Phone\": \"+1 646585\",\n            \"Fax\": \"+1 864664\"\n        }\n    }\n}"
+                },
+                "uri": {
+                  "host": "${\"BaseUrl\"}",
+                  "path": "/customer"
+                },
+                "id": "f07c4fb3-58e1-4d2e-a0db-ffa06ae57d3d",
+                "name": "Update Customer",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "assertions": []
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "environments": [
+    {
+      "id": "d928a9ee-a2b8-4482-94db-2461f55f55e6",
+      "name": "E-commerce 1.0.0",
+      "variables": {
+        "7c4e898b-440c-4eaf-ba67-fd6b9ea62e15": {
+          "name": "BaseUrl",
+          "value": "http://127.0.0.1:8090",
+          "enabled": true,
+          "createdAt": "2025-01-31T12:25:47.548Z",
+          "private": false
+        }
+      }
+    }
+  ]
+}

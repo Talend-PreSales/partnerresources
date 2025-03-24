@@ -1,0 +1,5466 @@
+{
+  "bindings": {
+    "project": {
+      "space": "DataSpace_Projects",
+      "id": "${manel_land_store}",
+      "name": "Manel - Land & Store",
+      "type": "DATA_PIPELINE",
+      "description": "select * from pg_replication_slots;\nselect  slot_name from pg_replication_slots where active_pid is null  limit 1;\nselect pg_drop_replication_slot('task_yg5ib_jbtqm_00013408_c68a53a0_054f_4a40_a481_e8cc17107be0');",
+      "schemaPrefix": "",
+      "lakehouseType": "SNOWFLAKE",
+      "originalLakehouseType": "SNOWFLAKE",
+      "storageConnection": {
+        "type": "reptgt_qdisnowflake",
+        "space": "DataSpace_Connections",
+        "name": "Snowflake",
+        "id": "a55afe4d-5182-47fd-842b-6fcca3b043ab",
+        "kindId": null
+      },
+      "landingStorageConnection": null,
+      "qvdStorageLocationType": "NONE",
+      "snowflakeStorageIntegration": null
+    },
+    "appSourceConnections": {
+      "${ecommerce_landing-7m_i.connection}": "DataSpace_Connections.MySQL",
+      "${manel_pos_london_landing_landing-f0-v.connection}": "DataSpace_Connections.PostgreSQL",
+      "${manel_pos_newyork_landing-vzpx.connection}": "DataSpace_Connections.PostgreSQL",
+      "${manel_pos_londong_landing-7m_z.connection}": "DataSpace_Connections.PostgreSQL"
+    },
+    "sourceConnections": {
+      "DataSpace_Connections.MySQL": {
+        "type": "repsrc_mysql",
+        "space": "DataSpace_Connections",
+        "name": "MySQL",
+        "id": "f4b93f73-5e08-431c-bdce-bfc42c5382a2",
+        "kindId": null
+      },
+      "DataSpace_Connections.PostgreSQL": {
+        "type": "repsrc_postgresql",
+        "space": "DataSpace_Connections",
+        "name": "PostgreSQL",
+        "id": "b1405018-4bd7-40a4-b7cc-656308d17d93",
+        "kindId": null
+      }
+    },
+    "appTargetConnections": {},
+    "targetConnections": {},
+    "databases": {
+      "landing": "",
+      "storage": "",
+      "transform": "",
+      "datamart": "",
+      "registeredData": "",
+      "documentPublishing": null,
+      "filePublishing": null,
+      "appOverrides": {}
+    },
+    "executionEngines": {
+      "landing": "",
+      "storage": "",
+      "transform": "",
+      "datamart": "",
+      "registeredData": null,
+      "documentPublishing": null,
+      "filePublishing": null,
+      "appOverrides": {}
+    },
+    "dataAssetsMapping": [
+      {
+        "appId": "ecommerce_landing-7m_i",
+        "mappings": []
+      },
+      {
+        "appId": "manel_pos_london_landing_landing-f0-v",
+        "mappings": [
+          {
+            "from": {
+              "database": null,
+              "schema": "pos_london"
+            },
+            "to": {
+              "database": null,
+              "schema": "pos_london"
+            }
+          }
+        ]
+      },
+      {
+        "appId": "manel_pos_newyork_landing-vzpx",
+        "mappings": [
+          {
+            "from": {
+              "database": null,
+              "schema": "pos_newyork"
+            },
+            "to": {
+              "database": null,
+              "schema": "pos_newyork"
+            }
+          }
+        ]
+      },
+      {
+        "appId": "manel_pos_londong_landing-7m_z",
+        "mappings": [
+          {
+            "from": {
+              "database": null,
+              "schema": "pos_paris"
+            },
+            "to": {
+              "database": null,
+              "schema": "pos_paris"
+            }
+          }
+        ]
+      }
+    ],
+    "snowflakeExternalVolume": {
+      "landing": null,
+      "storage": "",
+      "transform": "",
+      "datamart": "",
+      "registeredData": null,
+      "documentPublishing": null,
+      "filePublishing": null,
+      "appOverrides": {}
+    },
+    "snowflakeOpenCatalog": {
+      "landing": null,
+      "storage": "",
+      "transform": "",
+      "datamart": "",
+      "registeredData": null,
+      "documentPublishing": null,
+      "filePublishing": null,
+      "appOverrides": {}
+    },
+    "sourceProjects": {}
+  },
+  "projectSettings": {
+    "storageSettingsDefaults": {
+      "materialized": true,
+      "hasHistory": true,
+      "transactionalLiveViews": false,
+      "hasLiveViews": true,
+      "hasChanges": true,
+      "hasCurrent": true,
+      "dataAppRuntime": {
+        "tableUpdateInterval": 15,
+        "tableUpdateConcurrency": 10,
+        "maxNumberOfRecords": 0,
+        "workloadExecutionEngine": {
+          "engineType": "DEFAULT",
+          "name": ""
+        }
+      },
+      "dataAppSchedulingInfo": {
+        "runInterval": 15,
+        "schedulingType": "TIME_BASED"
+      },
+      "catalogSettings": {
+        "publish": false,
+        "tags": []
+      },
+      "tableTypeSettings": {
+        "tableType": "REGULAR",
+        "icebergSettings": {
+          "snowflakeExternalVolume": "",
+          "folderLocationType": "DATA_ASSET_NAME",
+          "specificFolder": "",
+          "enableOpenCatalogSync": false,
+          "snowflakeOpenCatalog": ""
+        }
+      },
+      "database": {
+        "connectionType": "DEFAULT",
+        "name": ""
+      }
+    },
+    "landingSettingsDefaults": {
+      "hasChanges": true,
+      "hasCurrent": false,
+      "dataAppRuntime": {
+        "tableLoadInParallel": 5,
+        "changeProcessingInterval": 60,
+        "sourceCdcFetchIntervalMinutes": 15,
+        "initialLoadMode": "useCache",
+        "workloadExecutionEngine": {
+          "engineType": "DEFAULT",
+          "name": ""
+        }
+      },
+      "folderLocationType": "DATA_ASSET_NAME",
+      "specificFolder": "",
+      "proxySettings": {
+        "proxyOdbc": false,
+        "proxyStorage": false
+      },
+      "database": {
+        "connectionType": "DEFAULT",
+        "name": ""
+      }
+    },
+    "transformSettingsDefaults": {
+      "materialized": false,
+      "hasHistory": true,
+      "transactionalLiveViews": false,
+      "hasLiveViews": false,
+      "hasChanges": true,
+      "hasCurrent": true,
+      "dataAppRuntime": {
+        "tableUpdateInterval": 15,
+        "tableUpdateConcurrency": 10,
+        "maxNumberOfRecords": 0,
+        "workloadExecutionEngine": {
+          "engineType": "DEFAULT",
+          "name": ""
+        }
+      },
+      "dataAppSchedulingInfo": {
+        "runInterval": 15,
+        "schedulingType": "EVENT_BASED"
+      },
+      "catalogSettings": {
+        "publish": false,
+        "tags": []
+      },
+      "tableTypeSettings": {
+        "tableType": "REGULAR",
+        "icebergSettings": {
+          "snowflakeExternalVolume": "",
+          "folderLocationType": "DATA_ASSET_NAME",
+          "specificFolder": "",
+          "enableOpenCatalogSync": false,
+          "snowflakeOpenCatalog": ""
+        }
+      },
+      "database": {
+        "connectionType": "DEFAULT",
+        "name": ""
+      }
+    },
+    "datamartSettingsDefaults": {
+      "materialized": true,
+      "hasHistory": false,
+      "transactionalLiveViews": false,
+      "hasLiveViews": false,
+      "hasChanges": false,
+      "hasCurrent": true,
+      "dataAppRuntime": {
+        "tableUpdateInterval": 15,
+        "tableUpdateConcurrency": 10,
+        "maxNumberOfRecords": 0,
+        "workloadExecutionEngine": {
+          "engineType": "DEFAULT",
+          "name": ""
+        }
+      },
+      "dataAppSchedulingInfo": {
+        "runInterval": 15,
+        "schedulingType": "EVENT_BASED"
+      },
+      "catalogSettings": {
+        "publish": true,
+        "tags": []
+      },
+      "tableTypeSettings": {
+        "tableType": "REGULAR",
+        "icebergSettings": {
+          "snowflakeExternalVolume": "",
+          "folderLocationType": "DATA_ASSET_NAME",
+          "specificFolder": "",
+          "enableOpenCatalogSync": false,
+          "snowflakeOpenCatalog": ""
+        }
+      },
+      "database": {
+        "connectionType": "DEFAULT",
+        "name": ""
+      }
+    },
+    "artifactsNamingDefaults": {
+      "suffixLiveViews": "__live",
+      "suffixChangesView": "__changes",
+      "suffixCurrentView": "",
+      "suffixHistoryViews": "__history",
+      "suffixLiveHistoryViews": "__live_history",
+      "suffixInternalSchema": "__internal",
+      "prefixHeaderColumns": "hdr__",
+      "prefixSchema": "",
+      "defaultSchemaNameOption": "LOWER_CASE"
+    },
+    "qvdStorageSettingsDefaults": {
+      "folderLocationType": "DATA_ASSET_NAME",
+      "specificFolder": ""
+    },
+    "registeredSettingsDefaults": {
+      "incrementalSettings": {
+        "registeredType": "NONE",
+        "watermarkColumnName": null,
+        "useBatchTimeAsFromDate": false,
+        "fromDateColumnName": null,
+        "useSameTableAsCt": false,
+        "ctTableName": null,
+        "softDeleteSupport": false,
+        "softDeleteExpression": null,
+        "priorImageSupport": false,
+        "priorImageExpression": null
+      },
+      "catalogSettings": {
+        "publish": false,
+        "tags": []
+      },
+      "database": {
+        "connectionType": "DEFAULT",
+        "name": ""
+      }
+    },
+    "loggingTableSettings": {
+      "artifactsLocation": {
+        "internalSchema": "PROJECT_INTERNAL",
+        "externalSchema": "PROJECT_EXTERNAL",
+        "database": ""
+      }
+    },
+    "docPublishingSettingsDefaults": {
+      "dataAppRuntime": {
+        "tableUpdateInterval": 15,
+        "tableUpdateConcurrency": 10,
+        "maxNumberOfRecords": 0,
+        "workloadExecutionEngine": {
+          "engineType": "DEFAULT",
+          "name": ""
+        }
+      },
+      "database": {
+        "connectionType": "DEFAULT",
+        "name": ""
+      },
+      "aiPublishTo": "VECTOR_DB",
+      "vectorDbConnectionId": "",
+      "llmConnectionId": "",
+      "llmSettings": {
+        "kindId": null,
+        "parameters": null
+      },
+      "vectorDbOptions": {
+        "compute": null,
+        "database": null,
+        "indexSchema": null,
+        "indexName": null
+      },
+      "dataAppSchedulingInfo": null
+    },
+    "filePublishingSettingsDefaults": {
+      "dataAppRuntime": {
+        "workloadExecutionEngine": {
+          "engineType": "DEFAULT",
+          "name": ""
+        }
+      },
+      "aiPublishTo": "VECTOR_DB",
+      "vectorDbConnectionId": "",
+      "llmConnectionId": "",
+      "llmSettings": {
+        "kindId": null,
+        "parameters": null
+      },
+      "vectorDbOptions": {
+        "compute": null,
+        "database": null,
+        "indexSchema": null,
+        "indexName": null
+      },
+      "dataAppSchedulingInfo": null
+    },
+    "fileLandingSettingsDefaults": {
+      "dataAppSchedulingInfo": null,
+      "database": {
+        "connectionType": "DEFAULT",
+        "name": ""
+      }
+    },
+    "lakeLandingSettingsDefaults": {
+      "folderLocationType": "DATA_ASSET_NAME",
+      "specificFolder": "",
+      "dataAppRuntime": {
+        "tableLoadInParallel": 5,
+        "changeProcessingInterval": 60,
+        "sourceCdcFetchIntervalMinutes": 15,
+        "initialLoadMode": "useCache",
+        "workloadExecutionEngine": {
+          "engineType": "DEFAULT",
+          "name": ""
+        }
+      }
+    }
+  },
+  "batchMode": true,
+  "projectProperties": {
+    "modelBased": true
+  },
+  "apps": [
+    {
+      "app": {
+        "type": "LANDING_SAAS_MANAGED",
+        "subType": null,
+        "id": "ecommerce_landing-7m_i",
+        "name": "Manel_ECommerce_Landing",
+        "description": "",
+        "version": "1",
+        "tags": null
+      },
+      "settings": {
+        "fullLoadOnly": false,
+        "landingAppSettings": {
+          "artifactsInfo": {
+            "liveViews": {
+              "enabled": true,
+              "transactionallyConsistent": false,
+              "currentSuffix": "__live",
+              "historySuffix": "__live_history"
+            },
+            "headerColumnsPrefix": "hdr__",
+            "history": {
+              "enabled": false,
+              "historyViewsSuffix": "__history",
+              "fromDateColumnName": "hdr__from_timestamp",
+              "toDateColumnName": "hdr__to_timestamp",
+              "priorTablesSuffix": "__prior"
+            },
+            "changeTables": {
+              "enabled": true,
+              "tablesSuffix": "__ct",
+              "viewsSuffix": "__changes"
+            },
+            "standardViewsWithHeaders": {
+              "enabled": true,
+              "suffix": "__whdr"
+            },
+            "current": {
+              "standardViewsSuffix": "",
+              "currentTablesSuffix": "__current"
+            },
+            "materialized": false,
+            "reloadType": "COMPARE_AND_APPLY_WITH_DELETED_ROWS",
+            "prefixForAllTablesAndViews": ""
+          },
+          "errorHandling": {
+            "applyConflicts": {
+              "insertPolicy": "ERROR_POLICY_LOG_ERROR",
+              "updatePolicy": "ERROR_POLICY_LOG_ERROR",
+              "deletePolicy": "ERROR_POLICY_IGNORE_RECORD",
+              "escalationCount": {
+                "isChecked": false,
+                "value": 50
+              },
+              "escalationPolicy": "ERROR_POLICY_LOG_ERROR"
+            },
+            "data": {
+              "truncationPolicyErrors": "ERROR_POLICY_IGNORE_RECORD",
+              "policyErrors": "ERROR_POLICY_IGNORE_RECORD",
+              "escalationPolicy": "ERROR_POLICY_SUSPEND_TABLE",
+              "escalationCount": {
+                "isChecked": false,
+                "value": 50
+              }
+            },
+            "tableError": {
+              "policyErrors": "ERROR_POLICY_SUSPEND_TABLE",
+              "escalationPolicy": "ERROR_POLICY_STOP_TASK",
+              "escalationCount": {
+                "isChecked": false,
+                "value": 50
+              }
+            },
+            "environmental": {
+              "interval": 5,
+              "maximumRetryCount": {
+                "isChecked": true,
+                "value": -1
+              },
+              "maximumRetrySettings": {
+                "maximumRetry": "ALWAYS",
+                "count": 0
+              },
+              "maximumRetryInterval": {
+                "isChecked": true,
+                "value": 1800
+              }
+            }
+          },
+          "replicateTaskId": null,
+          "isReplicateLanding": true,
+          "landingDwSettings": {
+            "landingArtifactsLocation": {
+              "dataAssetSchema": "manel_ecommerce_landing",
+              "database": "${landing}"
+            }
+          },
+          "landingStorageSettings": {
+            "folderLocationType": "DATA_ASSET_NAME",
+            "specificFolder": ""
+          },
+          "landingAppRuntime": {
+            "tableLoadInParallel": 5,
+            "changeProcessingInterval": 60,
+            "sourceCdcFetchIntervalMinutes": 60,
+            "initialLoadMode": "useCache",
+            "workloadExecutionEngine": {
+              "engineType": "DEFAULT",
+              "name": "${landing}"
+            }
+          },
+          "maximumLobSize": 8,
+          "includeLobColumns": true,
+          "landingType": "REPLICATE",
+          "proxySettings": {
+            "proxyOdbc": false,
+            "proxyStorage": false
+          },
+          "fileAttributes": {
+            "general": {
+              "maxFileSize": 100,
+              "useCompression": true
+            }
+          },
+          "changeProcessingTuning": {
+            "batchApply": {
+              "applyIntervalMin": 1,
+              "applyIntervalMax": 30,
+              "forceApplyMemory": 500
+            },
+            "batchSplitSize": {
+              "isChecked": false,
+              "value": 10000
+            },
+            "transactionTuning": {
+              "cacheSize": 50,
+              "transactionTotalMemory": {
+                "isChecked": true,
+                "value": 1024
+              },
+              "transactionDuration": {
+                "isChecked": false,
+                "value": 60
+              },
+              "offloadTransactions": {
+                "storeRecoveryData": false,
+                "applyUsingMerge": false,
+                "optimizeInserts": false,
+                "deleteAndInsertOnPkUpdate": true
+              }
+            },
+            "transactionalApply": {
+              "transactionMinChanges": 1000,
+              "batchTransactionsMaxTime": 1
+            }
+          },
+          "applyChangesOptions": {
+            "changeProcessingTuning": {
+              "batchApplyEnabled": true,
+              "applyChangesMultipleTablesConcurrently": false,
+              "maxTables": 5
+            }
+          },
+          "metadata": {
+            "lobHandling": {
+              "lobChunkSize": 64,
+              "optimizeLobSizeEnabled": false,
+              "optimizeLobSize": 1,
+              "optimizeLobSizeHandlingUnit": "KILOBYTE",
+              "lobColumns": "REPLICATE_LIMITED_LOB_COLUMN"
+            },
+            "controlTableSelection": [
+              {
+                "tableId": "APPLY_EXCEPTIONS",
+                "targetName": "attrep_apply_exceptions",
+                "isChecked": false
+              },
+              {
+                "tableId": "REPLICATION_STATUS",
+                "targetName": "attrep_status",
+                "isChecked": false
+              },
+              {
+                "tableId": "SUSPENDED_TABLES",
+                "targetName": "attrep_suspended_tables",
+                "isChecked": false
+              },
+              {
+                "tableId": "REPLICATION_HISTORY",
+                "targetName": "attrep_history",
+                "isChecked": false
+              },
+              {
+                "tableId": "CHANGE_DATA_PARTITIONS",
+                "targetName": "attrep_cdc_partitions",
+                "isChecked": false
+              },
+              {
+                "tableId": "DDL_HISTORY",
+                "targetName": "attrep_ddl_history",
+                "isChecked": false
+              }
+            ]
+          },
+          "characterSubstitution": {
+            "sourceTargetCharacters": [],
+            "validationSet": {
+              "characterName": null,
+              "substituteCharacter": 0
+            }
+          },
+          "moreOptions": [],
+          "storeChangesOptions": {
+            "changeTableHeaderColumn": [
+              {
+                "id": "CHANGE_SEQUENCE",
+                "headerColumn": "change_seq",
+                "isChecked": true
+              },
+              {
+                "id": "CHANGE_OPERATION",
+                "headerColumn": "change_oper",
+                "isChecked": true
+              },
+              {
+                "id": "CHANGE_MASK",
+                "headerColumn": "change_mask",
+                "isChecked": true
+              },
+              {
+                "id": "STREAM_POSITION",
+                "headerColumn": "stream_position",
+                "isChecked": false
+              },
+              {
+                "id": "OPERATION",
+                "headerColumn": "operation",
+                "isChecked": true
+              },
+              {
+                "id": "TRANSACTION_ID",
+                "headerColumn": "transaction_id",
+                "isChecked": false
+              },
+              {
+                "id": "TIMESTAMP",
+                "headerColumn": "timestamp",
+                "isChecked": true
+              },
+              {
+                "id": "PARTITION_NAME",
+                "headerColumn": "partition_name",
+                "isChecked": false
+              }
+            ]
+          },
+          "fullLoadOptions": {
+            "afterFullLoadCompleted": {
+              "createKeyOrUniqueIndex": false
+            },
+            "fullLoadOptionsTuning": {
+              "maxTables": 5,
+              "consistencyTimeout": 600,
+              "commitRate": 10000
+            }
+          },
+          "ddlHandlingPolicy": {
+            "addColumn": "APPLY_TO_TARGET",
+            "changeColumnType": "IGNORE",
+            "renameTable": "SUSPEND_TABLE",
+            "renameColumn": "SUSPEND_TABLE",
+            "dropTable": "IGNORE",
+            "dropColumn": "IGNORE",
+            "truncateTable": "IGNORE",
+            "createTable": "APPLY_TO_TARGET"
+          }
+        },
+        "transformAppSettings": null,
+        "storageAppSettings": null,
+        "datamartAppSettings": null,
+        "qvdStorageAppSettings": null,
+        "registeredAppSettings": null,
+        "replicationAppSettings": null,
+        "consolidationAppSettings": null,
+        "publishingAppSettings": null,
+        "distributionAppSettings": null,
+        "lakeLandingAppSettings": null,
+        "docPublishAppSettings": null,
+        "filePublishAppSettings": null,
+        "fileLandingAppSettings": null,
+        "isDummySettings": null
+      },
+      "sourceSelection": {
+        "dataEntitiesSelection": {
+          "sourceConnectionId": "${ecommerce_landing-7m_i.connection}",
+          "includePatterns": [
+            {
+              "tablePattern": "%",
+              "schemaPattern": "ecommerce",
+              "database": null,
+              "entityType": "TABLE",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "excludePatterns": [],
+          "dataEntities": []
+        }
+      },
+      "dataEntities": [
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$ecommerce_category",
+              "schema": "ecommerce",
+              "database": null,
+              "name": "Category",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": {
+            "loadOrder": "NORMAL",
+            "loadParallelSettings": {
+              "loadParallel": "NONE",
+              "segmentationSettings": null,
+              "partitionsSettings": null
+            }
+          },
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "category",
+          "name": "Category",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$ecommerce_custcustdemographics",
+              "schema": "ecommerce",
+              "database": null,
+              "name": "CustCustDemographics",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": {
+            "loadOrder": "NORMAL",
+            "loadParallelSettings": {
+              "loadParallel": "NONE",
+              "segmentationSettings": null,
+              "partitionsSettings": null
+            }
+          },
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "custcustdemographics",
+          "name": "CustCustDemographics",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$ecommerce_customer",
+              "schema": "ecommerce",
+              "database": null,
+              "name": "Customer",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": {
+            "loadOrder": "NORMAL",
+            "loadParallelSettings": {
+              "loadParallel": "NONE",
+              "segmentationSettings": null,
+              "partitionsSettings": null
+            }
+          },
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "customer",
+          "name": "Customer",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$ecommerce_customerdemographics",
+              "schema": "ecommerce",
+              "database": null,
+              "name": "CustomerDemographics",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": {
+            "loadOrder": "NORMAL",
+            "loadParallelSettings": {
+              "loadParallel": "NONE",
+              "segmentationSettings": null,
+              "partitionsSettings": null
+            }
+          },
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "customerdemographics",
+          "name": "CustomerDemographics",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$ecommerce_employee",
+              "schema": "ecommerce",
+              "database": null,
+              "name": "Employee",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": {
+            "loadOrder": "NORMAL",
+            "loadParallelSettings": {
+              "loadParallel": "NONE",
+              "segmentationSettings": null,
+              "partitionsSettings": null
+            }
+          },
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "employee",
+          "name": "Employee",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$ecommerce_employeeterritory",
+              "schema": "ecommerce",
+              "database": null,
+              "name": "EmployeeTerritory",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": {
+            "loadOrder": "NORMAL",
+            "loadParallelSettings": {
+              "loadParallel": "NONE",
+              "segmentationSettings": null,
+              "partitionsSettings": null
+            }
+          },
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "employeeterritory",
+          "name": "EmployeeTerritory",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$ecommerce_orderdetail",
+              "schema": "ecommerce",
+              "database": null,
+              "name": "OrderDetail",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": {
+            "loadOrder": "NORMAL",
+            "loadParallelSettings": {
+              "loadParallel": "NONE",
+              "segmentationSettings": null,
+              "partitionsSettings": null
+            }
+          },
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "orderdetail",
+          "name": "OrderDetail",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$ecommerce_product",
+              "schema": "ecommerce",
+              "database": null,
+              "name": "Product",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": {
+            "loadOrder": "NORMAL",
+            "loadParallelSettings": {
+              "loadParallel": "NONE",
+              "segmentationSettings": null,
+              "partitionsSettings": null
+            }
+          },
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "product",
+          "name": "Product",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$ecommerce_region",
+              "schema": "ecommerce",
+              "database": null,
+              "name": "Region",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": {
+            "loadOrder": "NORMAL",
+            "loadParallelSettings": {
+              "loadParallel": "NONE",
+              "segmentationSettings": null,
+              "partitionsSettings": null
+            }
+          },
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "region",
+          "name": "Region",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$ecommerce_salesorder",
+              "schema": "ecommerce",
+              "database": null,
+              "name": "SalesOrder",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": {
+            "loadOrder": "NORMAL",
+            "loadParallelSettings": {
+              "loadParallel": "NONE",
+              "segmentationSettings": null,
+              "partitionsSettings": null
+            }
+          },
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "salesorder",
+          "name": "SalesOrder",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$ecommerce_shipper",
+              "schema": "ecommerce",
+              "database": null,
+              "name": "Shipper",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": {
+            "loadOrder": "NORMAL",
+            "loadParallelSettings": {
+              "loadParallel": "NONE",
+              "segmentationSettings": null,
+              "partitionsSettings": null
+            }
+          },
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "shipper",
+          "name": "Shipper",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$ecommerce_supplier",
+              "schema": "ecommerce",
+              "database": null,
+              "name": "Supplier",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": {
+            "loadOrder": "NORMAL",
+            "loadParallelSettings": {
+              "loadParallel": "NONE",
+              "segmentationSettings": null,
+              "partitionsSettings": null
+            }
+          },
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "supplier",
+          "name": "Supplier",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$ecommerce_territory",
+              "schema": "ecommerce",
+              "database": null,
+              "name": "Territory",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": {
+            "loadOrder": "NORMAL",
+            "loadParallelSettings": {
+              "loadParallel": "NONE",
+              "segmentationSettings": null,
+              "partitionsSettings": null
+            }
+          },
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "territory",
+          "name": "Territory",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "modelBasedMappings": {},
+      "cachedDataEntities": [
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "Category",
+            "dbSchema": "ecommerce",
+            "dbName": null,
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "$replicate$ecommerce_category",
+          "name": "ecommerce_Category",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "CustCustDemographics",
+            "dbSchema": "ecommerce",
+            "dbName": null,
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "$replicate$ecommerce_custcustdemographics",
+          "name": "ecommerce_CustCustDemographics",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "Customer",
+            "dbSchema": "ecommerce",
+            "dbName": null,
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "$replicate$ecommerce_customer",
+          "name": "ecommerce_Customer",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "CustomerDemographics",
+            "dbSchema": "ecommerce",
+            "dbName": null,
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "$replicate$ecommerce_customerdemographics",
+          "name": "ecommerce_CustomerDemographics",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "Employee",
+            "dbSchema": "ecommerce",
+            "dbName": null,
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "$replicate$ecommerce_employee",
+          "name": "ecommerce_Employee",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "EmployeeTerritory",
+            "dbSchema": "ecommerce",
+            "dbName": null,
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "$replicate$ecommerce_employeeterritory",
+          "name": "ecommerce_EmployeeTerritory",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "OrderDetail",
+            "dbSchema": "ecommerce",
+            "dbName": null,
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "$replicate$ecommerce_orderdetail",
+          "name": "ecommerce_OrderDetail",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "Product",
+            "dbSchema": "ecommerce",
+            "dbName": null,
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "$replicate$ecommerce_product",
+          "name": "ecommerce_Product",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "Region",
+            "dbSchema": "ecommerce",
+            "dbName": null,
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "$replicate$ecommerce_region",
+          "name": "ecommerce_Region",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "SalesOrder",
+            "dbSchema": "ecommerce",
+            "dbName": null,
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "$replicate$ecommerce_salesorder",
+          "name": "ecommerce_SalesOrder",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "Shipper",
+            "dbSchema": "ecommerce",
+            "dbName": null,
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "$replicate$ecommerce_shipper",
+          "name": "ecommerce_Shipper",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "Supplier",
+            "dbSchema": "ecommerce",
+            "dbName": null,
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "$replicate$ecommerce_supplier",
+          "name": "ecommerce_Supplier",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "Territory",
+            "dbSchema": "ecommerce",
+            "dbName": null,
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "$replicate$ecommerce_territory",
+          "name": "ecommerce_Territory",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "rulesets": [],
+      "entityRelationship": [],
+      "schedulings": [],
+      "dataFlows": null
+    },
+    {
+      "app": {
+        "type": "STORAGE",
+        "subType": null,
+        "id": "ecommerce_storage-7m_j",
+        "name": "Manel_ECommerce_Storage",
+        "description": "",
+        "version": "1",
+        "tags": null
+      },
+      "settings": {
+        "fullLoadOnly": false,
+        "landingAppSettings": null,
+        "transformAppSettings": null,
+        "storageAppSettings": {
+          "ddlHandlingPolicy": {
+            "addColumn": "APPLY_TO_TARGET",
+            "changeColumnType": "IGNORE",
+            "renameTable": "SUSPEND_TABLE",
+            "renameColumn": "SUSPEND_TABLE",
+            "dropTable": "IGNORE",
+            "dropColumn": "IGNORE",
+            "truncateTable": "IGNORE",
+            "createTable": "APPLY_TO_TARGET"
+          },
+          "artifactsLocation": {
+            "internalSchema": "manel_ecommerce_storage__internal",
+            "dataAssetSchema": "manel_ecommerce_storage",
+            "database": "${storage}"
+          },
+          "artifactsInfo": {
+            "liveViews": {
+              "enabled": true,
+              "transactionallyConsistent": false,
+              "currentSuffix": "__live",
+              "historySuffix": "__live_history"
+            },
+            "headerColumnsPrefix": "hdr__",
+            "history": {
+              "enabled": true,
+              "historyViewsSuffix": "__history",
+              "fromDateColumnName": "hdr__from_timestamp",
+              "toDateColumnName": "hdr__to_timestamp",
+              "priorTablesSuffix": "__prior"
+            },
+            "changeTables": {
+              "enabled": true,
+              "tablesSuffix": "__ct",
+              "viewsSuffix": "__changes"
+            },
+            "standardViewsWithHeaders": {
+              "enabled": true,
+              "suffix": "__whdr"
+            },
+            "current": {
+              "standardViewsSuffix": "",
+              "currentTablesSuffix": "__current"
+            },
+            "materialized": true,
+            "reloadType": "COMPARE_AND_APPLY_WITH_DELETED_ROWS",
+            "prefixForAllTablesAndViews": ""
+          },
+          "dataAppRuntime": {
+            "tableUpdateInterval": 15,
+            "tableUpdateConcurrency": 10,
+            "maxNumberOfRecords": 0,
+            "workloadExecutionEngine": {
+              "engineType": "DEFAULT",
+              "name": "${storage}"
+            }
+          },
+          "catalogSettings": {
+            "publish": false,
+            "tags": []
+          },
+          "tableTypeSettings": {
+            "tableType": "REGULAR",
+            "icebergSettings": {
+              "snowflakeExternalVolume": "",
+              "folderLocationType": "DATA_ASSET_NAME",
+              "specificFolder": "",
+              "enableOpenCatalogSync": false,
+              "snowflakeOpenCatalog": ""
+            }
+          }
+        },
+        "datamartAppSettings": null,
+        "qvdStorageAppSettings": null,
+        "registeredAppSettings": null,
+        "replicationAppSettings": null,
+        "consolidationAppSettings": null,
+        "publishingAppSettings": null,
+        "distributionAppSettings": null,
+        "lakeLandingAppSettings": null,
+        "docPublishAppSettings": null,
+        "filePublishAppSettings": null,
+        "fileLandingAppSettings": null,
+        "isDummySettings": null
+      },
+      "sourceSelection": {
+        "dataEntitiesSelection": {
+          "sourceConnectionId": null,
+          "includePatterns": [
+            {
+              "tablePattern": "%",
+              "schemaPattern": "%",
+              "database": null,
+              "entityType": "TABLE",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "excludePatterns": [],
+          "dataEntities": []
+        }
+      },
+      "dataEntities": [
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "category",
+              "schema": null,
+              "database": null,
+              "name": "Category",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "category-7m_l",
+          "name": "Category",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "custcustdemographics",
+              "schema": null,
+              "database": null,
+              "name": "CustCustDemographics",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "custcustdemographics-7m_m",
+          "name": "CustCustDemographics",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "customer",
+              "schema": null,
+              "database": null,
+              "name": "Customer",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "customer-7m_n",
+          "name": "Customer",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "customerdemographics",
+              "schema": null,
+              "database": null,
+              "name": "CustomerDemographics",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "customerdemographics-7m_o",
+          "name": "CustomerDemographics",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "employee",
+              "schema": null,
+              "database": null,
+              "name": "Employee",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "employee-7m_p",
+          "name": "Employee",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "employeeterritory",
+              "schema": null,
+              "database": null,
+              "name": "EmployeeTerritory",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "employeeterritory-7m_q",
+          "name": "EmployeeTerritory",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "orderdetail",
+              "schema": null,
+              "database": null,
+              "name": "OrderDetail",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "orderdetail-7m_r",
+          "name": "OrderDetail",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "product",
+              "schema": null,
+              "database": null,
+              "name": "Product",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "product-7m_s",
+          "name": "Product",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "region",
+              "schema": null,
+              "database": null,
+              "name": "Region",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "region-7m_t",
+          "name": "Region",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "salesorder",
+              "schema": null,
+              "database": null,
+              "name": "SalesOrder",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "salesorder-7m_u",
+          "name": "SalesOrder",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "shipper",
+              "schema": null,
+              "database": null,
+              "name": "Shipper",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "shipper-7m_v",
+          "name": "Shipper",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "supplier",
+              "schema": null,
+              "database": null,
+              "name": "Supplier",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "supplier-7m_w",
+          "name": "Supplier",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "territory",
+              "schema": null,
+              "database": null,
+              "name": "Territory",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "ecommerce_landing-7m_i"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "territory-7m_x",
+          "name": "Territory",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "modelBasedMappings": {},
+      "cachedDataEntities": [],
+      "rulesets": [
+        {
+          "ruleset": {
+            "globalRules": [
+              "rule_dataset_upper-hdzr",
+              "rule_column_upper-hdzs"
+            ],
+            "tableRules": [
+              "orderdetail-f0_7"
+            ],
+            "enabled": true,
+            "id": "outbound",
+            "name": "outbound",
+            "description": "",
+            "version": "1",
+            "tags": null
+          },
+          "globalRules": [
+            {
+              "actionType": "RENAME_TABLE",
+              "scopeType": "NONE",
+              "scope": {
+                "whereOwnerName": "%",
+                "whereTableName": "%",
+                "whereColumnName": "%",
+                "whereDatatype": "UNSPECIFIED",
+                "whereExpression": null,
+                "whereColumnKeyAttribute": "ANY",
+                "whereColumnNullability": "ANY"
+              },
+              "action": {
+                "renameType": "TO_UPPER",
+                "expression": null,
+                "value": "",
+                "oldValue": null,
+                "applyColumnDatatype": false,
+                "column": {
+                  "name": null,
+                  "ordinal": 0,
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0,
+                  "datatype": {
+                    "type": "STRING",
+                    "length": 50,
+                    "precision": 0,
+                    "scale": 0,
+                    "originalType": null,
+                    "originalTypeFull": ""
+                  },
+                  "expression": null,
+                  "id": null,
+                  "flags": "NONE",
+                  "properties": null
+                },
+                "valueMapping": null
+              },
+              "enabled": true,
+              "transformedTableLocal": null,
+              "internalRule": false,
+              "id": "rule_dataset_upper-hdzr",
+              "name": "Rule_DataSet_Upper",
+              "description": "",
+              "version": "1",
+              "tags": null
+            },
+            {
+              "actionType": "RENAME_COLUMN",
+              "scopeType": "COLUMN",
+              "scope": {
+                "whereOwnerName": "%",
+                "whereTableName": "%",
+                "whereColumnName": "%",
+                "whereDatatype": "UNSPECIFIED",
+                "whereExpression": null,
+                "whereColumnKeyAttribute": "ANY",
+                "whereColumnNullability": "ANY"
+              },
+              "action": {
+                "renameType": "TO_UPPER",
+                "expression": null,
+                "value": "",
+                "oldValue": null,
+                "applyColumnDatatype": false,
+                "column": {
+                  "name": null,
+                  "ordinal": 0,
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0,
+                  "datatype": {
+                    "type": "STRING",
+                    "length": 50,
+                    "precision": 0,
+                    "scale": 0,
+                    "originalType": null,
+                    "originalTypeFull": ""
+                  },
+                  "expression": null,
+                  "id": null,
+                  "flags": "NONE",
+                  "properties": null
+                },
+                "valueMapping": null
+              },
+              "enabled": true,
+              "transformedTableLocal": null,
+              "internalRule": false,
+              "id": "rule_column_upper-hdzs",
+              "name": "Rule_Column_Upper",
+              "description": "",
+              "version": "1",
+              "tags": null
+            }
+          ],
+          "tableRules": [
+            {
+              "entityId": "orderdetail-7m_r",
+              "actionType": "LOCAL_MANIPULATION",
+              "scopeType": "COLUMN",
+              "scope": {
+                "whereOwnerName": "%",
+                "whereTableName": "OrderDetail",
+                "whereColumnName": "%",
+                "whereDatatype": "UNSPECIFIED",
+                "whereExpression": null,
+                "whereColumnKeyAttribute": "ANY",
+                "whereColumnNullability": "ANY"
+              },
+              "action": null,
+              "enabled": true,
+              "transformedTableLocal": {
+                "newTableName": null,
+                "filter": null,
+                "transformedColumnsLocal": [
+                  {
+                    "action": "ADD",
+                    "columnName": "AMOUNT",
+                    "newColumnName": null,
+                    "newDataType": {
+                      "type": "NUMERIC",
+                      "length": 0,
+                      "precision": 10,
+                      "scale": 2,
+                      "originalType": null,
+                      "originalTypeFull": ""
+                    },
+                    "expression": {
+                      "expressionStatement": "(${quantity}*${unitPrice})*(1-${discount})",
+                      "alias": [
+                        {
+                          "name": "quantity",
+                          "value": "quantity"
+                        },
+                        {
+                          "name": "unitPrice",
+                          "value": "unitprice"
+                        },
+                        {
+                          "name": "discount",
+                          "value": "discount"
+                        }
+                      ]
+                    },
+                    "primaryKeyOrdinal": 0,
+                    "ordinal": 0,
+                    "nullable": true,
+                    "addedColumnId": "426c676d-1cbc-4a57-aeb3-63d1ca5cc4b2",
+                    "markAsMetadata": false
+                  }
+                ]
+              },
+              "internalRule": false,
+              "id": "orderdetail-f0_7",
+              "name": "OrderDetail",
+              "description": "",
+              "version": "1",
+              "tags": null
+            }
+          ]
+        }
+      ],
+      "entityRelationship": [],
+      "schedulings": [
+        {
+          "enabled": true,
+          "schedulingType": "TIME_BASED",
+          "timeBasedScheduling": {
+            "schedule": [
+              "RRULE:FREQ=MINUTELY;INTERVAL=15;BYSECOND=0"
+            ],
+            "startDateTime": "2025-02-06T11:11:23.559Z",
+            "endDateTime": null,
+            "timezone": "Etc/UTC"
+          },
+          "eventBasedScheduling": {
+            "eventSchedulingType": "ANY_INPUT_TASK",
+            "triggerApps": []
+          },
+          "id": "schedule-7m_k",
+          "name": "Schedule",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "dataFlows": null
+    },
+    {
+      "app": {
+        "type": "LANDING_SAAS_MANAGED",
+        "subType": null,
+        "id": "manel_pos_london_landing_landing-f0-v",
+        "name": "Manel_POS_London_Landing",
+        "description": "",
+        "version": "1",
+        "tags": null
+      },
+      "settings": {
+        "fullLoadOnly": false,
+        "landingAppSettings": {
+          "artifactsInfo": {
+            "liveViews": {
+              "enabled": true,
+              "transactionallyConsistent": false,
+              "currentSuffix": "__live",
+              "historySuffix": "__live_history"
+            },
+            "headerColumnsPrefix": "hdr__",
+            "history": {
+              "enabled": false,
+              "historyViewsSuffix": "__history",
+              "fromDateColumnName": "hdr__from_timestamp",
+              "toDateColumnName": "hdr__to_timestamp",
+              "priorTablesSuffix": "__prior"
+            },
+            "changeTables": {
+              "enabled": true,
+              "tablesSuffix": "__ct",
+              "viewsSuffix": "__changes"
+            },
+            "standardViewsWithHeaders": {
+              "enabled": true,
+              "suffix": "__whdr"
+            },
+            "current": {
+              "standardViewsSuffix": "",
+              "currentTablesSuffix": "__current"
+            },
+            "materialized": false,
+            "reloadType": "COMPARE_AND_APPLY_WITH_DELETED_ROWS",
+            "prefixForAllTablesAndViews": ""
+          },
+          "errorHandling": {
+            "applyConflicts": {
+              "insertPolicy": "ERROR_POLICY_LOG_ERROR",
+              "updatePolicy": "ERROR_POLICY_LOG_ERROR",
+              "deletePolicy": "ERROR_POLICY_IGNORE_RECORD",
+              "escalationCount": {
+                "isChecked": false,
+                "value": 50
+              },
+              "escalationPolicy": "ERROR_POLICY_LOG_ERROR"
+            },
+            "data": {
+              "truncationPolicyErrors": "ERROR_POLICY_IGNORE_RECORD",
+              "policyErrors": "ERROR_POLICY_IGNORE_RECORD",
+              "escalationPolicy": "ERROR_POLICY_SUSPEND_TABLE",
+              "escalationCount": {
+                "isChecked": false,
+                "value": 50
+              }
+            },
+            "tableError": {
+              "policyErrors": "ERROR_POLICY_SUSPEND_TABLE",
+              "escalationPolicy": "ERROR_POLICY_STOP_TASK",
+              "escalationCount": {
+                "isChecked": false,
+                "value": 50
+              }
+            },
+            "environmental": {
+              "interval": 5,
+              "maximumRetryCount": {
+                "isChecked": true,
+                "value": -1
+              },
+              "maximumRetrySettings": {
+                "maximumRetry": "ALWAYS",
+                "count": 0
+              },
+              "maximumRetryInterval": {
+                "isChecked": true,
+                "value": 1800
+              }
+            }
+          },
+          "replicateTaskId": null,
+          "isReplicateLanding": true,
+          "landingDwSettings": {
+            "landingArtifactsLocation": {
+              "dataAssetSchema": "manel_pos_london_landing",
+              "database": "${landing}"
+            }
+          },
+          "landingStorageSettings": {
+            "folderLocationType": "DATA_ASSET_NAME",
+            "specificFolder": ""
+          },
+          "landingAppRuntime": {
+            "tableLoadInParallel": 5,
+            "changeProcessingInterval": 60,
+            "sourceCdcFetchIntervalMinutes": 60,
+            "initialLoadMode": "useCache",
+            "workloadExecutionEngine": {
+              "engineType": "DEFAULT",
+              "name": "${landing}"
+            }
+          },
+          "maximumLobSize": 8,
+          "includeLobColumns": true,
+          "landingType": "REPLICATE",
+          "proxySettings": {
+            "proxyOdbc": false,
+            "proxyStorage": false
+          },
+          "fileAttributes": {
+            "general": {
+              "maxFileSize": 100,
+              "useCompression": true
+            }
+          },
+          "changeProcessingTuning": {
+            "batchApply": {
+              "applyIntervalMin": 1,
+              "applyIntervalMax": 30,
+              "forceApplyMemory": 500
+            },
+            "batchSplitSize": {
+              "isChecked": false,
+              "value": 10000
+            },
+            "transactionTuning": {
+              "cacheSize": 50,
+              "transactionTotalMemory": {
+                "isChecked": true,
+                "value": 1024
+              },
+              "transactionDuration": {
+                "isChecked": false,
+                "value": 60
+              },
+              "offloadTransactions": {
+                "storeRecoveryData": false,
+                "applyUsingMerge": false,
+                "optimizeInserts": false,
+                "deleteAndInsertOnPkUpdate": true
+              }
+            },
+            "transactionalApply": {
+              "transactionMinChanges": 1000,
+              "batchTransactionsMaxTime": 1
+            }
+          },
+          "applyChangesOptions": {
+            "changeProcessingTuning": {
+              "batchApplyEnabled": true,
+              "applyChangesMultipleTablesConcurrently": false,
+              "maxTables": 5
+            }
+          },
+          "metadata": {
+            "lobHandling": {
+              "lobChunkSize": 64,
+              "optimizeLobSizeEnabled": false,
+              "optimizeLobSize": 1,
+              "optimizeLobSizeHandlingUnit": "KILOBYTE",
+              "lobColumns": "REPLICATE_LIMITED_LOB_COLUMN"
+            },
+            "controlTableSelection": [
+              {
+                "tableId": "APPLY_EXCEPTIONS",
+                "targetName": "attrep_apply_exceptions",
+                "isChecked": false
+              },
+              {
+                "tableId": "REPLICATION_STATUS",
+                "targetName": "attrep_status",
+                "isChecked": false
+              },
+              {
+                "tableId": "SUSPENDED_TABLES",
+                "targetName": "attrep_suspended_tables",
+                "isChecked": false
+              },
+              {
+                "tableId": "REPLICATION_HISTORY",
+                "targetName": "attrep_history",
+                "isChecked": false
+              },
+              {
+                "tableId": "CHANGE_DATA_PARTITIONS",
+                "targetName": "attrep_cdc_partitions",
+                "isChecked": false
+              },
+              {
+                "tableId": "DDL_HISTORY",
+                "targetName": "attrep_ddl_history",
+                "isChecked": false
+              }
+            ]
+          },
+          "characterSubstitution": {
+            "sourceTargetCharacters": [],
+            "validationSet": {
+              "characterName": null,
+              "substituteCharacter": 0
+            }
+          },
+          "moreOptions": [],
+          "storeChangesOptions": {
+            "changeTableHeaderColumn": [
+              {
+                "id": "CHANGE_SEQUENCE",
+                "headerColumn": "change_seq",
+                "isChecked": true
+              },
+              {
+                "id": "CHANGE_OPERATION",
+                "headerColumn": "change_oper",
+                "isChecked": true
+              },
+              {
+                "id": "CHANGE_MASK",
+                "headerColumn": "change_mask",
+                "isChecked": true
+              },
+              {
+                "id": "STREAM_POSITION",
+                "headerColumn": "stream_position",
+                "isChecked": false
+              },
+              {
+                "id": "OPERATION",
+                "headerColumn": "operation",
+                "isChecked": true
+              },
+              {
+                "id": "TRANSACTION_ID",
+                "headerColumn": "transaction_id",
+                "isChecked": false
+              },
+              {
+                "id": "TIMESTAMP",
+                "headerColumn": "timestamp",
+                "isChecked": true
+              },
+              {
+                "id": "PARTITION_NAME",
+                "headerColumn": "partition_name",
+                "isChecked": false
+              }
+            ]
+          },
+          "fullLoadOptions": {
+            "afterFullLoadCompleted": {
+              "createKeyOrUniqueIndex": false
+            },
+            "fullLoadOptionsTuning": {
+              "maxTables": 5,
+              "consistencyTimeout": 600,
+              "commitRate": 10000
+            }
+          },
+          "ddlHandlingPolicy": {
+            "addColumn": "APPLY_TO_TARGET",
+            "changeColumnType": "IGNORE",
+            "renameTable": "SUSPEND_TABLE",
+            "renameColumn": "SUSPEND_TABLE",
+            "dropTable": "IGNORE",
+            "dropColumn": "IGNORE",
+            "truncateTable": "IGNORE",
+            "createTable": "APPLY_TO_TARGET"
+          }
+        },
+        "transformAppSettings": null,
+        "storageAppSettings": null,
+        "datamartAppSettings": null,
+        "qvdStorageAppSettings": null,
+        "registeredAppSettings": null,
+        "replicationAppSettings": null,
+        "consolidationAppSettings": null,
+        "publishingAppSettings": null,
+        "distributionAppSettings": null,
+        "lakeLandingAppSettings": null,
+        "docPublishAppSettings": null,
+        "filePublishAppSettings": null,
+        "fileLandingAppSettings": null,
+        "isDummySettings": null
+      },
+      "sourceSelection": {
+        "dataEntitiesSelection": {
+          "sourceConnectionId": "${manel_pos_london_landing_landing-f0-v.connection}",
+          "includePatterns": [],
+          "excludePatterns": [],
+          "dataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$pos_london_orderdetail",
+              "schema": "pos_london",
+              "database": null,
+              "name": "orderdetail",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "manel_pos_london_landing_landing-f0-v"
+            },
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$pos_london_salesorder",
+              "schema": "pos_london",
+              "database": null,
+              "name": "salesorder",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "manel_pos_london_landing_landing-f0-v"
+            }
+          ]
+        }
+      },
+      "dataEntities": [
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$pos_london_orderdetail",
+              "schema": "pos_london",
+              "database": null,
+              "name": "orderdetail",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "manel_pos_london_landing_landing-f0-v"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": {
+            "loadOrder": "NORMAL",
+            "loadParallelSettings": {
+              "loadParallel": "NONE",
+              "segmentationSettings": null,
+              "partitionsSettings": null
+            }
+          },
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "orderdetail_1",
+          "name": "orderdetail_1",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$pos_london_salesorder",
+              "schema": "pos_london",
+              "database": null,
+              "name": "salesorder",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "manel_pos_london_landing_landing-f0-v"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": {
+            "loadOrder": "NORMAL",
+            "loadParallelSettings": {
+              "loadParallel": "NONE",
+              "segmentationSettings": null,
+              "partitionsSettings": null
+            }
+          },
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "salesorder_1",
+          "name": "salesorder_1",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "modelBasedMappings": {},
+      "cachedDataEntities": [
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "orderdetail",
+            "dbSchema": "pos_london",
+            "dbName": "postgres",
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "$replicate$pos_london_orderdetail",
+          "name": "pos_london_orderdetail",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "salesorder",
+            "dbSchema": "pos_london",
+            "dbName": "postgres",
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "$replicate$pos_london_salesorder",
+          "name": "pos_london_salesorder",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "rulesets": [
+        {
+          "ruleset": {
+            "globalRules": null,
+            "tableRules": [
+              "orderdetail_1-pjj2",
+              "salesorder_1-7nhm"
+            ],
+            "enabled": true,
+            "id": "outbound",
+            "name": "outbound",
+            "description": "",
+            "version": "1",
+            "tags": null
+          },
+          "globalRules": [],
+          "tableRules": [
+            {
+              "entityId": "orderdetail_1",
+              "actionType": "LOCAL_MANIPULATION",
+              "scopeType": "COLUMN",
+              "scope": {
+                "whereOwnerName": "%",
+                "whereTableName": "orderdetail_1",
+                "whereColumnName": "%",
+                "whereDatatype": "UNSPECIFIED",
+                "whereExpression": null,
+                "whereColumnKeyAttribute": "ANY",
+                "whereColumnNullability": "ANY"
+              },
+              "action": null,
+              "enabled": true,
+              "transformedTableLocal": {
+                "newTableName": "orderdetail",
+                "filter": null,
+                "transformedColumnsLocal": []
+              },
+              "internalRule": false,
+              "id": "orderdetail_1-pjj2",
+              "name": "orderdetail_1",
+              "description": "",
+              "version": "1",
+              "tags": null
+            },
+            {
+              "entityId": "salesorder_1",
+              "actionType": "LOCAL_MANIPULATION",
+              "scopeType": "COLUMN",
+              "scope": {
+                "whereOwnerName": "%",
+                "whereTableName": "salesorder_1",
+                "whereColumnName": "%",
+                "whereDatatype": "UNSPECIFIED",
+                "whereExpression": null,
+                "whereColumnKeyAttribute": "ANY",
+                "whereColumnNullability": "ANY"
+              },
+              "action": null,
+              "enabled": true,
+              "transformedTableLocal": {
+                "newTableName": "salesorder",
+                "filter": null,
+                "transformedColumnsLocal": []
+              },
+              "internalRule": false,
+              "id": "salesorder_1-7nhm",
+              "name": "salesorder_1",
+              "description": "",
+              "version": "1",
+              "tags": null
+            }
+          ]
+        }
+      ],
+      "entityRelationship": [],
+      "schedulings": [],
+      "dataFlows": null
+    },
+    {
+      "app": {
+        "type": "STORAGE",
+        "subType": null,
+        "id": "manel_pos_london_landing_storage-f0-w",
+        "name": "Manel_POS_London_Storage",
+        "description": "",
+        "version": "1",
+        "tags": null
+      },
+      "settings": {
+        "fullLoadOnly": false,
+        "landingAppSettings": null,
+        "transformAppSettings": null,
+        "storageAppSettings": {
+          "ddlHandlingPolicy": {
+            "addColumn": "APPLY_TO_TARGET",
+            "changeColumnType": "IGNORE",
+            "renameTable": "SUSPEND_TABLE",
+            "renameColumn": "SUSPEND_TABLE",
+            "dropTable": "IGNORE",
+            "dropColumn": "IGNORE",
+            "truncateTable": "IGNORE",
+            "createTable": "APPLY_TO_TARGET"
+          },
+          "artifactsLocation": {
+            "internalSchema": "manel_pos_london_storage__internal",
+            "dataAssetSchema": "manel_pos_london_storage",
+            "database": "${storage}"
+          },
+          "artifactsInfo": {
+            "liveViews": {
+              "enabled": true,
+              "transactionallyConsistent": false,
+              "currentSuffix": "__live",
+              "historySuffix": "__live_history"
+            },
+            "headerColumnsPrefix": "hdr__",
+            "history": {
+              "enabled": true,
+              "historyViewsSuffix": "__history",
+              "fromDateColumnName": "hdr__from_timestamp",
+              "toDateColumnName": "hdr__to_timestamp",
+              "priorTablesSuffix": "__prior"
+            },
+            "changeTables": {
+              "enabled": true,
+              "tablesSuffix": "__ct",
+              "viewsSuffix": "__changes"
+            },
+            "standardViewsWithHeaders": {
+              "enabled": true,
+              "suffix": "__whdr"
+            },
+            "current": {
+              "standardViewsSuffix": "",
+              "currentTablesSuffix": "__current"
+            },
+            "materialized": true,
+            "reloadType": "COMPARE_AND_APPLY_WITH_DELETED_ROWS",
+            "prefixForAllTablesAndViews": ""
+          },
+          "dataAppRuntime": {
+            "tableUpdateInterval": 15,
+            "tableUpdateConcurrency": 10,
+            "maxNumberOfRecords": 0,
+            "workloadExecutionEngine": {
+              "engineType": "DEFAULT",
+              "name": "${storage}"
+            }
+          },
+          "catalogSettings": {
+            "publish": false,
+            "tags": []
+          },
+          "tableTypeSettings": {
+            "tableType": "REGULAR",
+            "icebergSettings": {
+              "snowflakeExternalVolume": "",
+              "folderLocationType": "DATA_ASSET_NAME",
+              "specificFolder": "",
+              "enableOpenCatalogSync": false,
+              "snowflakeOpenCatalog": ""
+            }
+          }
+        },
+        "datamartAppSettings": null,
+        "qvdStorageAppSettings": null,
+        "registeredAppSettings": null,
+        "replicationAppSettings": null,
+        "consolidationAppSettings": null,
+        "publishingAppSettings": null,
+        "distributionAppSettings": null,
+        "lakeLandingAppSettings": null,
+        "docPublishAppSettings": null,
+        "filePublishAppSettings": null,
+        "fileLandingAppSettings": null,
+        "isDummySettings": null
+      },
+      "sourceSelection": {
+        "dataEntitiesSelection": {
+          "sourceConnectionId": null,
+          "includePatterns": [
+            {
+              "tablePattern": "%",
+              "schemaPattern": "%",
+              "database": null,
+              "entityType": "TABLE",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "manel_pos_london_landing_landing-f0-v"
+            }
+          ],
+          "excludePatterns": [],
+          "dataEntities": []
+        }
+      },
+      "dataEntities": [
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "orderdetail_1",
+              "schema": null,
+              "database": null,
+              "name": "orderdetail",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "manel_pos_london_landing_landing-f0-v"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "orderdetail-f0-y",
+          "name": "orderdetail",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "salesorder_1",
+              "schema": null,
+              "database": null,
+              "name": "salesorder",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "manel_pos_london_landing_landing-f0-v"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "salesorder-f0-z",
+          "name": "salesorder",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "modelBasedMappings": {},
+      "cachedDataEntities": [],
+      "rulesets": [
+        {
+          "ruleset": {
+            "globalRules": [
+              "rule_dataset_upper-7m_w",
+              "rule-f0-6"
+            ],
+            "tableRules": [
+              "orderdetail-febr"
+            ],
+            "enabled": true,
+            "id": "outbound",
+            "name": "outbound",
+            "description": "",
+            "version": "1",
+            "tags": null
+          },
+          "globalRules": [
+            {
+              "actionType": "RENAME_TABLE",
+              "scopeType": "NONE",
+              "scope": {
+                "whereOwnerName": "%",
+                "whereTableName": "%",
+                "whereColumnName": "%",
+                "whereDatatype": "UNSPECIFIED",
+                "whereExpression": null,
+                "whereColumnKeyAttribute": "ANY",
+                "whereColumnNullability": "ANY"
+              },
+              "action": {
+                "renameType": "TO_UPPER",
+                "expression": null,
+                "value": "",
+                "oldValue": null,
+                "applyColumnDatatype": false,
+                "column": {
+                  "name": null,
+                  "ordinal": 0,
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0,
+                  "datatype": {
+                    "type": "STRING",
+                    "length": 50,
+                    "precision": 0,
+                    "scale": 0,
+                    "originalType": null,
+                    "originalTypeFull": ""
+                  },
+                  "expression": null,
+                  "id": null,
+                  "flags": "NONE",
+                  "properties": null
+                },
+                "valueMapping": null
+              },
+              "enabled": true,
+              "transformedTableLocal": null,
+              "internalRule": false,
+              "id": "rule_dataset_upper-7m_w",
+              "name": "Rule_DataSet_Upper",
+              "description": "",
+              "version": "1",
+              "tags": null
+            },
+            {
+              "actionType": "RENAME_COLUMN",
+              "scopeType": "COLUMN",
+              "scope": {
+                "whereOwnerName": "%",
+                "whereTableName": "%",
+                "whereColumnName": "%",
+                "whereDatatype": "UNSPECIFIED",
+                "whereExpression": null,
+                "whereColumnKeyAttribute": "ANY",
+                "whereColumnNullability": "ANY"
+              },
+              "action": {
+                "renameType": "TO_UPPER",
+                "expression": null,
+                "value": "",
+                "oldValue": null,
+                "applyColumnDatatype": false,
+                "column": {
+                  "name": null,
+                  "ordinal": 0,
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0,
+                  "datatype": {
+                    "type": "STRING",
+                    "length": 50,
+                    "precision": 0,
+                    "scale": 0,
+                    "originalType": null,
+                    "originalTypeFull": ""
+                  },
+                  "expression": null,
+                  "id": null,
+                  "flags": "NONE",
+                  "properties": null
+                },
+                "valueMapping": null
+              },
+              "enabled": true,
+              "transformedTableLocal": null,
+              "internalRule": false,
+              "id": "rule-f0-6",
+              "name": "Rule_Column_Upper",
+              "description": "",
+              "version": "1",
+              "tags": null
+            }
+          ],
+          "tableRules": [
+            {
+              "entityId": "orderdetail-f0-y",
+              "actionType": "LOCAL_MANIPULATION",
+              "scopeType": "COLUMN",
+              "scope": {
+                "whereOwnerName": "%",
+                "whereTableName": "orderdetail",
+                "whereColumnName": "%",
+                "whereDatatype": "UNSPECIFIED",
+                "whereExpression": null,
+                "whereColumnKeyAttribute": "ANY",
+                "whereColumnNullability": "ANY"
+              },
+              "action": null,
+              "enabled": true,
+              "transformedTableLocal": {
+                "newTableName": null,
+                "filter": null,
+                "transformedColumnsLocal": [
+                  {
+                    "action": "ADD",
+                    "columnName": "AMOUNT",
+                    "newColumnName": null,
+                    "newDataType": {
+                      "type": "NUMERIC",
+                      "length": 0,
+                      "precision": 10,
+                      "scale": 2,
+                      "originalType": null,
+                      "originalTypeFull": ""
+                    },
+                    "expression": {
+                      "expressionStatement": "(${quantity}*${unitPrice})*(1-${discount})",
+                      "alias": [
+                        {
+                          "name": "quantity",
+                          "value": "qty"
+                        },
+                        {
+                          "name": "unitPrice",
+                          "value": "unitprice"
+                        },
+                        {
+                          "name": "discount",
+                          "value": "discount"
+                        }
+                      ]
+                    },
+                    "primaryKeyOrdinal": 0,
+                    "ordinal": 0,
+                    "nullable": true,
+                    "addedColumnId": "00702e8c-950b-428c-b90b-11e6261efb7f",
+                    "markAsMetadata": false
+                  }
+                ]
+              },
+              "internalRule": false,
+              "id": "orderdetail-febr",
+              "name": "orderdetail",
+              "description": "",
+              "version": "1",
+              "tags": null
+            }
+          ]
+        }
+      ],
+      "entityRelationship": [],
+      "schedulings": [
+        {
+          "enabled": true,
+          "schedulingType": "TIME_BASED",
+          "timeBasedScheduling": {
+            "schedule": [
+              "RRULE:FREQ=HOURLY;INTERVAL=2;BYMINUTE=16;BYSECOND=0"
+            ],
+            "startDateTime": "2025-02-06T11:16:00.000Z",
+            "endDateTime": "0001-01-01T00:00:00.000Z",
+            "timezone": "Etc/UTC"
+          },
+          "eventBasedScheduling": {
+            "eventSchedulingType": "ANY_INPUT_TASK",
+            "triggerApps": []
+          },
+          "id": "schedule-f0-x",
+          "name": "Schedule",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "dataFlows": null
+    },
+    {
+      "app": {
+        "type": "LANDING_SAAS_MANAGED",
+        "subType": null,
+        "id": "manel_pos_newyork_landing-vzpx",
+        "name": "Manel_POS_NewYork_Landing",
+        "description": "",
+        "version": "1",
+        "tags": null
+      },
+      "settings": {
+        "fullLoadOnly": false,
+        "landingAppSettings": {
+          "artifactsInfo": {
+            "liveViews": {
+              "enabled": true,
+              "transactionallyConsistent": false,
+              "currentSuffix": "__live",
+              "historySuffix": "__live_history"
+            },
+            "headerColumnsPrefix": "hdr__",
+            "history": {
+              "enabled": false,
+              "historyViewsSuffix": "__history",
+              "fromDateColumnName": "hdr__from_timestamp",
+              "toDateColumnName": "hdr__to_timestamp",
+              "priorTablesSuffix": "__prior"
+            },
+            "changeTables": {
+              "enabled": true,
+              "tablesSuffix": "__ct",
+              "viewsSuffix": "__changes"
+            },
+            "standardViewsWithHeaders": {
+              "enabled": true,
+              "suffix": "__whdr"
+            },
+            "current": {
+              "standardViewsSuffix": "",
+              "currentTablesSuffix": "__current"
+            },
+            "materialized": false,
+            "reloadType": "COMPARE_AND_APPLY_WITH_DELETED_ROWS",
+            "prefixForAllTablesAndViews": ""
+          },
+          "errorHandling": {
+            "applyConflicts": {
+              "insertPolicy": "ERROR_POLICY_LOG_ERROR",
+              "updatePolicy": "ERROR_POLICY_LOG_ERROR",
+              "deletePolicy": "ERROR_POLICY_IGNORE_RECORD",
+              "escalationCount": {
+                "isChecked": false,
+                "value": 50
+              },
+              "escalationPolicy": "ERROR_POLICY_LOG_ERROR"
+            },
+            "data": {
+              "truncationPolicyErrors": "ERROR_POLICY_IGNORE_RECORD",
+              "policyErrors": "ERROR_POLICY_IGNORE_RECORD",
+              "escalationPolicy": "ERROR_POLICY_SUSPEND_TABLE",
+              "escalationCount": {
+                "isChecked": false,
+                "value": 50
+              }
+            },
+            "tableError": {
+              "policyErrors": "ERROR_POLICY_SUSPEND_TABLE",
+              "escalationPolicy": "ERROR_POLICY_STOP_TASK",
+              "escalationCount": {
+                "isChecked": false,
+                "value": 50
+              }
+            },
+            "environmental": {
+              "interval": 5,
+              "maximumRetryCount": {
+                "isChecked": true,
+                "value": -1
+              },
+              "maximumRetrySettings": {
+                "maximumRetry": "ALWAYS",
+                "count": 0
+              },
+              "maximumRetryInterval": {
+                "isChecked": true,
+                "value": 1800
+              }
+            }
+          },
+          "replicateTaskId": null,
+          "isReplicateLanding": true,
+          "landingDwSettings": {
+            "landingArtifactsLocation": {
+              "dataAssetSchema": "manel_pos_newyork_landing",
+              "database": "${landing}"
+            }
+          },
+          "landingStorageSettings": {
+            "folderLocationType": "DATA_ASSET_NAME",
+            "specificFolder": ""
+          },
+          "landingAppRuntime": {
+            "tableLoadInParallel": 5,
+            "changeProcessingInterval": 60,
+            "sourceCdcFetchIntervalMinutes": 60,
+            "initialLoadMode": "useCache",
+            "workloadExecutionEngine": {
+              "engineType": "DEFAULT",
+              "name": "${landing}"
+            }
+          },
+          "maximumLobSize": 8,
+          "includeLobColumns": true,
+          "landingType": "REPLICATE",
+          "proxySettings": {
+            "proxyOdbc": false,
+            "proxyStorage": false
+          },
+          "fileAttributes": {
+            "general": {
+              "maxFileSize": 100,
+              "useCompression": true
+            }
+          },
+          "changeProcessingTuning": {
+            "batchApply": {
+              "applyIntervalMin": 1,
+              "applyIntervalMax": 30,
+              "forceApplyMemory": 500
+            },
+            "batchSplitSize": {
+              "isChecked": false,
+              "value": 10000
+            },
+            "transactionTuning": {
+              "cacheSize": 50,
+              "transactionTotalMemory": {
+                "isChecked": true,
+                "value": 1024
+              },
+              "transactionDuration": {
+                "isChecked": false,
+                "value": 60
+              },
+              "offloadTransactions": {
+                "storeRecoveryData": false,
+                "applyUsingMerge": false,
+                "optimizeInserts": false,
+                "deleteAndInsertOnPkUpdate": true
+              }
+            },
+            "transactionalApply": {
+              "transactionMinChanges": 1000,
+              "batchTransactionsMaxTime": 1
+            }
+          },
+          "applyChangesOptions": {
+            "changeProcessingTuning": {
+              "batchApplyEnabled": true,
+              "applyChangesMultipleTablesConcurrently": false,
+              "maxTables": 5
+            }
+          },
+          "metadata": {
+            "lobHandling": {
+              "lobChunkSize": 64,
+              "optimizeLobSizeEnabled": false,
+              "optimizeLobSize": 1,
+              "optimizeLobSizeHandlingUnit": "KILOBYTE",
+              "lobColumns": "REPLICATE_LIMITED_LOB_COLUMN"
+            },
+            "controlTableSelection": [
+              {
+                "tableId": "APPLY_EXCEPTIONS",
+                "targetName": "attrep_apply_exceptions",
+                "isChecked": false
+              },
+              {
+                "tableId": "REPLICATION_STATUS",
+                "targetName": "attrep_status",
+                "isChecked": false
+              },
+              {
+                "tableId": "SUSPENDED_TABLES",
+                "targetName": "attrep_suspended_tables",
+                "isChecked": false
+              },
+              {
+                "tableId": "REPLICATION_HISTORY",
+                "targetName": "attrep_history",
+                "isChecked": false
+              },
+              {
+                "tableId": "CHANGE_DATA_PARTITIONS",
+                "targetName": "attrep_cdc_partitions",
+                "isChecked": false
+              },
+              {
+                "tableId": "DDL_HISTORY",
+                "targetName": "attrep_ddl_history",
+                "isChecked": false
+              }
+            ]
+          },
+          "characterSubstitution": {
+            "sourceTargetCharacters": [],
+            "validationSet": {
+              "characterName": null,
+              "substituteCharacter": 0
+            }
+          },
+          "moreOptions": [],
+          "storeChangesOptions": {
+            "changeTableHeaderColumn": [
+              {
+                "id": "CHANGE_SEQUENCE",
+                "headerColumn": "change_seq",
+                "isChecked": true
+              },
+              {
+                "id": "CHANGE_OPERATION",
+                "headerColumn": "change_oper",
+                "isChecked": true
+              },
+              {
+                "id": "CHANGE_MASK",
+                "headerColumn": "change_mask",
+                "isChecked": true
+              },
+              {
+                "id": "STREAM_POSITION",
+                "headerColumn": "stream_position",
+                "isChecked": false
+              },
+              {
+                "id": "OPERATION",
+                "headerColumn": "operation",
+                "isChecked": true
+              },
+              {
+                "id": "TRANSACTION_ID",
+                "headerColumn": "transaction_id",
+                "isChecked": false
+              },
+              {
+                "id": "TIMESTAMP",
+                "headerColumn": "timestamp",
+                "isChecked": true
+              },
+              {
+                "id": "PARTITION_NAME",
+                "headerColumn": "partition_name",
+                "isChecked": false
+              }
+            ]
+          },
+          "fullLoadOptions": {
+            "afterFullLoadCompleted": {
+              "createKeyOrUniqueIndex": false
+            },
+            "fullLoadOptionsTuning": {
+              "maxTables": 5,
+              "consistencyTimeout": 600,
+              "commitRate": 10000
+            }
+          },
+          "ddlHandlingPolicy": {
+            "addColumn": "APPLY_TO_TARGET",
+            "changeColumnType": "IGNORE",
+            "renameTable": "SUSPEND_TABLE",
+            "renameColumn": "SUSPEND_TABLE",
+            "dropTable": "IGNORE",
+            "dropColumn": "IGNORE",
+            "truncateTable": "IGNORE",
+            "createTable": "APPLY_TO_TARGET"
+          }
+        },
+        "transformAppSettings": null,
+        "storageAppSettings": null,
+        "datamartAppSettings": null,
+        "qvdStorageAppSettings": null,
+        "registeredAppSettings": null,
+        "replicationAppSettings": null,
+        "consolidationAppSettings": null,
+        "publishingAppSettings": null,
+        "distributionAppSettings": null,
+        "lakeLandingAppSettings": null,
+        "docPublishAppSettings": null,
+        "filePublishAppSettings": null,
+        "fileLandingAppSettings": null,
+        "isDummySettings": null
+      },
+      "sourceSelection": {
+        "dataEntitiesSelection": {
+          "sourceConnectionId": "${manel_pos_newyork_landing-vzpx.connection}",
+          "includePatterns": [],
+          "excludePatterns": [],
+          "dataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$pos_newyork_orderdetail",
+              "schema": "pos_newyork",
+              "database": null,
+              "name": "orderdetail",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "manel_pos_newyork_landing-vzpx"
+            },
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$pos_newyork_salesorder",
+              "schema": "pos_newyork",
+              "database": null,
+              "name": "salesorder",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "manel_pos_newyork_landing-vzpx"
+            }
+          ]
+        }
+      },
+      "dataEntities": [
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$pos_newyork_orderdetail",
+              "schema": "pos_newyork",
+              "database": null,
+              "name": "orderdetail",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "manel_pos_newyork_landing-vzpx"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": {
+            "loadOrder": "NORMAL",
+            "loadParallelSettings": {
+              "loadParallel": "NONE",
+              "segmentationSettings": null,
+              "partitionsSettings": null
+            }
+          },
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "orderdetail_1",
+          "name": "orderdetail_1",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$pos_newyork_salesorder",
+              "schema": "pos_newyork",
+              "database": null,
+              "name": "salesorder",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "manel_pos_newyork_landing-vzpx"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": {
+            "loadOrder": "NORMAL",
+            "loadParallelSettings": {
+              "loadParallel": "NONE",
+              "segmentationSettings": null,
+              "partitionsSettings": null
+            }
+          },
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "salesorder_1",
+          "name": "salesorder_1",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "modelBasedMappings": {},
+      "cachedDataEntities": [
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "orderdetail",
+            "dbSchema": "pos_newyork",
+            "dbName": "postgres",
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "$replicate$pos_newyork_orderdetail",
+          "name": "pos_newyork_orderdetail",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "salesorder",
+            "dbSchema": "pos_newyork",
+            "dbName": null,
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "$replicate$pos_newyork_salesorder",
+          "name": "pos_newyork_salesorder",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "rulesets": [
+        {
+          "ruleset": {
+            "globalRules": null,
+            "tableRules": [
+              "orderdetail_1-hdjw",
+              "salesorder_1-7nhn"
+            ],
+            "enabled": true,
+            "id": "outbound",
+            "name": "outbound",
+            "description": "",
+            "version": "1",
+            "tags": null
+          },
+          "globalRules": [],
+          "tableRules": [
+            {
+              "entityId": "orderdetail_1",
+              "actionType": "LOCAL_MANIPULATION",
+              "scopeType": "COLUMN",
+              "scope": {
+                "whereOwnerName": "%",
+                "whereTableName": "orderdetail_1",
+                "whereColumnName": "%",
+                "whereDatatype": "UNSPECIFIED",
+                "whereExpression": null,
+                "whereColumnKeyAttribute": "ANY",
+                "whereColumnNullability": "ANY"
+              },
+              "action": null,
+              "enabled": true,
+              "transformedTableLocal": {
+                "newTableName": "orderdetail",
+                "filter": null,
+                "transformedColumnsLocal": []
+              },
+              "internalRule": false,
+              "id": "orderdetail_1-hdjw",
+              "name": "orderdetail_1",
+              "description": "",
+              "version": "1",
+              "tags": null
+            },
+            {
+              "entityId": "salesorder_1",
+              "actionType": "LOCAL_MANIPULATION",
+              "scopeType": "COLUMN",
+              "scope": {
+                "whereOwnerName": "%",
+                "whereTableName": "salesorder_1",
+                "whereColumnName": "%",
+                "whereDatatype": "UNSPECIFIED",
+                "whereExpression": null,
+                "whereColumnKeyAttribute": "ANY",
+                "whereColumnNullability": "ANY"
+              },
+              "action": null,
+              "enabled": true,
+              "transformedTableLocal": {
+                "newTableName": "salesorder",
+                "filter": null,
+                "transformedColumnsLocal": []
+              },
+              "internalRule": false,
+              "id": "salesorder_1-7nhn",
+              "name": "salesorder_1",
+              "description": "",
+              "version": "1",
+              "tags": null
+            }
+          ]
+        }
+      ],
+      "entityRelationship": [],
+      "schedulings": [],
+      "dataFlows": null
+    },
+    {
+      "app": {
+        "type": "STORAGE",
+        "subType": null,
+        "id": "manel_pos_newyork_storage-vzpy",
+        "name": "Manel_POS_NewYork_Storage",
+        "description": "",
+        "version": "1",
+        "tags": null
+      },
+      "settings": {
+        "fullLoadOnly": false,
+        "landingAppSettings": null,
+        "transformAppSettings": null,
+        "storageAppSettings": {
+          "ddlHandlingPolicy": {
+            "addColumn": "APPLY_TO_TARGET",
+            "changeColumnType": "IGNORE",
+            "renameTable": "SUSPEND_TABLE",
+            "renameColumn": "SUSPEND_TABLE",
+            "dropTable": "IGNORE",
+            "dropColumn": "IGNORE",
+            "truncateTable": "IGNORE",
+            "createTable": "APPLY_TO_TARGET"
+          },
+          "artifactsLocation": {
+            "internalSchema": "manel_pos_newyork_storage__internal",
+            "dataAssetSchema": "manel_pos_newyork_storage",
+            "database": "${storage}"
+          },
+          "artifactsInfo": {
+            "liveViews": {
+              "enabled": true,
+              "transactionallyConsistent": false,
+              "currentSuffix": "__live",
+              "historySuffix": "__live_history"
+            },
+            "headerColumnsPrefix": "hdr__",
+            "history": {
+              "enabled": true,
+              "historyViewsSuffix": "__history",
+              "fromDateColumnName": "hdr__from_timestamp",
+              "toDateColumnName": "hdr__to_timestamp",
+              "priorTablesSuffix": "__prior"
+            },
+            "changeTables": {
+              "enabled": true,
+              "tablesSuffix": "__ct",
+              "viewsSuffix": "__changes"
+            },
+            "standardViewsWithHeaders": {
+              "enabled": true,
+              "suffix": "__whdr"
+            },
+            "current": {
+              "standardViewsSuffix": "",
+              "currentTablesSuffix": "__current"
+            },
+            "materialized": true,
+            "reloadType": "COMPARE_AND_APPLY_WITH_DELETED_ROWS",
+            "prefixForAllTablesAndViews": ""
+          },
+          "dataAppRuntime": {
+            "tableUpdateInterval": 15,
+            "tableUpdateConcurrency": 10,
+            "maxNumberOfRecords": 0,
+            "workloadExecutionEngine": {
+              "engineType": "DEFAULT",
+              "name": "${storage}"
+            }
+          },
+          "catalogSettings": {
+            "publish": false,
+            "tags": []
+          },
+          "tableTypeSettings": {
+            "tableType": "REGULAR",
+            "icebergSettings": {
+              "snowflakeExternalVolume": "",
+              "folderLocationType": "DATA_ASSET_NAME",
+              "specificFolder": "",
+              "enableOpenCatalogSync": false,
+              "snowflakeOpenCatalog": ""
+            }
+          }
+        },
+        "datamartAppSettings": null,
+        "qvdStorageAppSettings": null,
+        "registeredAppSettings": null,
+        "replicationAppSettings": null,
+        "consolidationAppSettings": null,
+        "publishingAppSettings": null,
+        "distributionAppSettings": null,
+        "lakeLandingAppSettings": null,
+        "docPublishAppSettings": null,
+        "filePublishAppSettings": null,
+        "fileLandingAppSettings": null,
+        "isDummySettings": null
+      },
+      "sourceSelection": {
+        "dataEntitiesSelection": {
+          "sourceConnectionId": null,
+          "includePatterns": [
+            {
+              "tablePattern": "%",
+              "schemaPattern": "%",
+              "database": null,
+              "entityType": "TABLE",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "manel_pos_newyork_landing-vzpx"
+            }
+          ],
+          "excludePatterns": [],
+          "dataEntities": []
+        }
+      },
+      "dataEntities": [
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "orderdetail_1",
+              "schema": null,
+              "database": null,
+              "name": "orderdetail_1",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "manel_pos_newyork_landing-vzpx"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "orderdetail_1-7nhl",
+          "name": "orderdetail_1",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "salesorder_1",
+              "schema": null,
+              "database": null,
+              "name": "salesorder_1",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "manel_pos_newyork_landing-vzpx"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "salesorder_1-7nhm",
+          "name": "salesorder_1",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "modelBasedMappings": {},
+      "cachedDataEntities": [],
+      "rulesets": [
+        {
+          "ruleset": {
+            "globalRules": [
+              "rule-fesv",
+              "rule_column_upper-pjcl"
+            ],
+            "tableRules": [
+              "orderdetail_1-hdjt",
+              "salesorder_1-pjks"
+            ],
+            "enabled": true,
+            "id": "outbound",
+            "name": "outbound",
+            "description": "",
+            "version": "1",
+            "tags": null
+          },
+          "globalRules": [
+            {
+              "actionType": "RENAME_TABLE",
+              "scopeType": "NONE",
+              "scope": {
+                "whereOwnerName": "%",
+                "whereTableName": "%",
+                "whereColumnName": "%",
+                "whereDatatype": "UNSPECIFIED",
+                "whereExpression": null,
+                "whereColumnKeyAttribute": "ANY",
+                "whereColumnNullability": "ANY"
+              },
+              "action": {
+                "renameType": "TO_UPPER",
+                "expression": null,
+                "value": "",
+                "oldValue": null,
+                "applyColumnDatatype": false,
+                "column": {
+                  "name": null,
+                  "ordinal": 0,
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0,
+                  "datatype": {
+                    "type": "STRING",
+                    "length": 50,
+                    "precision": 0,
+                    "scale": 0,
+                    "originalType": null,
+                    "originalTypeFull": ""
+                  },
+                  "expression": null,
+                  "id": null,
+                  "flags": "NONE",
+                  "properties": null
+                },
+                "valueMapping": null
+              },
+              "enabled": true,
+              "transformedTableLocal": null,
+              "internalRule": false,
+              "id": "rule-fesv",
+              "name": "Rule_DataSet_Upper",
+              "description": "",
+              "version": "1",
+              "tags": null
+            },
+            {
+              "actionType": "RENAME_COLUMN",
+              "scopeType": "COLUMN",
+              "scope": {
+                "whereOwnerName": "%",
+                "whereTableName": "%",
+                "whereColumnName": "%",
+                "whereDatatype": "UNSPECIFIED",
+                "whereExpression": null,
+                "whereColumnKeyAttribute": "ANY",
+                "whereColumnNullability": "ANY"
+              },
+              "action": {
+                "renameType": "TO_UPPER",
+                "expression": null,
+                "value": "",
+                "oldValue": null,
+                "applyColumnDatatype": false,
+                "column": {
+                  "name": null,
+                  "ordinal": 0,
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0,
+                  "datatype": {
+                    "type": "STRING",
+                    "length": 50,
+                    "precision": 0,
+                    "scale": 0,
+                    "originalType": null,
+                    "originalTypeFull": ""
+                  },
+                  "expression": null,
+                  "id": null,
+                  "flags": "NONE",
+                  "properties": null
+                },
+                "valueMapping": null
+              },
+              "enabled": true,
+              "transformedTableLocal": null,
+              "internalRule": false,
+              "id": "rule_column_upper-pjcl",
+              "name": "Rule_Column_Upper",
+              "description": "",
+              "version": "1",
+              "tags": null
+            }
+          ],
+          "tableRules": [
+            {
+              "entityId": "orderdetail_1-7nhl",
+              "actionType": "LOCAL_MANIPULATION",
+              "scopeType": "COLUMN",
+              "scope": {
+                "whereOwnerName": "%",
+                "whereTableName": "orderdetail_1",
+                "whereColumnName": "%",
+                "whereDatatype": "UNSPECIFIED",
+                "whereExpression": null,
+                "whereColumnKeyAttribute": "ANY",
+                "whereColumnNullability": "ANY"
+              },
+              "action": null,
+              "enabled": true,
+              "transformedTableLocal": {
+                "newTableName": "ORDERDETAIL",
+                "filter": null,
+                "transformedColumnsLocal": [
+                  {
+                    "action": "ADD",
+                    "columnName": "AMOUNT",
+                    "newColumnName": null,
+                    "newDataType": {
+                      "type": "NUMERIC",
+                      "length": 0,
+                      "precision": 10,
+                      "scale": 2,
+                      "originalType": null,
+                      "originalTypeFull": ""
+                    },
+                    "expression": {
+                      "expressionStatement": "(${quantity}*${unitPrice})*(1-${discount})",
+                      "alias": [
+                        {
+                          "name": "quantity",
+                          "value": "qty"
+                        },
+                        {
+                          "name": "unitPrice",
+                          "value": "unitprice"
+                        },
+                        {
+                          "name": "discount",
+                          "value": "discount"
+                        }
+                      ]
+                    },
+                    "primaryKeyOrdinal": 0,
+                    "ordinal": 0,
+                    "nullable": true,
+                    "addedColumnId": "fda4eae7-5494-469a-afd0-a16cc3cc0ca6",
+                    "markAsMetadata": false
+                  }
+                ]
+              },
+              "internalRule": false,
+              "id": "orderdetail_1-hdjt",
+              "name": "orderdetail_1",
+              "description": "",
+              "version": "1",
+              "tags": null
+            },
+            {
+              "entityId": "salesorder_1-7nhm",
+              "actionType": "LOCAL_MANIPULATION",
+              "scopeType": "COLUMN",
+              "scope": {
+                "whereOwnerName": "%",
+                "whereTableName": "salesorder_1",
+                "whereColumnName": "%",
+                "whereDatatype": "UNSPECIFIED",
+                "whereExpression": null,
+                "whereColumnKeyAttribute": "ANY",
+                "whereColumnNullability": "ANY"
+              },
+              "action": null,
+              "enabled": true,
+              "transformedTableLocal": {
+                "newTableName": "SALESORDER",
+                "filter": null,
+                "transformedColumnsLocal": []
+              },
+              "internalRule": false,
+              "id": "salesorder_1-pjks",
+              "name": "salesorder_1",
+              "description": "",
+              "version": "1",
+              "tags": null
+            }
+          ]
+        }
+      ],
+      "entityRelationship": [],
+      "schedulings": [
+        {
+          "enabled": true,
+          "schedulingType": "TIME_BASED",
+          "timeBasedScheduling": {
+            "schedule": [
+              "RRULE:FREQ=HOURLY;INTERVAL=2;BYMINUTE=19;BYSECOND=0"
+            ],
+            "startDateTime": "2025-02-06T11:19:00.000Z",
+            "endDateTime": "0001-01-01T00:00:00.000Z",
+            "timezone": "Etc/UTC"
+          },
+          "eventBasedScheduling": {
+            "eventSchedulingType": "ANY_INPUT_TASK",
+            "triggerApps": []
+          },
+          "id": "schedule-vzpz",
+          "name": "Schedule",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "dataFlows": null
+    },
+    {
+      "app": {
+        "type": "LANDING_SAAS_MANAGED",
+        "subType": null,
+        "id": "manel_pos_londong_landing-7m_z",
+        "name": "Manel_POS_Paris_Landing",
+        "description": "",
+        "version": "1",
+        "tags": null
+      },
+      "settings": {
+        "fullLoadOnly": false,
+        "landingAppSettings": {
+          "artifactsInfo": {
+            "liveViews": {
+              "enabled": true,
+              "transactionallyConsistent": false,
+              "currentSuffix": "__live",
+              "historySuffix": "__live_history"
+            },
+            "headerColumnsPrefix": "hdr__",
+            "history": {
+              "enabled": false,
+              "historyViewsSuffix": "__history",
+              "fromDateColumnName": "hdr__from_timestamp",
+              "toDateColumnName": "hdr__to_timestamp",
+              "priorTablesSuffix": "__prior"
+            },
+            "changeTables": {
+              "enabled": true,
+              "tablesSuffix": "__ct",
+              "viewsSuffix": "__changes"
+            },
+            "standardViewsWithHeaders": {
+              "enabled": true,
+              "suffix": "__whdr"
+            },
+            "current": {
+              "standardViewsSuffix": "",
+              "currentTablesSuffix": "__current"
+            },
+            "materialized": false,
+            "reloadType": "COMPARE_AND_APPLY_WITH_DELETED_ROWS",
+            "prefixForAllTablesAndViews": ""
+          },
+          "errorHandling": {
+            "applyConflicts": {
+              "insertPolicy": "ERROR_POLICY_LOG_ERROR",
+              "updatePolicy": "ERROR_POLICY_LOG_ERROR",
+              "deletePolicy": "ERROR_POLICY_IGNORE_RECORD",
+              "escalationCount": {
+                "isChecked": false,
+                "value": 50
+              },
+              "escalationPolicy": "ERROR_POLICY_LOG_ERROR"
+            },
+            "data": {
+              "truncationPolicyErrors": "ERROR_POLICY_IGNORE_RECORD",
+              "policyErrors": "ERROR_POLICY_IGNORE_RECORD",
+              "escalationPolicy": "ERROR_POLICY_SUSPEND_TABLE",
+              "escalationCount": {
+                "isChecked": false,
+                "value": 50
+              }
+            },
+            "tableError": {
+              "policyErrors": "ERROR_POLICY_SUSPEND_TABLE",
+              "escalationPolicy": "ERROR_POLICY_STOP_TASK",
+              "escalationCount": {
+                "isChecked": false,
+                "value": 50
+              }
+            },
+            "environmental": {
+              "interval": 5,
+              "maximumRetryCount": {
+                "isChecked": true,
+                "value": -1
+              },
+              "maximumRetrySettings": {
+                "maximumRetry": "ALWAYS",
+                "count": 0
+              },
+              "maximumRetryInterval": {
+                "isChecked": true,
+                "value": 1800
+              }
+            }
+          },
+          "replicateTaskId": null,
+          "isReplicateLanding": true,
+          "landingDwSettings": {
+            "landingArtifactsLocation": {
+              "dataAssetSchema": "manel_pos_paris_landing",
+              "database": "${landing}"
+            }
+          },
+          "landingStorageSettings": {
+            "folderLocationType": "DATA_ASSET_NAME",
+            "specificFolder": ""
+          },
+          "landingAppRuntime": {
+            "tableLoadInParallel": 5,
+            "changeProcessingInterval": 60,
+            "sourceCdcFetchIntervalMinutes": 60,
+            "initialLoadMode": "useCache",
+            "workloadExecutionEngine": {
+              "engineType": "DEFAULT",
+              "name": "${landing}"
+            }
+          },
+          "maximumLobSize": 8,
+          "includeLobColumns": true,
+          "landingType": "REPLICATE",
+          "proxySettings": {
+            "proxyOdbc": false,
+            "proxyStorage": false
+          },
+          "fileAttributes": {
+            "general": {
+              "maxFileSize": 100,
+              "useCompression": true
+            }
+          },
+          "changeProcessingTuning": {
+            "batchApply": {
+              "applyIntervalMin": 1,
+              "applyIntervalMax": 30,
+              "forceApplyMemory": 500
+            },
+            "batchSplitSize": {
+              "isChecked": false,
+              "value": 10000
+            },
+            "transactionTuning": {
+              "cacheSize": 50,
+              "transactionTotalMemory": {
+                "isChecked": true,
+                "value": 1024
+              },
+              "transactionDuration": {
+                "isChecked": false,
+                "value": 60
+              },
+              "offloadTransactions": {
+                "storeRecoveryData": false,
+                "applyUsingMerge": false,
+                "optimizeInserts": false,
+                "deleteAndInsertOnPkUpdate": true
+              }
+            },
+            "transactionalApply": {
+              "transactionMinChanges": 1000,
+              "batchTransactionsMaxTime": 1
+            }
+          },
+          "applyChangesOptions": {
+            "changeProcessingTuning": {
+              "batchApplyEnabled": true,
+              "applyChangesMultipleTablesConcurrently": false,
+              "maxTables": 5
+            }
+          },
+          "metadata": {
+            "lobHandling": {
+              "lobChunkSize": 64,
+              "optimizeLobSizeEnabled": false,
+              "optimizeLobSize": 1,
+              "optimizeLobSizeHandlingUnit": "KILOBYTE",
+              "lobColumns": "REPLICATE_LIMITED_LOB_COLUMN"
+            },
+            "controlTableSelection": [
+              {
+                "tableId": "APPLY_EXCEPTIONS",
+                "targetName": "attrep_apply_exceptions",
+                "isChecked": false
+              },
+              {
+                "tableId": "REPLICATION_STATUS",
+                "targetName": "attrep_status",
+                "isChecked": false
+              },
+              {
+                "tableId": "SUSPENDED_TABLES",
+                "targetName": "attrep_suspended_tables",
+                "isChecked": false
+              },
+              {
+                "tableId": "REPLICATION_HISTORY",
+                "targetName": "attrep_history",
+                "isChecked": false
+              },
+              {
+                "tableId": "CHANGE_DATA_PARTITIONS",
+                "targetName": "attrep_cdc_partitions",
+                "isChecked": false
+              },
+              {
+                "tableId": "DDL_HISTORY",
+                "targetName": "attrep_ddl_history",
+                "isChecked": false
+              }
+            ]
+          },
+          "characterSubstitution": {
+            "sourceTargetCharacters": [],
+            "validationSet": {
+              "characterName": null,
+              "substituteCharacter": 0
+            }
+          },
+          "moreOptions": [],
+          "storeChangesOptions": {
+            "changeTableHeaderColumn": [
+              {
+                "id": "CHANGE_SEQUENCE",
+                "headerColumn": "change_seq",
+                "isChecked": true
+              },
+              {
+                "id": "CHANGE_OPERATION",
+                "headerColumn": "change_oper",
+                "isChecked": true
+              },
+              {
+                "id": "CHANGE_MASK",
+                "headerColumn": "change_mask",
+                "isChecked": true
+              },
+              {
+                "id": "STREAM_POSITION",
+                "headerColumn": "stream_position",
+                "isChecked": false
+              },
+              {
+                "id": "OPERATION",
+                "headerColumn": "operation",
+                "isChecked": true
+              },
+              {
+                "id": "TRANSACTION_ID",
+                "headerColumn": "transaction_id",
+                "isChecked": false
+              },
+              {
+                "id": "TIMESTAMP",
+                "headerColumn": "timestamp",
+                "isChecked": true
+              },
+              {
+                "id": "PARTITION_NAME",
+                "headerColumn": "partition_name",
+                "isChecked": false
+              }
+            ]
+          },
+          "fullLoadOptions": {
+            "afterFullLoadCompleted": {
+              "createKeyOrUniqueIndex": false
+            },
+            "fullLoadOptionsTuning": {
+              "maxTables": 5,
+              "consistencyTimeout": 600,
+              "commitRate": 10000
+            }
+          },
+          "ddlHandlingPolicy": {
+            "addColumn": "APPLY_TO_TARGET",
+            "changeColumnType": "IGNORE",
+            "renameTable": "SUSPEND_TABLE",
+            "renameColumn": "SUSPEND_TABLE",
+            "dropTable": "IGNORE",
+            "dropColumn": "IGNORE",
+            "truncateTable": "IGNORE",
+            "createTable": "APPLY_TO_TARGET"
+          }
+        },
+        "transformAppSettings": null,
+        "storageAppSettings": null,
+        "datamartAppSettings": null,
+        "qvdStorageAppSettings": null,
+        "registeredAppSettings": null,
+        "replicationAppSettings": null,
+        "consolidationAppSettings": null,
+        "publishingAppSettings": null,
+        "distributionAppSettings": null,
+        "lakeLandingAppSettings": null,
+        "docPublishAppSettings": null,
+        "filePublishAppSettings": null,
+        "fileLandingAppSettings": null,
+        "isDummySettings": null
+      },
+      "sourceSelection": {
+        "dataEntitiesSelection": {
+          "sourceConnectionId": "${manel_pos_londong_landing-7m_z.connection}",
+          "includePatterns": [],
+          "excludePatterns": [],
+          "dataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$pos_paris_orderdetail",
+              "schema": "pos_paris",
+              "database": null,
+              "name": "orderdetail",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "manel_pos_londong_landing-7m_z"
+            },
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$pos_paris_salesorder",
+              "schema": "pos_paris",
+              "database": null,
+              "name": "salesorder",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "manel_pos_londong_landing-7m_z"
+            }
+          ]
+        }
+      },
+      "dataEntities": [
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$pos_paris_orderdetail",
+              "schema": "pos_paris",
+              "database": null,
+              "name": "orderdetail",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "manel_pos_londong_landing-7m_z"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": {
+            "loadOrder": "NORMAL",
+            "loadParallelSettings": {
+              "loadParallel": "NONE",
+              "segmentationSettings": null,
+              "partitionsSettings": null
+            }
+          },
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "orderdetail_1",
+          "name": "orderdetail_1",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$pos_paris_salesorder",
+              "schema": "pos_paris",
+              "database": null,
+              "name": "salesorder",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "manel_pos_londong_landing-7m_z"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": {
+            "loadOrder": "NORMAL",
+            "loadParallelSettings": {
+              "loadParallel": "NONE",
+              "segmentationSettings": null,
+              "partitionsSettings": null
+            }
+          },
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "salesorder_1",
+          "name": "salesorder_1",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "modelBasedMappings": {},
+      "cachedDataEntities": [
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "orderdetail",
+            "dbSchema": "pos_paris",
+            "dbName": "postgres",
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "$replicate$pos_paris_orderdetail",
+          "name": "pos_paris_orderdetail",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "salesorder",
+            "dbSchema": "pos_paris",
+            "dbName": null,
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "$replicate$pos_paris_salesorder",
+          "name": "pos_paris_salesorder",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "rulesets": [
+        {
+          "ruleset": {
+            "globalRules": null,
+            "tableRules": [
+              "orderdetail_1-pjku",
+              "salesorder_1-7nho"
+            ],
+            "enabled": true,
+            "id": "outbound",
+            "name": "outbound",
+            "description": "",
+            "version": "1",
+            "tags": null
+          },
+          "globalRules": [],
+          "tableRules": [
+            {
+              "entityId": "orderdetail_1",
+              "actionType": "LOCAL_MANIPULATION",
+              "scopeType": "COLUMN",
+              "scope": {
+                "whereOwnerName": "%",
+                "whereTableName": "orderdetail_1",
+                "whereColumnName": "%",
+                "whereDatatype": "UNSPECIFIED",
+                "whereExpression": null,
+                "whereColumnKeyAttribute": "ANY",
+                "whereColumnNullability": "ANY"
+              },
+              "action": null,
+              "enabled": true,
+              "transformedTableLocal": {
+                "newTableName": "orderdetail",
+                "filter": null,
+                "transformedColumnsLocal": []
+              },
+              "internalRule": false,
+              "id": "orderdetail_1-pjku",
+              "name": "orderdetail_1",
+              "description": "",
+              "version": "1",
+              "tags": null
+            },
+            {
+              "entityId": "salesorder_1",
+              "actionType": "LOCAL_MANIPULATION",
+              "scopeType": "COLUMN",
+              "scope": {
+                "whereOwnerName": "%",
+                "whereTableName": "salesorder_1",
+                "whereColumnName": "%",
+                "whereDatatype": "UNSPECIFIED",
+                "whereExpression": null,
+                "whereColumnKeyAttribute": "ANY",
+                "whereColumnNullability": "ANY"
+              },
+              "action": null,
+              "enabled": true,
+              "transformedTableLocal": {
+                "newTableName": "salesorder",
+                "filter": null,
+                "transformedColumnsLocal": []
+              },
+              "internalRule": false,
+              "id": "salesorder_1-7nho",
+              "name": "salesorder_1",
+              "description": "",
+              "version": "1",
+              "tags": null
+            }
+          ]
+        }
+      ],
+      "entityRelationship": [],
+      "schedulings": [],
+      "dataFlows": null
+    },
+    {
+      "app": {
+        "type": "STORAGE",
+        "subType": null,
+        "id": "manel_pos_paris_storage-vzpl",
+        "name": "Manel_POS_Paris_Storage",
+        "description": "",
+        "version": "1",
+        "tags": null
+      },
+      "settings": {
+        "fullLoadOnly": false,
+        "landingAppSettings": null,
+        "transformAppSettings": null,
+        "storageAppSettings": {
+          "ddlHandlingPolicy": {
+            "addColumn": "APPLY_TO_TARGET",
+            "changeColumnType": "IGNORE",
+            "renameTable": "SUSPEND_TABLE",
+            "renameColumn": "SUSPEND_TABLE",
+            "dropTable": "IGNORE",
+            "dropColumn": "IGNORE",
+            "truncateTable": "IGNORE",
+            "createTable": "APPLY_TO_TARGET"
+          },
+          "artifactsLocation": {
+            "internalSchema": "manel_pos_paris_storage__internal",
+            "dataAssetSchema": "manel_pos_paris_storage",
+            "database": "${storage}"
+          },
+          "artifactsInfo": {
+            "liveViews": {
+              "enabled": false,
+              "transactionallyConsistent": false,
+              "currentSuffix": "__live",
+              "historySuffix": "__live_history"
+            },
+            "headerColumnsPrefix": "hdr__",
+            "history": {
+              "enabled": true,
+              "historyViewsSuffix": "__history",
+              "fromDateColumnName": "hdr__from_timestamp",
+              "toDateColumnName": "hdr__to_timestamp",
+              "priorTablesSuffix": "__prior"
+            },
+            "changeTables": {
+              "enabled": true,
+              "tablesSuffix": "__ct",
+              "viewsSuffix": "__changes"
+            },
+            "standardViewsWithHeaders": {
+              "enabled": true,
+              "suffix": "__whdr"
+            },
+            "current": {
+              "standardViewsSuffix": "",
+              "currentTablesSuffix": "__current"
+            },
+            "materialized": true,
+            "reloadType": "COMPARE_AND_APPLY_WITH_DELETED_ROWS",
+            "prefixForAllTablesAndViews": ""
+          },
+          "dataAppRuntime": {
+            "tableUpdateInterval": 15,
+            "tableUpdateConcurrency": 10,
+            "maxNumberOfRecords": 0,
+            "workloadExecutionEngine": {
+              "engineType": "DEFAULT",
+              "name": "${storage}"
+            }
+          },
+          "catalogSettings": {
+            "publish": false,
+            "tags": []
+          },
+          "tableTypeSettings": {
+            "tableType": "REGULAR",
+            "icebergSettings": {
+              "snowflakeExternalVolume": "",
+              "folderLocationType": "DATA_ASSET_NAME",
+              "specificFolder": "",
+              "enableOpenCatalogSync": false,
+              "snowflakeOpenCatalog": ""
+            }
+          }
+        },
+        "datamartAppSettings": null,
+        "qvdStorageAppSettings": null,
+        "registeredAppSettings": null,
+        "replicationAppSettings": null,
+        "consolidationAppSettings": null,
+        "publishingAppSettings": null,
+        "distributionAppSettings": null,
+        "lakeLandingAppSettings": null,
+        "docPublishAppSettings": null,
+        "filePublishAppSettings": null,
+        "fileLandingAppSettings": null,
+        "isDummySettings": null
+      },
+      "sourceSelection": {
+        "dataEntitiesSelection": {
+          "sourceConnectionId": null,
+          "includePatterns": [
+            {
+              "tablePattern": "%",
+              "schemaPattern": "%",
+              "database": null,
+              "entityType": "TABLE",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "manel_pos_londong_landing-7m_z"
+            }
+          ],
+          "excludePatterns": null,
+          "dataEntities": null
+        }
+      },
+      "dataEntities": [
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "orderdetail_1",
+              "schema": null,
+              "database": null,
+              "name": "orderdetail",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "manel_pos_londong_landing-7m_z"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "orderdetail-vzpn",
+          "name": "orderdetail",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "salesorder_1",
+              "schema": null,
+              "database": null,
+              "name": "salesorder",
+              "projectId": "${manel_land_store}",
+              "dataAppId": "manel_pos_londong_landing-7m_z"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "documentDataEntitySettings": null,
+          "id": "salesorder-vzpo",
+          "name": "salesorder",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "modelBasedMappings": {},
+      "cachedDataEntities": [],
+      "rulesets": [
+        {
+          "ruleset": {
+            "globalRules": [
+              "rule_dataset_upper-qx_v",
+              "rule_column_upper-qx_w"
+            ],
+            "tableRules": [
+              "orderdetail-jsj4"
+            ],
+            "enabled": true,
+            "id": "outbound",
+            "name": "outbound",
+            "description": "",
+            "version": "1",
+            "tags": null
+          },
+          "globalRules": [
+            {
+              "actionType": "RENAME_TABLE",
+              "scopeType": "NONE",
+              "scope": {
+                "whereOwnerName": "%",
+                "whereTableName": "%",
+                "whereColumnName": "%",
+                "whereDatatype": "UNSPECIFIED",
+                "whereExpression": null,
+                "whereColumnKeyAttribute": "ANY",
+                "whereColumnNullability": "ANY"
+              },
+              "action": {
+                "renameType": "TO_UPPER",
+                "expression": null,
+                "value": "",
+                "oldValue": null,
+                "applyColumnDatatype": false,
+                "column": {
+                  "name": null,
+                  "ordinal": 0,
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0,
+                  "datatype": {
+                    "type": "STRING",
+                    "length": 50,
+                    "precision": 0,
+                    "scale": 0,
+                    "originalType": null,
+                    "originalTypeFull": ""
+                  },
+                  "expression": null,
+                  "id": null,
+                  "flags": "NONE",
+                  "properties": null
+                },
+                "valueMapping": null
+              },
+              "enabled": true,
+              "transformedTableLocal": null,
+              "internalRule": false,
+              "id": "rule_dataset_upper-qx_v",
+              "name": "Rule_DataSet_Upper",
+              "description": "",
+              "version": "1",
+              "tags": null
+            },
+            {
+              "actionType": "RENAME_COLUMN",
+              "scopeType": "COLUMN",
+              "scope": {
+                "whereOwnerName": "%",
+                "whereTableName": "%",
+                "whereColumnName": "%",
+                "whereDatatype": "UNSPECIFIED",
+                "whereExpression": null,
+                "whereColumnKeyAttribute": "ANY",
+                "whereColumnNullability": "ANY"
+              },
+              "action": {
+                "renameType": "TO_UPPER",
+                "expression": null,
+                "value": "",
+                "oldValue": null,
+                "applyColumnDatatype": false,
+                "column": {
+                  "name": null,
+                  "ordinal": 0,
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0,
+                  "datatype": {
+                    "type": "STRING",
+                    "length": 50,
+                    "precision": 0,
+                    "scale": 0,
+                    "originalType": null,
+                    "originalTypeFull": ""
+                  },
+                  "expression": null,
+                  "id": null,
+                  "flags": "NONE",
+                  "properties": null
+                },
+                "valueMapping": null
+              },
+              "enabled": true,
+              "transformedTableLocal": null,
+              "internalRule": false,
+              "id": "rule_column_upper-qx_w",
+              "name": "Rule_Column_Upper",
+              "description": "",
+              "version": "1",
+              "tags": null
+            }
+          ],
+          "tableRules": [
+            {
+              "entityId": "orderdetail-vzpn",
+              "actionType": "LOCAL_MANIPULATION",
+              "scopeType": "COLUMN",
+              "scope": {
+                "whereOwnerName": "%",
+                "whereTableName": "orderdetail",
+                "whereColumnName": "%",
+                "whereDatatype": "UNSPECIFIED",
+                "whereExpression": null,
+                "whereColumnKeyAttribute": "ANY",
+                "whereColumnNullability": "ANY"
+              },
+              "action": null,
+              "enabled": true,
+              "transformedTableLocal": {
+                "newTableName": null,
+                "filter": null,
+                "transformedColumnsLocal": [
+                  {
+                    "action": "ADD",
+                    "columnName": "AMOUNT",
+                    "newColumnName": null,
+                    "newDataType": {
+                      "type": "NUMERIC",
+                      "length": 0,
+                      "precision": 10,
+                      "scale": 2,
+                      "originalType": null,
+                      "originalTypeFull": ""
+                    },
+                    "expression": {
+                      "expressionStatement": "(${quantity}*${unitPrice})*(1-${discount})",
+                      "alias": [
+                        {
+                          "name": "quantity",
+                          "value": "qty"
+                        },
+                        {
+                          "name": "unitPrice",
+                          "value": "unitprice"
+                        },
+                        {
+                          "name": "discount",
+                          "value": "discount"
+                        }
+                      ]
+                    },
+                    "primaryKeyOrdinal": 0,
+                    "ordinal": 0,
+                    "nullable": true,
+                    "addedColumnId": "64fe4c67-4b08-4242-9c1e-a34f24e6f1e9",
+                    "markAsMetadata": false
+                  }
+                ]
+              },
+              "internalRule": false,
+              "id": "orderdetail-jsj4",
+              "name": "orderdetail",
+              "description": "",
+              "version": "1",
+              "tags": null
+            }
+          ]
+        }
+      ],
+      "entityRelationship": [],
+      "schedulings": [
+        {
+          "enabled": true,
+          "schedulingType": "TIME_BASED",
+          "timeBasedScheduling": {
+            "schedule": [
+              "RRULE:FREQ=HOURLY;INTERVAL=2;BYMINUTE=29;BYSECOND=0"
+            ],
+            "startDateTime": "2025-02-06T11:29:00.000Z",
+            "endDateTime": "0001-01-01T00:00:00.000Z",
+            "timezone": "Etc/UTC"
+          },
+          "eventBasedScheduling": {
+            "eventSchedulingType": "ANY_INPUT_TASK",
+            "triggerApps": []
+          },
+          "id": "schedule-vzpm",
+          "name": "Schedule",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "dataFlows": null
+    }
+  ]
+}

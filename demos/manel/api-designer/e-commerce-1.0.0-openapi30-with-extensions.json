@@ -1,0 +1,324 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "E-commerce",
+    "description" : "E-commerce API",
+    "contact" : { },
+    "version" : "1.0.0"
+  },
+  "servers" : [ {
+    "url" : "http://127.0.0.1:8090",
+    "description" : "endpoint when running studio",
+    "x-talend" : {
+      "isPublished" : true
+    }
+  }, {
+    "url" : "http://127.0.0.1:5070/services",
+    "description" : "Deployed endpoint running on local machine.",
+    "x-talend" : {
+      "isPublished" : true
+    }
+  }, {
+    "url" : "http://172.21.20.182:5070/services",
+    "description" : "Deploys on QMI machine",
+    "x-talend" : {
+      "isPublished" : true
+    }
+  } ],
+  "paths" : {
+    "/customer/{id}" : {
+      "get" : {
+        "summary" : "Read customer by ID",
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Customer"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Status 404"
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "Delete customer by ID",
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          },
+          "404" : {
+            "description" : "Status 404"
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      } ],
+      "x-talend" : {
+        "section" : "Operations"
+      }
+    },
+    "/customer" : {
+      "get" : {
+        "summary" : "Search for customers",
+        "description" : "Get customer list by query",
+        "parameters" : [ {
+          "name" : "name",
+          "in" : "query",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Customer"
+                  }
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Status 404"
+          }
+        }
+      },
+      "put" : {
+        "summary" : "Update Customer",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Customer"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "202" : {
+            "description" : "Status 202",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Customer"
+                }
+              }
+            }
+          },
+          "304" : {
+            "description" : "Status 304"
+          },
+          "404" : {
+            "description" : "Status 404"
+          }
+        }
+      },
+      "post" : {
+        "summary" : "Create Customer",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Customer"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "201" : {
+            "description" : "Status 201",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Customer"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Status 406"
+          }
+        }
+      },
+      "x-talend" : {
+        "section" : "Operations"
+      }
+    },
+    "/Advanced" : {
+      "get" : {
+        "summary" : "Search for matching customers",
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Customer"
+                  }
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Status 404"
+          }
+        }
+      },
+      "x-talend" : {
+        "section" : "Operations"
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Customer" : {
+        "type" : "object",
+        "properties" : {
+          "customer" : {
+            "type" : "object",
+            "properties" : {
+              "CustomerID" : {
+                "type" : "string"
+              },
+              "CompanyName" : {
+                "type" : "string"
+              },
+              "Contact" : {
+                "type" : "object",
+                "properties" : {
+                  "ContactName" : {
+                    "type" : "string"
+                  },
+                  "ContactTitle" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "HQLocation" : {
+                "type" : "object",
+                "properties" : {
+                  "Address" : {
+                    "type" : "string"
+                  },
+                  "City" : {
+                    "type" : "string"
+                  },
+                  "Region" : {
+                    "type" : "string"
+                  },
+                  "PostCode" : {
+                    "type" : "string"
+                  },
+                  "Country" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "ElectronicCommuncation" : {
+                "type" : "object",
+                "properties" : {
+                  "Phone" : {
+                    "type" : "string"
+                  },
+                  "Fax" : {
+                    "type" : "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "example" : "{\n    \"customer\": {\n        \"CustomerID\": \"cID\",\n        \"CompanyName\": \"Acme\",\n        \"Contact\": { \n            \"ContactName\": \"Roadrunner\",\n            \"ContactTitle\": \"Fast & Furious\"\n        },\n        \"HQLocation\": {\n            \"Address\": \"Sandroad 11\",\n            \"City\": \"Carson city\",\n            \"Region\": \"TX\",\n            \"PostCode\": \"100\",\n            \"Country\": \"US\"\n        },\n        \"ElectronicCommuncation\": {\n            \"Phone\": \"+1 646585\",\n            \"Fax\": \"+1 864664\"\n        }\n    }\n}",
+        "x-talend" : {
+          "section" : "Model"
+        }
+      },
+      "test" : {
+        "type" : "object",
+        "properties" : {
+          "customer" : {
+            "type" : "object",
+            "properties" : {
+              "CustomerID" : {
+                "type" : "string"
+              },
+              "CompanyName" : {
+                "type" : "string"
+              },
+              "Contact" : {
+                "type" : "object",
+                "properties" : {
+                  "ContactName" : {
+                    "type" : "string"
+                  },
+                  "ContactTitle" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "HQLocation" : {
+                "type" : "object",
+                "properties" : {
+                  "Address" : {
+                    "type" : "string"
+                  },
+                  "City" : {
+                    "type" : "string"
+                  },
+                  "Region" : {
+                    "type" : "string"
+                  },
+                  "PostCode" : {
+                    "type" : "string"
+                  },
+                  "Country" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "ElectronicCommuncation" : {
+                "type" : "object",
+                "properties" : {
+                  "Phone" : {
+                    "type" : "string"
+                  },
+                  "Fax" : {
+                    "type" : "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "example" : "{\n    \"customer\": {\n        \"CustomerID\": \"cID\",\n        \"CompanyName\": \"Acme\",\n        \"Contact\": { \n            \"ContactName\": \"Roadrunner\",\n            \"ContactTitle\": \"Fast & Furious\"\n        },\n        \"HQLocation\": {\n            \"Address\": \"Sandroad 11\",\n            \"City\": \"Carson city\",\n            \"Region\": \"TX\",\n            \"PostCode\": \"100\",\n            \"Country\": \"US\"\n        },\n        \"ElectronicCommuncation\": {\n            \"Phone\": \"+1 646585\",\n            \"Fax\": \"+1 864664\"\n        }\n    }\n}",
+        "x-talend" : {
+          "section" : "Model"
+        }
+      }
+    }
+  },
+  "x-talend" : {
+    "sections" : {
+      "Operations" : { },
+      "Model" : { }
+    }
+  }
+}

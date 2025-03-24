@@ -14,7 +14,7 @@ ENV TENANT_NAMEREGION=
 ENV OWNER_EMAIL=
 ENV MACHINEID=
 ENV QAA_URL="https://innovation.us.qlikcloud.com/api/v1/automations/357cb3df-7a90-4c5c-9363-45a4ee68607a/actions/execute"
-ENV QAA_EXEC_TOKEN="qq7rHO48tQeve4ziKpdJBMLzGdqDYEnIogxvTdDZYxfrD0FsKbyLaonJ7Mt9IGM0"
+ENV QAA_EXEC_TOKEN="atoken"
 ENV QAA_TOKEN_HEADER_NAME="X-Execution-Token"
 ENV TENANT_DOMAIN="qlikcloud.com"
 

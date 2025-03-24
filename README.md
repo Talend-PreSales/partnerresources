@@ -6,7 +6,7 @@ The purpose of this repository is to provide Talend Partners with demos and othe
 
 ### Manel ECommerce
 
-#### [Manel end2end demonstraiton](demos/manel)
+#### [Manel end2end demonstration](demos/manel)
 
 ### API
 

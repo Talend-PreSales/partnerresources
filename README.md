@@ -1,4 +1,4 @@
-# Talend Partner Resources
+# Qlik Talend Partner Resources
 
 The purpose of this repository is to provide Talend Partners with demos and other valuable resources. 
 

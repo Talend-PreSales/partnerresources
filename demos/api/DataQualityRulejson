@@ -1,0 +1,21 @@
+[
+    {
+        "executionResults": [
+            {
+                "ruleName": "email",
+                "inputColumn": [
+                    "email"
+                ],
+                "status": "Invalid"
+            },
+            {
+                "ruleName": "Global Phone Number Validation",
+                "inputColumn": [
+                    "CountryIso",
+                    "Phone"
+                ],
+                "status": "Invalid"
+            }
+        ]
+    }
+]
